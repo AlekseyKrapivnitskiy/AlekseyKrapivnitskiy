@@ -1,5 +1,6 @@
 package lesson2;
 
+import base.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,14 +14,9 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
-public class SimpleTestWithAnnotations {
+public class SimpleTestWithAnnotations2 extends SeleniumBase {
 
     private WebDriver driver;
-
-    @BeforeClass
-    public void beforeClass() {
-        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-    }
 
     @BeforeMethod
     public void beforeMethod() {
@@ -34,7 +30,7 @@ public class SimpleTestWithAnnotations {
         driver.close();
     }
 
-    @Test(invocationCount = 3)
+    @Test(invocationCount = 2)
     public void simpleTest() {
         //2
         driver.navigate().to("https://epam.github.io/JDI/index.html");
