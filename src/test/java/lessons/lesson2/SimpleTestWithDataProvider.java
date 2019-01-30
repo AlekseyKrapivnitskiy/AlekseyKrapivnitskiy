@@ -1,4 +1,4 @@
-package lesson2;
+package lessons.lesson2;
 
 import base.SeleniumBase;
 import org.testng.annotations.DataProvider;

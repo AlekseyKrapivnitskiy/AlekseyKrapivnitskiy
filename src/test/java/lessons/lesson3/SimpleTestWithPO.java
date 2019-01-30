@@ -1,7 +1,7 @@
-package lesson3;
+package lessons.lesson3;
 
 import base.SeleniumBase;
-import base.lesson3.IndexPage;
+import base.lessons.lesson3.IndexPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;

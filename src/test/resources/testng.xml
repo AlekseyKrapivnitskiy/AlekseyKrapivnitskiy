@@ -5,7 +5,7 @@
     <test name="Test 1"   >
 
         <classes>
-            <class name="lesson2.SimpleTestWithAnnotations" />
+            <class name="lessons.lesson2.SimpleTestWithAnnotations" />
         </classes>
 
     </test>
