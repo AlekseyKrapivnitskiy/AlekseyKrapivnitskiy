@@ -12,8 +12,6 @@ public class SelenideSimpleTest {
 
     @Test
     public void simpleTest() {
-        //1
-        open("https://epam.github.io/JDI/index.html");
 
         //2
         Assert.assertEquals(getWebDriver().getTitle(), "Home Page");

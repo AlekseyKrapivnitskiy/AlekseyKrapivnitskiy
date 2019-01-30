@@ -1,10 +1,10 @@
-package base;
+package base.lessons.lesson4;
 
 import org.testng.annotations.BeforeSuite;
 
 import static java.lang.System.setProperty;
 
-public abstract class SeleniumBase {
+public abstract class SelenideBase {
 
     @BeforeSuite
     public void beforeSuite() {
