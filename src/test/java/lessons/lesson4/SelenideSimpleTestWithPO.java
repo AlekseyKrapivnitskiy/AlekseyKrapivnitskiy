@@ -28,7 +28,7 @@ public class SelenideSimpleTestWithPO extends SelenideBase {
 
     @Test
     public void SimpleTest() {
-        seleindexPage.open();
+        indexPage.open();
         indexPage.login("epam", "12345");
     }
 }
