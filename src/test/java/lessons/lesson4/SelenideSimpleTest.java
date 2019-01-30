@@ -3,6 +3,7 @@ package lessons.lesson4;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
@@ -22,5 +23,8 @@ public class SelenideSimpleTest {
         $("[id='name']").sendKeys("epam");
         $("[id='password']").sendKeys("1234");
         $("[id='login-button']").click();
+
+        //4
+        $("").shouldHave(text(""));
     }
 }
