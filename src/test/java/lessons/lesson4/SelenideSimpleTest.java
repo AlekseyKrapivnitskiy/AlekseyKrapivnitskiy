@@ -18,7 +18,6 @@ public class SelenideSimpleTest {
         Assert.assertEquals(getWebDriver().getTitle(), "Home Page");
 
         //3
-
         $("[id='user-icon']").click();
         $("[id='name']").sendKeys("epam");
         $("[id='password']").sendKeys("1234");
