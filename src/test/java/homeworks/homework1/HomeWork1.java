@@ -25,7 +25,7 @@ public class HomeWork1 {
     }
 
     @Test
-    public void homeWork1() {
+    public void indexPageTest() {
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
