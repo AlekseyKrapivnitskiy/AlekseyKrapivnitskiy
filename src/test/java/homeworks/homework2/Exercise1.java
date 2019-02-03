@@ -45,13 +45,7 @@ public class Exercise1 {
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
-        //2.Perform login
-        driver.findElement(By.cssSelector("#user-icon")).click();
-        driver.findElement(By.cssSelector("#name")).sendKeys("epam");
-        driver.findElement(By.cssSelector("#password")).sendKeys("1234");
-        driver.findElement(By.cssSelector("#login-button")).click();
-
-        //3.Assert that there are 4 texts on the Index Page under icons and they have proper text
+        //2.Assert that there are 4 texts on the Index Page under icons and they have proper text
         assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(i).getText(),s);
     }
 }
