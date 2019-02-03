@@ -33,16 +33,10 @@ public class Exercise1 {
     @DataProvider(parallel = true)
     private Object[][] dataProvider() {
         return new Object[][]{
-                {0, "To include good practices\n" +
-                        "and ideas from successful\n" +
-                        "EPAM project"},
-                {1, "To be flexible and\n" +
-                        "customizable"},
+                {0, "To include good practices\n" + "and ideas from successful\n" + "EPAM project"},
+                {1, "To be flexible and\n" + "customizable"},
                 {2, "To be multiplatform"},
-                {3, "Already have good base\n" +
-                        "(about 20 internal and\n" +
-                        "some external projects),\n" +
-                        "wish to get more…"}
+                {3, "Already have good base\n" + "(about 20 internal and\n" + "some external projects),\n" + "wish to get more…"}
         };
     }
 
