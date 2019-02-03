@@ -12,7 +12,7 @@ import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class HomeWork1 {
+public class Homework1 {
 
     private WebDriver driver;
 
