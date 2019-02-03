@@ -47,25 +47,25 @@ public class Homework1 {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
-        assertEquals(driver.findElement(By.cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8 > li:nth-child(1)")).getText(), "HOME");
-        assertEquals(driver.findElement(By.cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8 > li:nth-child(2)")).getText(), "CONTACT FORM");
-        assertEquals(driver.findElement(By.cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8 > li:nth-child(3)")).getText(), "SERVICE");
-        assertEquals(driver.findElement(By.cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8 > li:nth-child(4)")).getText(), "METALS & COLORS");
+        assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(0).getText(), "HOME");
+        assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(1).getText(), "CONTACT FORM");
+        assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(2).getText(), "SERVICE");
+        assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(3).getText(), "METALS & COLORS");
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
-        assertTrue(driver.findElement(By.cssSelector("div.main-content > div > div:nth-child(1) > div > div")).isDisplayed());
-        assertTrue(driver.findElement(By.cssSelector("div.main-content > div > div:nth-child(2) > div > div")).isDisplayed());
-        assertTrue(driver.findElement(By.cssSelector("div.main-content > div > div:nth-child(3) > div > div")).isDisplayed());
-        assertTrue(driver.findElement(By.cssSelector("div.main-content > div > div:nth-child(4) > div > div")).isDisplayed());
+        assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(0).isDisplayed());
+        assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(1).isDisplayed());
+        assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(2).isDisplayed());
+        assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(3).isDisplayed());
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        assertEquals(driver.findElement(By.cssSelector("div.main-content > div > div:nth-child(1) > div > span")).getText(), "To include good practices\n" + "and ideas from successful\n" + "EPAM project");
-        assertEquals(driver.findElement(By.cssSelector("div.main-content > div > div:nth-child(2) > div > span")).getText(), "To be flexible and\n" + "customizable");
-        assertEquals(driver.findElement(By.cssSelector("div.main-content > div > div:nth-child(3) > div > span")).getText(), "To be multiplatform");
-        assertEquals(driver.findElement(By.cssSelector("div.main-content > div > div:nth-child(4) > div > span")).getText(), "Already have good base\n" + "(about 20 internal and\n" + "some external projects),\n" + "wish to get more…");
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(0).getText(), "To include good practices\n" + "and ideas from successful\n" + "EPAM project");
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(1).getText(), "To be flexible and\n" + "customizable");
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(2).getText(), "To be multiplatform");
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(3).getText(), "Already have good base\n" + "(about 20 internal and\n" + "some external projects),\n" + "wish to get more…");
 
         //9.Assert a text of the main headers
-        assertEquals(driver.findElement(By.cssSelector("h3.main-title.text-center")).getText(), "EPAM FRAMEWORK WISHES…");
+        assertEquals(driver.findElement(By.cssSelector(".main-title.text-center")).getText(), "EPAM FRAMEWORK WISHES…");
 
         //10.Assert that there is the iframe in the center of page
         assertTrue(driver.findElement(By.cssSelector("#iframe")).isDisplayed());
@@ -78,10 +78,10 @@ public class Homework1 {
         driver.switchTo().defaultContent();
 
         //13.Assert a text of the sub header
-        assertEquals(driver.findElement(By.cssSelector("h3:nth-child(3)")).getText(), "JDI GITHUB");
+        assertEquals(driver.findElement(By.cssSelector(".text-center > a")).getText(), "JDI GITHUB");
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
-        assertEquals(driver.findElement(By.cssSelector("h3:nth-child(3) > a")).getAttribute("href"), "https://github.com/epam/JDI");
+        assertEquals(driver.findElement(By.cssSelector(".text-center > a")).getAttribute("href"), "https://github.com/epam/JDI");
 
         // 15.Assert that there is Left Section
         assertTrue(driver.findElement(By.cssSelector("#mCSB_1")).isDisplayed());
