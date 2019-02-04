@@ -98,6 +98,7 @@ public class Homework1 {
 
         //17.Close Browser
         driver.close();
+        // TODO missing variant with soft assertions
     }
 }
 
