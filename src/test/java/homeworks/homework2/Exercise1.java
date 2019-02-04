@@ -46,6 +46,6 @@ public class Exercise1 {
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
         //2.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(i).getText(),s);
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(i).getText(), s);
     }
 }
