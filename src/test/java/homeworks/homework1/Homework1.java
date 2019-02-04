@@ -18,6 +18,7 @@ public class Homework1 {
 
     @BeforeClass
     public void beforeClass() {
+        // TODO try to avoid using static import for System class
         setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -47,18 +48,24 @@ public class Homework1 {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
+        // TODO please try to avoid code duplication
         assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(0).getText(), "HOME");
         assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(1).getText(), "CONTACT FORM");
         assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(2).getText(), "SERVICE");
         assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(3).getText(), "METALS & COLORS");
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
+        // TODO please try to avoid code duplication
         assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(0).isDisplayed());
         assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(1).isDisplayed());
         assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(2).isDisplayed());
         assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(3).isDisplayed());
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
+        /* TODO
+            * Please try to avoid code duplication
+            * Please format lines with Java Code Convention style
+         */
         assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(0).getText(), "To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(1).getText(), "To be flexible and\n" + "customizable");
         assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(2).getText(), "To be multiplatform");
