@@ -1,4 +1,4 @@
-package base.lessons.lesson4;
+package lessons.lesson4;
 
 import com.codeborne.selenide.SelenideElement;
 
