@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -18,8 +17,8 @@ public class Homework1 {
 
     @BeforeClass
     public void beforeClass() {
-        // TODO try to avoid using static import for System class
-        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        // TODO try to avoid using static import for System class --fixed
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
