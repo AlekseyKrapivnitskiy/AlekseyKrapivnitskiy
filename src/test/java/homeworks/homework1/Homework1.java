@@ -64,12 +64,14 @@ public class Homework1 {
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
         /* TODO
             * Please try to avoid code duplication
-            * Please format lines with Java Code Convention style
+            * Please format lines with Java Code Convention style -- fixed
          */
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(0).getText(), "To include good practices\n" + "and ideas from successful\n" + "EPAM project");
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(0).getText(), "To include good practices\n"
+                + "and ideas from successful\n" + "EPAM project");
         assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(1).getText(), "To be flexible and\n" + "customizable");
         assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(2).getText(), "To be multiplatform");
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(3).getText(), "Already have good base\n" + "(about 20 internal and\n" + "some external projects),\n" + "wish to get more…");
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(3).getText(), "Already have good base\n"
+                + "(about 20 internal and\n" + "some external projects),\n" + "wish to get more…");
 
         //9.Assert a text of the main headers
         assertEquals(driver.findElement(By.cssSelector(".main-title.text-center")).getText(), "EPAM FRAMEWORK WISHES…");
