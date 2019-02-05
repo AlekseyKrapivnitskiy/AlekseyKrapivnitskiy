@@ -17,7 +17,7 @@ public class Homework1 {
 
     @BeforeClass
     public void beforeClass() {
-        // TODO try to avoid using static import for System class --fixed
+        // TODO try to avoid using static import for System class -- fixed
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
