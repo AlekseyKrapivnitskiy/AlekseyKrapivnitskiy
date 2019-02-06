@@ -2,17 +2,20 @@ package homeworks.homework2.exercise2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class Regression4 {
+public class Regression {
 
     private WebDriver driver;
 
@@ -47,25 +50,52 @@ public class Regression4 {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
-        assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(0).getText(), "HOME");
-        assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(1).getText(), "CONTACT FORM");
-        assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(2).getText(), "SERVICE");
-        assertEquals(driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li")).get(3).getText(), "METALS & COLORS");
+        // TODO please try to avoid code duplication -- fixed
+        List<String> headerItems = new ArrayList<String>();
+        headerItems.add("HOME");
+        headerItems.add("CONTACT FORM");
+        headerItems.add("SERVICE");
+        headerItems.add("METALS & COLORS");
+
+        List<WebElement> navigationBar = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
+
+        for (int i = 0; i < navigationBar.size(); i ++) {
+            assertEquals(navigationBar.get(i).getText(), headerItems.get(i));
+        }
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
-        assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(0).isDisplayed());
-        assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(1).isDisplayed());
-        assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(2).isDisplayed());
-        assertTrue(driver.findElements(By.cssSelector(".benefit-icon")).get(3).isDisplayed());
+        // TODO please try to avoid code duplication -- fixed
+        List<WebElement> benefitIcons = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
+
+        for (WebElement benefitIcon : benefitIcons) {
+            assertTrue(benefitIcon.isDisplayed());
+        }
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(0).getText(), "To include good practices\n" + "and ideas from successful\n" + "EPAM project");
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(1).getText(), "To be flexible and\n" + "customizable");
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(2).getText(), "To be multiplatform");
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(3).getText(), "Already have good base\n" + "(about 20 internal and\n" + "some external projects),\n" + "wish to get more…");
+        /* TODO
+         * Please try to avoid code duplication -- fixed
+         * Please format lines with Java Code Convention style -- fixed
+         */
+        List<String> benefitTexts = new ArrayList<String>();
+        benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
+        benefitTexts.add("To be flexible and\n" + "customizable");
+        benefitTexts.add("To be multiplatform");
+        benefitTexts.add("Already have good base\n" + "(about 20 internal and\n" + "some external projects),\n" +
+                "wish to get more…");
+
+        List<WebElement> benefitTxt = driver.findElements(By.cssSelector(".benefit-txt"));
+
+        for (int i = 0; i < benefitTxt.size(); i ++) {
+            assertEquals(benefitTxt.get(i).getText(), benefitTexts.get(i));
+        }
 
         //9.Assert a text of the main headers
         assertEquals(driver.findElement(By.cssSelector(".main-title.text-center")).getText(), "EPAM FRAMEWORK WISHES…");
+        assertEquals(driver.findElement(By.cssSelector(".main-txt.text-center")).getText(), "LOREM IPSUM DOLOR SIT AMET, " +
+                "CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. " +
+                "UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA " +
+                "COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE " +
+                "EU FUGIAT NULLA PARIATUR.");
 
         //10.Assert that there is the iframe in the center of page
         assertTrue(driver.findElement(By.cssSelector("#iframe")).isDisplayed());
@@ -91,6 +121,7 @@ public class Regression4 {
 
         //17.Close Browser
         driver.close();
+        // TODO missing variant with soft assertions -- fixed, please check in test\java\homeworks\homework1\SoftAsserts.java
     }
 }
 
