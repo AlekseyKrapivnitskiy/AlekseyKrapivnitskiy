@@ -1,34 +1,27 @@
 package homeworks.homework2.exercise2;
 
+import base.lessons.lesson3.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class Regression {
-
-    private WebDriver driver;
-
-    @BeforeClass
-    public void beforeClass() {
-        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
-    }
+public class Regression extends SeleniumBase {
 
     @Test(groups = "Regression")
     public void indexPageTest1() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
@@ -50,7 +43,6 @@ public class Regression {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
-        // TODO please try to avoid code duplication -- fixed
         List<String> headerItems = new ArrayList<String>();
         headerItems.add("HOME");
         headerItems.add("CONTACT FORM");
@@ -64,7 +56,6 @@ public class Regression {
         }
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
-        // TODO please try to avoid code duplication -- fixed
         List<WebElement> benefitIcons = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
 
         for (WebElement benefitIcon : benefitIcons) {
@@ -72,10 +63,6 @@ public class Regression {
         }
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        /* TODO
-         * Please try to avoid code duplication -- fixed
-         * Please format lines with Java Code Convention style -- fixed
-         */
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -121,11 +108,14 @@ public class Regression {
 
         //17.Close Browser
         driver.close();
-        // TODO missing variant with soft assertions -- fixed, please check in test\java\homeworks\homework1\SoftAsserts.java
     }
 
     @Test(groups = "Regression")
     public void indexPageTest2() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
@@ -147,7 +137,6 @@ public class Regression {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
-        // TODO please try to avoid code duplication -- fixed
         List<String> headerItems = new ArrayList<String>();
         headerItems.add("HOME");
         headerItems.add("CONTACT FORM");
@@ -161,7 +150,6 @@ public class Regression {
         }
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
-        // TODO please try to avoid code duplication -- fixed
         List<WebElement> benefitIcons = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
 
         for (WebElement benefitIcon : benefitIcons) {
@@ -169,10 +157,6 @@ public class Regression {
         }
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        /* TODO
-         * Please try to avoid code duplication -- fixed
-         * Please format lines with Java Code Convention style -- fixed
-         */
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -218,11 +202,14 @@ public class Regression {
 
         //17.Close Browser
         driver.close();
-        // TODO missing variant with soft assertions -- fixed, please check in test\java\homeworks\homework1\SoftAsserts.java
     }
 
     @Test(groups = "Regression")
     public void indexPageTest3() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
@@ -244,7 +231,6 @@ public class Regression {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
-        // TODO please try to avoid code duplication -- fixed
         List<String> headerItems = new ArrayList<String>();
         headerItems.add("HOME");
         headerItems.add("CONTACT FORM");
@@ -258,7 +244,6 @@ public class Regression {
         }
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
-        // TODO please try to avoid code duplication -- fixed
         List<WebElement> benefitIcons = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
 
         for (WebElement benefitIcon : benefitIcons) {
@@ -266,10 +251,6 @@ public class Regression {
         }
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        /* TODO
-         * Please try to avoid code duplication -- fixed
-         * Please format lines with Java Code Convention style -- fixed
-         */
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -315,7 +296,5 @@ public class Regression {
 
         //17.Close Browser
         driver.close();
-        // TODO missing variant with soft assertions -- fixed, please check in test\java\homeworks\homework1\SoftAsserts.java
     }
 }
-
