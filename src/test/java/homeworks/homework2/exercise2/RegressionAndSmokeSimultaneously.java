@@ -44,7 +44,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
-        // TODO please try to avoid code duplication -- fixed
         List<String> headerItems = new ArrayList<String>();
         headerItems.add("HOME");
         headerItems.add("CONTACT FORM");
@@ -58,7 +57,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         }
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
-        // TODO please try to avoid code duplication -- fixed
         List<WebElement> benefitIcons = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
 
         for (WebElement benefitIcon : benefitIcons) {
@@ -66,10 +64,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         }
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        /* TODO
-         * Please try to avoid code duplication -- fixed
-         * Please format lines with Java Code Convention style -- fixed
-         */
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -115,7 +109,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
         //17.Close Browser
         driver.close();
-        // TODO missing variant with soft assertions -- fixed, please check in test\java\homeworks\homework1\SoftAsserts.java
     }
 
     @Test(groups = {"Regression", "Smoke"})
@@ -145,7 +138,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
-        // TODO please try to avoid code duplication -- fixed
         List<String> headerItems = new ArrayList<String>();
         headerItems.add("HOME");
         headerItems.add("CONTACT FORM");
@@ -159,7 +151,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         }
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
-        // TODO please try to avoid code duplication -- fixed
         List<WebElement> benefitIcons = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
 
         for (WebElement benefitIcon : benefitIcons) {
@@ -167,10 +158,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         }
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        /* TODO
-         * Please try to avoid code duplication -- fixed
-         * Please format lines with Java Code Convention style -- fixed
-         */
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -216,7 +203,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
         //17.Close Browser
         driver.close();
-        // TODO missing variant with soft assertions -- fixed, please check in test\java\homeworks\homework1\SoftAsserts.java
     }
 
     @Test(groups = {"Regression", "Smoke"})
@@ -246,7 +232,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         assertEquals(driver.getTitle(), homePageTitle);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
-        // TODO please try to avoid code duplication -- fixed
         List<String> headerItems = new ArrayList<String>();
         headerItems.add("HOME");
         headerItems.add("CONTACT FORM");
@@ -260,7 +245,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         }
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
-        // TODO please try to avoid code duplication -- fixed
         List<WebElement> benefitIcons = driver.findElements(By.cssSelector(".uui-navigation.nav.navbar-nav.m-l8 > li"));
 
         for (WebElement benefitIcon : benefitIcons) {
@@ -268,10 +252,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
         }
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        /* TODO
-         * Please try to avoid code duplication -- fixed
-         * Please format lines with Java Code Convention style -- fixed
-         */
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -317,7 +297,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
         //17.Close Browser
         driver.close();
-        // TODO missing variant with soft assertions -- fixed, please check in test\java\homeworks\homework1\SoftAsserts.java
     }
 }
 
