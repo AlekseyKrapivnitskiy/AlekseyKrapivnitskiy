@@ -1,13 +1,14 @@
 package base.lessons.lesson3;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeSuite;
-
-import static java.lang.System.setProperty;
 
 public abstract class SeleniumBase {
 
-    @BeforeSuite
+    protected WebDriver driver;
+
+    @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
-        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
     }
 }
