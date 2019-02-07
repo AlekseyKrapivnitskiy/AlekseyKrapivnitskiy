@@ -1,11 +1,10 @@
 package homeworks.homework2.exercise2;
 
-import base.lessons.lesson3.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -16,16 +15,21 @@ import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class RegressionAndSmokeSimultaneously extends SeleniumBase {
+public class RegressionAndSmokeSimultaneously {
 
     private WebDriver driver;
+
+    @BeforeClass
+    public void beforeClass() {
+        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+    }
 
     @Test(groups = {"Regression", "Smoke"})
     public void indexPageTest1() {
         //1.Open test site by URL
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
         //2.Assert Browser title
@@ -123,9 +127,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
     @Test(groups = {"Regression", "Smoke"})
     public void indexPageTest2() {
         //1.Open test site by URL
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
         //2.Assert Browser title
@@ -223,9 +224,6 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
     @Test(groups = {"Regression", "Smoke"})
     public void indexPageTest3() {
         //1.Open test site by URL
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
         //2.Assert Browser title
