@@ -1,5 +1,6 @@
 package homeworks.homework2.exercise2;
 
+import base.lessons.lesson3.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,20 +16,13 @@ import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class RegressionAndSmokeSimultaneously {
-
-    private WebDriver driver;
-
-    @BeforeClass
-    public void beforeClass() {
-        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
-    }
+public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
     @Test(groups = {"Regression", "Smoke"})
-    public void indexPageTest1() {
+    public void indexPageTest1() {WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
@@ -126,6 +120,10 @@ public class RegressionAndSmokeSimultaneously {
 
     @Test(groups = {"Regression", "Smoke"})
     public void indexPageTest2() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
@@ -223,6 +221,10 @@ public class RegressionAndSmokeSimultaneously {
 
     @Test(groups = {"Regression", "Smoke"})
     public void indexPageTest3() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
