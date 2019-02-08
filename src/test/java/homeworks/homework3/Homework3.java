@@ -13,7 +13,7 @@ import java.util.List;
 import static homeworks.homework3.enums.BenefitTexts.*;
 import static homeworks.homework3.enums.CenterTexts.*;
 import static homeworks.homework3.enums.HeaderItems.*;
-import static homeworks.homework3.enums.IndexPageData.INDEX_PAGE_DATA;
+import static homeworks.homework3.enums.IndexPageData.*;
 import static homeworks.homework3.enums.JdiGithub.*;
 import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
 
@@ -37,10 +37,10 @@ public class Homework3 extends SeleniumBase {
         IndexPage indexPage = new IndexPage(driver);
 
         //1.Open test site by URL
-        indexPage.open(INDEX_PAGE_DATA.url);
+        indexPage.open(INDEX_PAGE_URL.text);
 
         //2.Assert Browser title
-        indexPage.checkTitle(INDEX_PAGE_DATA.title);
+        indexPage.checkTitle(INDEX_PAGE_TITLE.text);
 
         //3.Perform login
         indexPage.login(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password);
@@ -49,7 +49,7 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkUsername(PITER_CHAILOVSKII.username);
 
         //5.Assert Browser title
-        indexPage.open(INDEX_PAGE_DATA.url);
+        indexPage.checkTitle(INDEX_PAGE_TITLE.text);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
         List<String> headerItems = new ArrayList<String>();
