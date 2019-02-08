@@ -10,12 +10,12 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static homeworks.homework3.BenefitTexts.BENEFIT_TEXTS;
-import static homeworks.homework3.CenterTexts.CENTER_TEXTS;
-import static homeworks.homework3.HeaderItems.HEADER_ITEMS;
-import static homeworks.homework3.IndexPageData.INDEX_PAGE_DATA;
-import static homeworks.homework3.JdiGithub.JDI_GITHUB;
-import static homeworks.homework3.Users.PITER_CHAILOVSKII;
+import static homeworks.homework3.enums.BenefitTexts.*;
+import static homeworks.homework3.enums.CenterTexts.CENTER_TEXTS;
+import static homeworks.homework3.enums.HeaderItems.HEADER_ITEMS;
+import static homeworks.homework3.enums.IndexPageData.INDEX_PAGE_DATA;
+import static homeworks.homework3.enums.JdiGithub.JDI_GITHUB;
+import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
 
 public class Homework3 extends SeleniumBase {
 
@@ -64,11 +64,11 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkBenefitIcons();
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        List<String> benefitTexts = new ArrayList<String>();
-        benefitTexts.add(BENEFIT_TEXTS.practise);
-        benefitTexts.add(BENEFIT_TEXTS.custom);
-        benefitTexts.add(BENEFIT_TEXTS.multiplatform);
-        benefitTexts.add(BENEFIT_TEXTS.base);
+        List<String> benefitTexts = new ArrayList<>();
+        benefitTexts.add(PRACTISE.text);
+        benefitTexts.add(CUSTOMIZE.text);
+        benefitTexts.add(MULTIPLATFORM.text);
+        benefitTexts.add(BASE.text);
 
         indexPage.checkBenefitTexts(benefitTexts);
 

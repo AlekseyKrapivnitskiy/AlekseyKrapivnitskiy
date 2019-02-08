@@ -1,4 +1,4 @@
-package homeworks.homework3;
+package homeworks.homework3.enums;
 
 public enum HeaderItems {
 
