@@ -38,19 +38,19 @@ public class Homework3 extends SeleniumBase {
         IndexPage indexPage = new IndexPage(driver);
 
         //1.Open test site by URL
-        indexPage.open(INDEX_PAGE_URL.text);
+        indexPage.open(INDEX_PAGE_DATA);
 
         //2.Assert Browser title
-        indexPage.checkTitle(INDEX_PAGE_TITLE.text);
+        indexPage.checkTitle(INDEX_PAGE_DATA);
 
         //3.Perform login
         indexPage.login(PITER_CHAILOVSKII);
 
         //4.Assert User name in the left-top side of screen that user is logged in
-        indexPage.checkUsername(PITER_CHAILOVSKII.username);
+        indexPage.checkUsername(PITER_CHAILOVSKII);
 
         //5.Assert Browser title
-        indexPage.checkTitle(INDEX_PAGE_TITLE.text);
+        indexPage.checkTitle(INDEX_PAGE_DATA);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
         List<String> headerItems = new ArrayList<String>();
@@ -74,7 +74,7 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkBenefitTexts(benefitTexts);
 
         //9.Assert a text of the main headers
-        indexPage.checkCenterText(TITLE.text, MAIN_TEXT.text);
+        indexPage.checkCenterText(CENTER_TEXTS);
 
         //10.Assert that there is the iframe in the center of page
         indexPage.checkIFrame();
@@ -87,10 +87,10 @@ public class Homework3 extends SeleniumBase {
         driver.switchTo().defaultContent();
 
         //13.Assert a text of the sub header
-        indexPage.checkSubHeader(JDI_GITHUB_TITLE.text);
+        indexPage.checkSubHeader(JDI_GITHUB);
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
-        indexPage.checkSubHeaderLink(JDI_GITHUB_LINK.text);
+        indexPage.checkSubHeaderLink(JDI_GITHUB);
 
         // 15.Assert that there is Left Section
         indexPage.checkLeftMenu();

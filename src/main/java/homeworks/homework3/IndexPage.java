@@ -1,5 +1,8 @@
 package homeworks.homework3;
 
+import homeworks.homework3.enums.CenterTexts;
+import homeworks.homework3.enums.IndexPageData;
+import homeworks.homework3.enums.JdiGithub;
 import homeworks.homework3.enums.Users;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,18 +34,18 @@ public class IndexPage {
         submitButton.click();
     }
 
-    // TODO Why parameter is String
-    public void open(String url) {
-        driver.navigate().to(url);
+    // TODO Why parameter is String -- fixed
+    public void open(IndexPageData indexPageData) {
+        driver.navigate().to(indexPageData.url);
     }
 
-    // TODO Why parameter is String
-    public void checkTitle(String homePageTitle) {
-        assertEquals(driver.getTitle(), homePageTitle);
+    // TODO Why parameter is String -- fixed
+    public void checkTitle(IndexPageData indexPageData) {
+        assertEquals(driver.getTitle(), indexPageData.title);
     }
-    // TODO Why parameter is String
-    public void checkUsername(String username) {
-        assertEquals(driver.findElement(By.cssSelector("#user-name")).getText(), username);
+    // TODO Why parameter is String -- fixed
+    public void checkUsername(Users users) {
+        assertEquals(driver.findElement(By.cssSelector("#user-name")).getText(), users.username);
     }
 
     public void checkHeaderItems(List<String> headerItems) {
@@ -69,9 +72,9 @@ public class IndexPage {
         }
     }
 
-    public void checkCenterText(String title, String mainText) {
-        assertEquals(driver.findElement(By.cssSelector(".main-title.text-center")).getText(), title);
-        assertEquals(driver.findElement(By.cssSelector(".main-txt.text-center")).getText(), mainText);
+    public void checkCenterText(CenterTexts centerTexts) {
+        assertEquals(driver.findElement(By.cssSelector(".main-title.text-center")).getText(), centerTexts.title);
+        assertEquals(driver.findElement(By.cssSelector(".main-txt.text-center")).getText(), centerTexts.mainText);
     }
 
     public void checkIFrame() {
@@ -86,12 +89,12 @@ public class IndexPage {
         assertTrue(driver.findElement(By.cssSelector("#epam_logo")).isDisplayed());
     }
 
-    public void checkSubHeader(String subHeader) {
-        assertEquals(driver.findElement(By.cssSelector(".text-center > a")).getText(), subHeader);
+    public void checkSubHeader(JdiGithub jdiGithub) {
+        assertEquals(driver.findElement(By.cssSelector(".text-center > a")).getText(), jdiGithub.title);
     }
 
-    public void checkSubHeaderLink(String link) {
-        assertEquals(driver.findElement(By.cssSelector(".text-center > a")).getAttribute("href"), link);
+    public void checkSubHeaderLink(JdiGithub jdiGithub) {
+        assertEquals(driver.findElement(By.cssSelector(".text-center > a")).getAttribute("href"), jdiGithub.url);
     }
 
     public void checkLeftMenu() {

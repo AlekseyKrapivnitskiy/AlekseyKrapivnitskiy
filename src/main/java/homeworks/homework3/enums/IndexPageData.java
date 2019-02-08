@@ -2,12 +2,13 @@ package homeworks.homework3.enums;
 
 public enum IndexPageData {
 
-    INDEX_PAGE_URL("https://epam.github.io/JDI/index.html"),
-    INDEX_PAGE_TITLE("Home Page");
+    INDEX_PAGE_DATA("https://epam.github.io/JDI/index.html", "Home Page");
 
-    public String text;
+    public String url;
+    public String title;
 
-    IndexPageData(String text) {
-        this.text = text;
+    IndexPageData(String url, String title) {
+        this.url = url;
+        this.title = title;
     }
 }
