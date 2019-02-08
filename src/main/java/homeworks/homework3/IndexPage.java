@@ -13,10 +13,12 @@ public class IndexPage {
 
     public WebDriver driver;
 
+    // TODO Why you don't use PageFactory?
     public IndexPage(WebDriver driver) {
         this.driver = driver;
     }
 
+    // TODO Why parameter is String and String
     public void login(String name, String password) {
         WebElement userIcon = driver.findElement(By.cssSelector("#user-icon"));
         userIcon.click();
@@ -28,14 +30,16 @@ public class IndexPage {
         submitButton.click();
     }
 
+    // TODO Why parameter is String
     public void open(String url) {
         driver.navigate().to(url);
     }
 
+    // TODO Why parameter is String
     public void checkTitle(String homePageTitle) {
         assertEquals(driver.getTitle(), homePageTitle);
     }
-
+    // TODO Why parameter is String
     public void checkUsername(String username) {
         assertEquals(driver.findElement(By.cssSelector("#user-name")).getText(), username);
     }

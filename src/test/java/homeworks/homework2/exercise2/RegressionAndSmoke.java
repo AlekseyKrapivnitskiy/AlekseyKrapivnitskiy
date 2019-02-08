@@ -18,6 +18,7 @@ public class RegressionAndSmoke extends SeleniumBase {
 
     @Test(groups = "Regression")
     public void indexPageTest1() {
+        // TODO Please check all classes this could be moved @BeforeMethods
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
@@ -112,6 +113,7 @@ public class RegressionAndSmoke extends SeleniumBase {
 
     @Test(groups = "Regression")
     public void indexPageTest2() {
+        // TODO Please check all classes this could be moved @BeforeMethods
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
@@ -206,6 +208,7 @@ public class RegressionAndSmoke extends SeleniumBase {
 
     @Test(groups = "Smoke")
     public void indexPageTest3() {
+        // TODO Please check all classes this could be moved @BeforeMethods
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);

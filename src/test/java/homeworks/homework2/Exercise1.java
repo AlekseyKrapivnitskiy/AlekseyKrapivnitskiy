@@ -17,6 +17,7 @@ public class Exercise1 {
 
     private WebDriver driver;
 
+    // TODO Do you try set annotation @BeforeMethod?
     @BeforeClass
     public void beforeClass() {
         setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
@@ -41,6 +42,10 @@ public class Exercise1 {
     }
 
     @Test(dataProvider = "dataProvider")
+    /* TODO
+        1. What does i mean?
+        2. What does s mean?
+     */
     public void indexPageBenefitTextTest(int i, String s){
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
