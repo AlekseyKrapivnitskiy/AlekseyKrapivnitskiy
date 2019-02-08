@@ -3,6 +3,7 @@ package homeworks.homework3;
 import base.lessons.lesson3.SeleniumBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,12 +22,13 @@ import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
 public class Homework3 extends SeleniumBase {
 
     private WebDriver driver;
+    private IndexPage indexPage;
 
     @BeforeMethod
     public void beforeMethod() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+        indexPage = PageFactory.initElements(driver, IndexPage.class);
     }
 
     @AfterMethod
@@ -36,8 +38,6 @@ public class Homework3 extends SeleniumBase {
 
     @Test
     public void indexPageTest() {
-        IndexPage indexPage = new IndexPage(driver);
-
         //1.Open test site by URL
         indexPage.open(INDEX_PAGE_DATA);
 

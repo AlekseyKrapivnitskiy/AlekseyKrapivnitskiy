@@ -7,6 +7,7 @@ import homeworks.homework3.enums.Users;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
@@ -17,26 +18,34 @@ public class IndexPage {
 
     public WebDriver driver;
 
-    // TODO Why you don't use PageFactory?
-    public IndexPage(WebDriver driver) {
+    IndexPage(WebDriver driver){
         this.driver = driver;
     }
 
-    // TODO Why parameter is String and String -- fixed
-    public void login(Users users) {
-        WebElement userIcon = driver.findElement(By.cssSelector("#user-icon"));
-        userIcon.click();
-        WebElement userField = driver.findElement(By.cssSelector("#name"));
-        userField.sendKeys(users.login);
-        WebElement passwordField = driver.findElement(By.cssSelector("#password"));
-        passwordField.sendKeys(users.password);
-        WebElement submitButton = driver.findElement(By.cssSelector("#login-button"));
-        submitButton.click();
-    }
+    // TODO Why you don't use PageFactory? -- fixed
+    @FindBy(css = "#user-icon")
+    private WebElement userIcon;
+
+    @FindBy(css = "#name")
+    private WebElement userField;
+
+    @FindBy(css = "#password")
+    private WebElement passwordField;
+
+    @FindBy(css = "#login-button")
+    private WebElement submitButton;
 
     // TODO Why parameter is String -- fixed
     public void open(IndexPageData indexPageData) {
         driver.navigate().to(indexPageData.url);
+    }
+
+    // TODO Why parameter is String and String -- fixed
+    public void login(Users users) {
+        userIcon.click();
+        userField.sendKeys(users.login);
+        passwordField.sendKeys(users.password);
+        submitButton.click();
     }
 
     // TODO Why parameter is String -- fixed
