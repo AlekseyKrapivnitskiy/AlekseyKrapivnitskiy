@@ -16,8 +16,6 @@ import static homeworks.homework3.HeaderItems.HEADER_ITEMS;
 import static homeworks.homework3.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework3.JdiGithub.JDI_GITHUB;
 import static homeworks.homework3.Users.PITER_CHAILOVSKII;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class Homework3 extends SeleniumBase {
 
