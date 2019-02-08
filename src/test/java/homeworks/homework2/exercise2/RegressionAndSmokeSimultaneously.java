@@ -17,6 +17,8 @@ import static org.testng.Assert.assertTrue;
 public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
     @Test(groups = {"Regression", "Smoke"})
+    // TODO Please check all classes this could be moved @BeforeMethods
+    // TODO Code style
     public void indexPageTest1() {WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
@@ -111,6 +113,7 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
     @Test(groups = {"Regression", "Smoke"})
     public void indexPageTest2() {
+        // TODO Please check all classes this could be moved @BeforeMethods
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
@@ -205,6 +208,7 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
     @Test(groups = {"Regression", "Smoke"})
     public void indexPageTest3() {
+        // TODO Please check all classes this could be moved @BeforeMethods
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);

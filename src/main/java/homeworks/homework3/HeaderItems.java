@@ -2,6 +2,7 @@ package homeworks.homework3;
 
 public enum HeaderItems {
 
+    // TODO It will be better if each text have separate enum value
     HEADER_ITEMS("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS");
 
     public String home;
