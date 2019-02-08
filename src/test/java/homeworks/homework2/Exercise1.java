@@ -1,5 +1,6 @@
 package homeworks.homework2;
 
+import base.lessons.lesson4.SelenideBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,11 +11,11 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
-public class Exercise1 {
+public class Exercise1 extends SelenideBase {
 
     private WebDriver driver;
 
-    // TODO Do you try set annotation @BeforeMethod? -- fixed with @BeforeTest
+    // TODO Do you try set annotation @BeforeMethod?
     @BeforeTest
     public void beforeTest() {
         setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
@@ -40,8 +41,8 @@ public class Exercise1 {
 
     @Test(dataProvider = "dataProvider")
     /* TODO
-        1. What does i mean? -- renamed to number
-        2. What does s mean? -- renamed to text
+        1. What does i mean? -- renamed to id
+        2. What does s mean? -- renamed to benefitText
      */
     public void indexPageBenefitTextTest(int id, String text){
         //1.Open test site by URL
