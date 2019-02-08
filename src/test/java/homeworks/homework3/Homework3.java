@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static homeworks.homework3.enums.BenefitTexts.*;
-import static homeworks.homework3.enums.CenterTexts.CENTER_TEXTS;
-import static homeworks.homework3.enums.HeaderItems.HEADER_ITEMS;
+import static homeworks.homework3.enums.CenterTexts.*;
+import static homeworks.homework3.enums.HeaderItems.*;
 import static homeworks.homework3.enums.IndexPageData.INDEX_PAGE_DATA;
-import static homeworks.homework3.enums.JdiGithub.JDI_GITHUB;
+import static homeworks.homework3.enums.JdiGithub.*;
 import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
 
 public class Homework3 extends SeleniumBase {
@@ -53,10 +53,10 @@ public class Homework3 extends SeleniumBase {
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
         List<String> headerItems = new ArrayList<String>();
-        headerItems.add(HEADER_ITEMS.home);
-        headerItems.add(HEADER_ITEMS.contactForm);
-        headerItems.add(HEADER_ITEMS.service);
-        headerItems.add(HEADER_ITEMS.metalsAndColors);
+        headerItems.add(HOME.text);
+        headerItems.add(CONTACT_FORM.text);
+        headerItems.add(SERVICE.text);
+        headerItems.add(METALS_AND_COLORS.text);
 
         indexPage.checkHeaderItems(headerItems);
 
@@ -73,7 +73,7 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkBenefitTexts(benefitTexts);
 
         //9.Assert a text of the main headers
-        indexPage.checkCenterText(CENTER_TEXTS.title, CENTER_TEXTS.text);
+        indexPage.checkCenterText(TITLE.text, MAIN_TEXT.text);
 
         //10.Assert that there is the iframe in the center of page
         indexPage.checkIFrame();
@@ -86,10 +86,10 @@ public class Homework3 extends SeleniumBase {
         driver.switchTo().defaultContent();
 
         //13.Assert a text of the sub header
-        indexPage.checkSubHeader(JDI_GITHUB.title);
+        indexPage.checkSubHeader(JDI_GITHUB_TITLE.text);
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
-        indexPage.checkSubHeaderLink(JDI_GITHUB.link);
+        indexPage.checkSubHeaderLink(JDI_GITHUB_LINK.text);
 
         // 15.Assert that there is Left Section
         indexPage.checkLeftMenu();

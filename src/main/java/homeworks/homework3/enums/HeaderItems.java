@@ -2,18 +2,15 @@ package homeworks.homework3.enums;
 
 public enum HeaderItems {
 
-    // TODO It will be better if each text have separate enum value
-    HEADER_ITEMS("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS");
+    // TODO It will be better if each text have separate enum value -- fixed
+    HOME("HOME"),
+    CONTACT_FORM("CONTACT FORM"),
+    SERVICE("SERVICE"),
+    METALS_AND_COLORS("METALS & COLORS");
 
-    public String home;
-    public String contactForm;
-    public String service;
-    public String metalsAndColors;
+    public String text;
 
-    HeaderItems(String home, String contactForm, String service, String metalsAndColors) {
-        this.home = home;
-        this.contactForm = contactForm;
-        this.service = service;
-        this.metalsAndColors = metalsAndColors;
+    HeaderItems(String text) {
+        this.text = text;
     }
 }

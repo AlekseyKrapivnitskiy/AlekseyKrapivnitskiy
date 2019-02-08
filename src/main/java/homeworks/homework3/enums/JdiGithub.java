@@ -2,14 +2,13 @@ package homeworks.homework3.enums;
 
 public enum JdiGithub {
 
-    // TODO I guess you could combine this and IndexPageData enum into one
-    JDI_GITHUB("JDI GITHUB", "https://github.com/epam/JDI");
+    // TODO I guess you could combine this and IndexPageData enum into one -- fixed
+    JDI_GITHUB_TITLE("JDI GITHUB"),
+    JDI_GITHUB_LINK("https://github.com/epam/JDI");
 
-    public String title;
-    public String link;
+    public String text;
 
-    JdiGithub(String title, String link) {
-        this.title = title;
-        this.link = link;
+    JdiGithub(String text) {
+        this.text = text;
     }
 }
