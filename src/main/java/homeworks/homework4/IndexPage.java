@@ -34,11 +34,11 @@ public class IndexPage {
         $("#user-name").shouldHave(text(username));
     }
 
-    public void checkServiceDropDownList() {
-        List<String> serviceDropDown = $(".dropdown-menu > li").;
+  /*  public void checkServiceDropDownList() {
+        List<String> serviceDropDown = $(".dropdown-menu > li");
 
         for (int i = 0; i < serviceDropDown.size(); i ++) {
-            assertEquals(serviceDropDown.get(i).getText(), headerItems.get(i));
+                  assertEquals(serviceDropDown.get(i).getText(), headerItems.get(i));
         }
-    }
+    }*/
 }
