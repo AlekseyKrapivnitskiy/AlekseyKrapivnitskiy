@@ -1,6 +1,7 @@
 package homeworks.homework3;
 
 import base.lessons.lesson3.SeleniumBase;
+import homeworks.homework3.enums.Users;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -43,7 +44,7 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkTitle(INDEX_PAGE_TITLE.text);
 
         //3.Perform login
-        indexPage.login(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password);
+        indexPage.login(PITER_CHAILOVSKII);
 
         //4.Assert User name in the left-top side of screen that user is logged in
         indexPage.checkUsername(PITER_CHAILOVSKII.username);

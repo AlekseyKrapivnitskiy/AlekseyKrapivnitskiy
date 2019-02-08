@@ -1,5 +1,6 @@
 package homeworks.homework3;
 
+import homeworks.homework3.enums.Users;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,14 +19,14 @@ public class IndexPage {
         this.driver = driver;
     }
 
-    // TODO Why parameter is String and String
-    public void login(String name, String password) {
+    // TODO Why parameter is String and String -- fixed
+    public void login(Users users) {
         WebElement userIcon = driver.findElement(By.cssSelector("#user-icon"));
         userIcon.click();
         WebElement userField = driver.findElement(By.cssSelector("#name"));
-        userField.sendKeys(name);
+        userField.sendKeys(users.username);
         WebElement passwordField = driver.findElement(By.cssSelector("#password"));
-        passwordField.sendKeys(password);
+        passwordField.sendKeys(users.password);
         WebElement submitButton = driver.findElement(By.cssSelector("#login-button"));
         submitButton.click();
     }
