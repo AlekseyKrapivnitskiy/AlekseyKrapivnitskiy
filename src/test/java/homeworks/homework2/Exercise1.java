@@ -3,10 +3,7 @@ package homeworks.homework2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,17 +14,17 @@ public class Exercise1 {
 
     private WebDriver driver;
 
-    // TODO Do you try set annotation @BeforeMethod?
-    @BeforeClass
-    public void beforeClass() {
+    // TODO Do you try set annotation @BeforeMethod? -- fixed with @BeforeTest
+    @BeforeTest
+    public void beforeTest() {
         setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
     }
 
-    @AfterClass
-    public void afterClass() {
+    @AfterTest
+    public void afterTest() {
         driver.close();
     }
 
@@ -43,14 +40,14 @@ public class Exercise1 {
 
     @Test(dataProvider = "dataProvider")
     /* TODO
-        1. What does i mean?
-        2. What does s mean?
+        1. What does i mean? -- renamed to number
+        2. What does s mean? -- renamed to text
      */
-    public void indexPageBenefitTextTest(int i, String s){
+    public void indexPageBenefitTextTest(int id, String text){
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
         //2.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(i).getText(), s);
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(id).getText(), text);
     }
 }
