@@ -1,7 +1,6 @@
 package homeworks.homework3;
 
 import base.lessons.lesson3.SeleniumBase;
-import homeworks.homework3.enums.Users;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -10,6 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static homeworks.homework3.enums.BenefitTexts.*;
 import static homeworks.homework3.enums.CenterTexts.*;
@@ -26,6 +26,7 @@ public class Homework3 extends SeleniumBase {
     public void beforeMethod() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
     }
 
     @AfterMethod
