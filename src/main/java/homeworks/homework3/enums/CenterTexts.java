@@ -12,7 +12,7 @@ public enum CenterTexts {
     public String title;
     public String mainText;
 
-    CenterTexts(String text, String mainText) {
+    CenterTexts(String title, String mainText) {
         this.title = title;
         this.mainText = mainText;
     }

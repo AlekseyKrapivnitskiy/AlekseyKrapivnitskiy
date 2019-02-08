@@ -27,7 +27,7 @@ public class IndexPage {
         WebElement userIcon = driver.findElement(By.cssSelector("#user-icon"));
         userIcon.click();
         WebElement userField = driver.findElement(By.cssSelector("#name"));
-        userField.sendKeys(users.username);
+        userField.sendKeys(users.login);
         WebElement passwordField = driver.findElement(By.cssSelector("#password"));
         passwordField.sendKeys(users.password);
         WebElement submitButton = driver.findElement(By.cssSelector("#login-button"));
