@@ -8,8 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Condition.attribute;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -72,6 +71,10 @@ public class IndexPage {
     }
 
     public void checkDifferentPageElements() {
-
+        $$(".label-checkbox").shouldHaveSize(4);
+        $$(".label-radio").shouldHaveSize(4);
+        $$("select.uui-form-element").shouldHaveSize(1);
+        $$("button.uui-button").shouldHaveSize(1);
+        $$("input.uui-button").shouldHaveSize(1);
     }
 }

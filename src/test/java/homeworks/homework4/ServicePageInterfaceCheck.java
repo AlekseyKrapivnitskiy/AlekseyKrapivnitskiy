@@ -63,6 +63,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.openDifferentElementsPage();
 
         //8.Check interface on Different elements page, it contains all needed elements
+        indexPage.checkDifferentPageElements();
 
         //9.Assert that there is Right Section
 
