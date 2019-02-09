@@ -40,6 +40,11 @@ public class IndexPage {
         driver.navigate().to(indexPageData.url);
     }
 
+    // TODO Why parameter is String -- fixed
+    public void checkTitle(IndexPageData indexPageData) {
+        assertEquals(driver.getTitle(), indexPageData.title);
+    }
+
     // TODO Why parameter is String and String -- fixed
     public void login(Users users) {
         userIcon.click();
@@ -48,10 +53,6 @@ public class IndexPage {
         submitButton.click();
     }
 
-    // TODO Why parameter is String -- fixed
-    public void checkTitle(IndexPageData indexPageData) {
-        assertEquals(driver.getTitle(), indexPageData.title);
-    }
     // TODO Why parameter is String -- fixed
     public void checkUsername(Users users) {
         assertEquals(driver.findElement(By.cssSelector("#user-name")).getText(), users.username);

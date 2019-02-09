@@ -4,13 +4,10 @@ import base.lessons.lesson3.SeleniumBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static homeworks.homework3.enums.BenefitTexts.*;
 import static homeworks.homework3.enums.CenterTexts.*;
@@ -21,14 +18,15 @@ import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
 
 public class Homework3 extends SeleniumBase {
 
-    private WebDriver driver;
     private IndexPage indexPage;
+    private WebDriver driver;
 
     @BeforeMethod
     public void beforeMethod() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        indexPage = PageFactory.initElements(driver, IndexPage.class);
+        indexPage = new IndexPage(driver);
+        PageFactory.initElements(driver, indexPage);
     }
 
     @AfterMethod
