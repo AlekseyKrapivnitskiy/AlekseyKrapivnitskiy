@@ -6,9 +6,12 @@ import homeworks.homework4.enums.IndexPageData;
 import homeworks.homework4.enums.Users;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class IndexPage {
 
@@ -43,11 +46,32 @@ public class IndexPage {
         $("#user-name").shouldHave(text(users.username));
     }
 
-  /*  public void checkServiceDropDownList() {
-        List<String> serviceDropDown = $(".dropdown-menu > li");
+    public void checkServiceDropdownListInHeader(List<String> serviceDropdown) {
+        $(".dropdown").click();
 
-        for (int i = 0; i < serviceDropDown.size(); i ++) {
-                  assertEquals(serviceDropDown.get(i).getText(), headerItems.get(i));
+        List<SelenideElement> serviceElements = $$("dropdown-menu > li");
+
+        for (int i = 0; i < serviceElements.size(); i++) {
+            serviceElements.get(i).shouldNotHave(text(serviceDropdown.get(i)));
         }
-    }*/
+    }
+
+    public void checkServiceDropdownListInLeftMenu(List<String> serviceDropdown) {
+        $(".sidebar-menu").click();
+
+        List<SelenideElement> serviceElements = $$("sidebar-menu.menu-title");
+
+        for (int i = 0; i < serviceElements.size(); i++) {
+            serviceElements.get(i).shouldNotHave(text(serviceDropdown.get(i)));
+        }
+    }
+
+    public void openDifferentElementsPage() {
+        $(".dropdown").click();
+        $(".dropdown-menu > li:nth-child(7)").click();
+    }
+
+    public void checkDifferentPageElements() {
+
+    }
 }
