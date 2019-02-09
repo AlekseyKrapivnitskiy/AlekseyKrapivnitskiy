@@ -1,8 +1,8 @@
-package homeworks.homework4;
+package homeworks.homework4.enums;
 
 public enum IndexPageData {
 
-    INDEX_PAGE_DATA("https://epam.github.io/JDI/", "Home Page");
+    INDEX_PAGE_DATA("https://epam.github.io/JDI/index.html", "Home Page");
 
     public String url;
     public String title;
