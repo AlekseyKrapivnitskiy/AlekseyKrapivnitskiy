@@ -1,22 +1,40 @@
 package homeworks.homework4;
 
-import static com.codeborne.selenide.Selenide.*;
+import base.lessons.lesson4.SelenideBase;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 
-public class DatesPage {
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-    public void openDatesPage() {
-        $(".dropdown").click();
-        $(".dropdown-menu > li:nth-child(2)").click();
+public class DatesPage{
+
+    @FindBy(css = "a.ui-slider-handle:nth-child(1)")
+    private SelenideElement leftSlider;
+
+    @FindBy(css = "a.ui-slider-handle:nth-child(3)")
+    private SelenideElement rightSlider;
+
+    @FindBy(css = ".uui-slider")
+    public SelenideElement sliderLine;
+
+    @FindBy(css = ".panel-body-list.logs > li")
+    private SelenideElement logsPanel;
+
+    private Actions actions = new Actions(getWebDriver());
+
+    public void moveLeftSlider(Integer value) {
+        actions.clickAndHold(leftSlider).moveToElement(sliderLine,  ((sliderLine.getSize().width) * (value)/100 ),
+                0).release().build().perform();
     }
 
-    public void setRangeMaxLeftAndMaxRitght() {
-        actions().dragAndDropBy($("ui-slider-handle.ui-state-default.ui-corner-all"), 20, 0);
-        actions().dragAndDropBy($("ui-slider-handle ui-state-default ui-corner-all ui-state-hover"), 100, 100);
+    public void moveRightSlider(Integer value) {
+        actions.clickAndHold(rightSlider).moveToElement(sliderLine, ((sliderLine.getSize().width) * (value)/100 ),
+                0).release().build().perform();
     }
 
-    public void setRangeMaxLeftForBothSliders() {
-        actions().dragAndDrop($("ui-slider-handle.ui-state-default.ui-corner-all"), $("ui-slider-handle ui-state-default ui-corner-all ui-state-hover"));
-        actions().dragAndDropBy($("ui-slider-handle ui-state-default ui-corner-all ui-state-hover"), 100, 0);
-        screenshot("screenshot.jpg");
+    public void checkLogs(String direction, Integer value) {
+        logsPanel.shouldHave(Condition.text("Range 2(" + direction + "):" + value + " link clicked"));
     }
 }

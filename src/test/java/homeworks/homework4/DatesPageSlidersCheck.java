@@ -16,16 +16,18 @@ public class DatesPageSlidersCheck extends SelenideBase {
     @BeforeMethod
     public void beforeMethod() {
         indexPage = new IndexPage();
-        datesPage = new DatesPage();
 
         //1.Open test site by URL
         indexPage.open(INDEX_PAGE_DATA);
 
+        datesPage = new DatesPage();
+
         page(indexPage);
+        page(datesPage);
     }
 
     @Test
-    public void servicePageInterfaceTest() {
+    public void datesPageSlidersTest() {
         //2.Assert Browser title
         indexPage.checkTitle(INDEX_PAGE_DATA);
 
@@ -36,24 +38,38 @@ public class DatesPageSlidersCheck extends SelenideBase {
         indexPage.checkUsername(PITER_CHAILOVSKII);
 
         //5.Open through the header menu Service -> Dates Page
-        datesPage.openDatesPage();
+        indexPage.openDatesPage();
 
-        //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most rigth position
-        datesPage.setRangeMaxLeftAndMaxRitght();
+        //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most right position
+        datesPage.moveLeftSlider(0);
+        datesPage.checkLogs("from", 0);
+        datesPage.moveRightSlider(100);
 
         //7.Assert that for "From" and "To" sliders there are logs rows with corresponding values
+        datesPage.checkLogs("to", 100);
 
         //8.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most left position
-        datesPage.setRangeMaxLeftForBothSliders();
+        datesPage.moveLeftSlider(0);
+        datesPage.checkLogs("from", 0);
+        datesPage.moveRightSlider(0);
 
         //9.Assert that for "From" and "To" sliders there are logs rows with corresponding values
+        datesPage.checkLogs("to", 0);
 
-        //10.Using drag-and-drop set Range sliders. left sliders - the most rigth position, right slider - the most rigth position
+        //10.Using drag-and-drop set Range sliders. left sliders - the most right position, right slider - the most right position
+        datesPage.moveLeftSlider(100);
+        datesPage.checkLogs("from", 100);
+        datesPage.moveRightSlider(100);
 
         //11.Assert that for "From" and "To" sliders there are logs rows with corresponding values
+        datesPage.checkLogs("to", 100);
 
         //12.Using drag-and-drop set Range sliders.
+        datesPage.moveLeftSlider(30);
+        datesPage.checkLogs("from", 30);
+        datesPage.moveRightSlider(70);
 
         //13.Assert that for "From" and "To" sliders there are logs rows with corresponding values
+        datesPage.checkLogs("to", 70);
     }
 }
