@@ -100,4 +100,18 @@ public class IndexPage {
         $(".label-checkbox:nth-child(1) > input[type=checkbox]").shouldBe(checked);
         $(".label-checkbox:nth-child(3) > input[type=checkbox]").shouldBe(checked);
     }
+
+    public void selectSelenRadio() {
+        $(".label-radio:nth-child(4)").click();
+    }
+
+    public void checkRadiosLabelsAndStatus(List<String> radiosLabelsTexts) {
+        List<SelenideElement> radiosLabels = $$("checkbox-row.label-checkbox");
+
+        for (int i = 0; i < radiosLabels.size(); i++) {
+            radiosLabels.get(i).shouldHave(text(radiosLabelsTexts.get(i)));
+        }
+
+        $(".label-radio:nth-child(4) > input[type=radio]").shouldBe(checked);
+    }
 }

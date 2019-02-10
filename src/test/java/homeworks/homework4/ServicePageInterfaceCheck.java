@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.page;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.Service.*;
 import static homeworks.homework4.enums.SupportCheckboxes.*;
+import static homeworks.homework4.enums.SupportRadios.*;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
 public class ServicePageInterfaceCheck extends SelenideBase {
@@ -85,8 +86,16 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkCheckboxesLabelsAndStatus(checkboxesLabels);
 
         //13.Select radio
+        indexPage.selectSelenRadio();
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
+        List<String> radiosLabels = new ArrayList<>();
+        radiosLabels.add(GOLD.text);
+        radiosLabels.add(SILVER.text);
+        radiosLabels.add(BRONZE.text);
+        radiosLabels.add(SELEN.text);
+
+        indexPage.checkRadiosLabelsAndStatus(radiosLabels);
 
         //15.Select in dropdown
 
