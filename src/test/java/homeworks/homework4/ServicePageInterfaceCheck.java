@@ -8,11 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.page;
-import static homeworks.homework4.enums.Colors.*;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.Service.*;
-import static homeworks.homework4.enums.Checkboxes.*;
-import static homeworks.homework4.enums.Radios.*;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
 public class ServicePageInterfaceCheck extends SelenideBase {
@@ -81,42 +78,24 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.clickOnWaterAndWindCheckboxes();
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        List<String> checkboxesLabels = new ArrayList<>();
-        checkboxesLabels.add(WATER.text);
-        checkboxesLabels.add(EARTH.text);
-        checkboxesLabels.add(WIND.text);
-        checkboxesLabels.add(FIRE.text);
-
-        differentElementsPage.checkCheckboxesLabelsAndCheckedStatuses(checkboxesLabels);
+        differentElementsPage.checkCheckboxesLogs();
 
         //13.Select radio
         differentElementsPage.selectSelenRadio();
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
-        List<String> radiosLabels = new ArrayList<>();
-        radiosLabels.add(GOLD.text);
-        radiosLabels.add(SILVER.text);
-        radiosLabels.add(BRONZE.text);
-        radiosLabels.add(SELEN.text);
-
-        differentElementsPage.checkRadiosLabelsAndStatus(radiosLabels);
+        differentElementsPage.checkRadiosLogs();
 
         //15.Select in dropdown
         differentElementsPage.selectYellowInDropdown();
 
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
-        List<String> colorsList = new ArrayList<>();
-        radiosLabels.add(RED.text);
-        radiosLabels.add(GREEN.text);
-        radiosLabels.add(BLUE.text);
-        radiosLabels.add(YELLOW.text);
-
-        differentElementsPage.checkDropdownOptionsAndStatus(colorsList);
+        differentElementsPage.checkDropdownLogs();
 
         //17.Unselect and assert checkboxes
         differentElementsPage.clickOnWaterAndWindCheckboxes();
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLabelsAndUncheckedStatuses(checkboxesLabels);
+        differentElementsPage.checkCheckboxesLabelsAndUncheckedStatuses();
     }
 }

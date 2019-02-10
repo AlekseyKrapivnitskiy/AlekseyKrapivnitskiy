@@ -1,5 +1,6 @@
 package homeworks.homework4;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,80 +19,82 @@ public class DifferentElementsPage {
     @FindBy(css = ".dropdown-menu > li:nth-child(7)")
     private SelenideElement differentElementsPageItem;
 
+    @FindBy(css = ".label-checkbox")
+    private ElementsCollection checkboxesList;
+
+    @FindBy(css = ".label-radio")
+    private ElementsCollection radioButtonsList;
+
+    @FindBy(css = "select.uui-form-element")
+    private ElementsCollection dropdownList;
+
+    @FindBy(css = "p")
+    private ElementsCollection buttonesList;
+
+    @FindBy(css = ".right-fix-panel")
+    private SelenideElement rightSection;
+
+    @FindBy(css = "#mCSB_1")
+    private SelenideElement leftSection;
+
+    @FindBy(css = ".label-checkbox:nth-child(1) > input[type=checkbox]")
+    private SelenideElement waterCheckbox;
+
+    @FindBy(css = ".label-checkbox:nth-child(3) > input[type=checkbox]")
+    private SelenideElement windCheckbox;
+
+    @FindBy(css = ".label-radio:nth-child(4)")
+    private SelenideElement selenRadio;
+
+    @FindBy(css = "select.uui-form-element")
+    private SelenideElement colorsDropdown;
+
     public void openDifferentElementsPage() {
         serviceDropdownInHeader.click();
         differentElementsPageItem.click();
     }
 
     public void checkDifferentPageElements() {
-        $$(".label-checkbox").shouldHaveSize(4);
-        $$(".label-radio").shouldHaveSize(4);
-        $$("select.uui-form-element").shouldHaveSize(1);
-        $$("p").shouldHaveSize(2);
+        checkboxesList.shouldHaveSize(4);
+        radioButtonsList.shouldHaveSize(4);
+        dropdownList.shouldHaveSize(1);
+        buttonesList.shouldHaveSize(2);
     }
 
     public void checkRightSection() {
-        $(".uui-side-bar.right-fix-panel.mCustomScrollbar._mCS_2 mCS_no_scrollbar").isDisplayed();
+        rightSection.isDisplayed();
     }
 
     public void checkLeftSection() {
-        $(".mCustomScrollBox.mCS-light.mCSB_vertical.mCSB_inside").isDisplayed();
+        leftSection.isDisplayed();
     }
 
     public void clickOnWaterAndWindCheckboxes() {
-        $(".label-checkbox:nth-child(1)").click();
-        $(".label-checkbox:nth-child(3)").click();
+        waterCheckbox.click();
+        windCheckbox.click();
     }
 
-    public void checkCheckboxesLabelsAndCheckedStatuses(List<String> checkboxesLabelsTexts) {
-        List<SelenideElement> checkboxesLabels = $$("sidebar-menu.menu-title");
+    public void checkCheckboxesLogs() {
 
-        for (int i = 0; i < checkboxesLabels.size(); i++) {
-            checkboxesLabels.get(i).shouldHave(text(checkboxesLabelsTexts.get(i)));
-        }
-
-        $(".label-checkbox:nth-child(1) > input[type=checkbox]").shouldBe(checked);
-        $(".label-checkbox:nth-child(3) > input[type=checkbox]").shouldBe(checked);
     }
 
     public void selectSelenRadio() {
-        $(".label-radio:nth-child(4)").click();
+        selenRadio.click();
     }
 
-    public void checkRadiosLabelsAndStatus(List<String> radiosLabelsTexts) {
-        List<SelenideElement> radiosLabels = $$("checkbox-row.label-checkbox");
-
-        for (int i = 0; i < radiosLabels.size(); i++) {
-            radiosLabels.get(i).shouldHave(text(radiosLabelsTexts.get(i)));
-        }
-
-        $(".label-radio:nth-child(4) > input[type=radio]").shouldBe(checked);
+    public void checkRadiosLogs() {
     }
 
     public void selectYellowInDropdown() {
-        $("select.uui-form-element").click();
-        $("select.uui-form-element").selectOption("Yellow");
+        colorsDropdown.click();
+        colorsDropdown.selectOption("Yellow");
     }
 
-    public void checkDropdownOptionsAndStatus(List<String> colorsList) {
-        $("select.uui-form-element").click();
-        List<SelenideElement> colorsListInDropdown = $$("colors.uui-form-element");
+    public void checkDropdownLogs() {
 
-        for (int i = 0; i < colorsListInDropdown.size(); i++) {
-            colorsListInDropdown.get(i).shouldHave(text(colorsList.get(i)));
-        }
-
-        $("select.uui-form-element > option:nth-child(4)").isSelected();
     }
 
-    public void checkCheckboxesLabelsAndUncheckedStatuses(List<String> checkboxesLabelsTexts) {
-        List<SelenideElement> checkboxesLabels = $$("sidebar-menu.menu-title");
+    public void checkCheckboxesLabelsAndUncheckedStatuses() {
 
-        for (int i = 1; i < checkboxesLabels.size(); i++) {
-            checkboxesLabels.get(i).shouldHave(text(checkboxesLabelsTexts.get(i)));
-        }
-
-        $(".label-checkbox:nth-child(1) > input[type=checkbox]").shouldNotBe(checked);
-        $(".label-checkbox:nth-child(3) > input[type=checkbox]").shouldNotBe(checked);
     }
 }
