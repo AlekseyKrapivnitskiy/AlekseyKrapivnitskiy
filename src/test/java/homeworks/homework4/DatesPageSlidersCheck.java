@@ -11,10 +11,12 @@ import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 public class DatesPageSlidersCheck extends SelenideBase {
 
     private IndexPage indexPage;
+    private DatesPage datesPage;
 
     @BeforeMethod
     public void beforeMethod() {
         indexPage = new IndexPage();
+        datesPage = new DatesPage();
 
         //1.Open test site by URL
         indexPage.open(INDEX_PAGE_DATA);
@@ -34,12 +36,15 @@ public class DatesPageSlidersCheck extends SelenideBase {
         indexPage.checkUsername(PITER_CHAILOVSKII);
 
         //5.Open through the header menu Service -> Dates Page
+        datesPage.openDatesPage();
 
         //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most rigth position
+        datesPage.setRangeMaxLeftAndMaxRitght();
 
         //7.Assert that for "From" and "To" sliders there are logs rows with corresponding values
 
         //8.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most left position
+        datesPage.setRangeMaxLeftForBothSliders();
 
         //9.Assert that for "From" and "To" sliders there are logs rows with corresponding values
 

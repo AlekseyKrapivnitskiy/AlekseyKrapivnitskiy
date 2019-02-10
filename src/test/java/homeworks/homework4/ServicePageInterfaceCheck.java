@@ -18,10 +18,12 @@ import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 public class ServicePageInterfaceCheck extends SelenideBase {
 
     private IndexPage indexPage;
+    private DifferentElementsPage differentElementsPage;
 
     @BeforeMethod
     public void beforeMethod() {
         indexPage = new IndexPage();
+        differentElementsPage = new DifferentElementsPage();
 
         //1.Open test site by URL
         indexPage.open(INDEX_PAGE_DATA);
@@ -63,19 +65,19 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu);
 
         //7.Open through the header menu Service -> Different Elements Page
-        indexPage.openDifferentElementsPage();
+        differentElementsPage.openDifferentElementsPage();
 
         //8.Check interface on Different elements page, it contains all needed elements
-        indexPage.checkDifferentPageElements();
+        differentElementsPage.checkDifferentPageElements();
 
         //9.Assert that there is Right Section
-        indexPage.checkRightSection();
+        differentElementsPage.checkRightSection();
 
         //10.Assert that there is Left Section
-        indexPage.checkLeftSection();
+        differentElementsPage.checkLeftSection();
 
         //11.Select checkboxes
-        indexPage.clickOnWaterAndWindCheckboxes();
+        differentElementsPage.clickOnWaterAndWindCheckboxes();
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
         List<String> checkboxesLabels = new ArrayList<>();
@@ -84,10 +86,10 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         checkboxesLabels.add(WIND.text);
         checkboxesLabels.add(FIRE.text);
 
-        indexPage.checkCheckboxesLabelsAndCheckedStatuses(checkboxesLabels);
+        differentElementsPage.checkCheckboxesLabelsAndCheckedStatuses(checkboxesLabels);
 
         //13.Select radio
-        indexPage.selectSelenRadio();
+        differentElementsPage.selectSelenRadio();
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
         List<String> radiosLabels = new ArrayList<>();
@@ -96,10 +98,10 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         radiosLabels.add(BRONZE.text);
         radiosLabels.add(SELEN.text);
 
-        indexPage.checkRadiosLabelsAndStatus(radiosLabels);
+        differentElementsPage.checkRadiosLabelsAndStatus(radiosLabels);
 
         //15.Select in dropdown
-        indexPage.selectYellowInDropdown();
+        differentElementsPage.selectYellowInDropdown();
 
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
         List<String> colorsList = new ArrayList<>();
@@ -108,12 +110,12 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         radiosLabels.add(BLUE.text);
         radiosLabels.add(YELLOW.text);
 
-        indexPage.checkDropdownOptionsAndStatus(colorsList);
+        differentElementsPage.checkDropdownOptionsAndStatus(colorsList);
 
         //17.Unselect and assert checkboxes
-        indexPage.clickOnWaterAndWindCheckboxes();
+        differentElementsPage.clickOnWaterAndWindCheckboxes();
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        indexPage.checkCheckboxesLabelsAndUncheckedStatuses(checkboxesLabels);
+        differentElementsPage.checkCheckboxesLabelsAndUncheckedStatuses(checkboxesLabels);
     }
 }
