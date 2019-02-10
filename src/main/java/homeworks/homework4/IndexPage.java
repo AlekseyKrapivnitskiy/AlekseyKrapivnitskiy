@@ -25,12 +25,30 @@ public class IndexPage {
     @FindBy(css = "#login-button")
     private SelenideElement submitButton;
 
+    @FindBy(css = "title")
+    private SelenideElement pageTitle;
+
+    @FindBy(css = "#user-name")
+    private SelenideElement usernameLabel;
+
+    @FindBy(css = ".dropdown")
+    private SelenideElement serviceDropdownInHeader;
+
+    @FindBy(css = "dropdown-menu > li")
+    private List<SelenideElement> serviceDropdownItemsInHeader;
+
+    @FindBy(css = ".menu-title")
+    private SelenideElement serviceDropdownInLeftMenu;
+
+    @FindBy(css = "sub > li")
+    private List<SelenideElement> serviceDropdownItemsInLeftMenu;
+
     public void open(IndexPageData indexPageData) {
         Selenide.open(indexPageData.url);
     }
 
     public void checkTitle(IndexPageData indexPageData) {
-        $("title").shouldHave(attribute("text", indexPageData.title));
+        pageTitle.shouldHave(attribute("text", indexPageData.title));
     }
 
     public void login(Users users) {
@@ -41,26 +59,22 @@ public class IndexPage {
     }
 
     public void checkUsername(Users users) {
-        $("#user-name").shouldHave(text(users.username));
+        usernameLabel.shouldHave(text(users.username));
     }
 
-    public void checkServiceDropdownListInHeader(List<String> serviceDropdown) {
-        $(".dropdown").click();
+    public void checkServiceDropdownListInHeader(List<String> serviceDropdownItems) {
+        serviceDropdownInHeader.click();
 
-        List<SelenideElement> serviceElements = $$("dropdown-menu > li");
-
-        for (int i = 0; i < serviceElements.size(); i++) {
-            serviceElements.get(i).shouldHave(text(serviceDropdown.get(i)));
+        for (int i = 0; i < serviceDropdownItemsInHeader.size(); i++) {
+            serviceDropdownItemsInHeader.get(i).shouldHave(text(serviceDropdownItems.get(i)));
         }
     }
 
-    public void checkServiceDropdownListInLeftMenu(List<String> serviceDropdown) {
-        $(".sidebar-menu").click();
+    public void checkServiceDropdownListInLeftMenu(List<String> serviceDropdownItems) {
+        serviceDropdownInLeftMenu.click();
 
-        List<SelenideElement> serviceElements = $$("sidebar-menu.menu-title");
-
-        for (int i = 0; i < serviceElements.size(); i++) {
-            serviceElements.get(i).shouldHave(text(serviceDropdown.get(i)));
+        for (int i = 0; i < serviceDropdownItemsInLeftMenu.size(); i++) {
+            serviceDropdownItemsInLeftMenu.get(i).shouldHave(text(serviceDropdownItems.get(i)));
         }
     }
 }
