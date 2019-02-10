@@ -42,6 +42,12 @@ public class IndexPage {
     @FindBy(css = "sub > li")
     private List<SelenideElement> serviceDropdownItemsInLeftMenu;
 
+    @FindBy(css = ".dropdown-menu > li:nth-child(7)")
+    private SelenideElement differentElementsPageItem;
+
+    @FindBy(css = ".dropdown-menu > li:nth-child(2)")
+    private SelenideElement datesPageItem;
+
     public void open(IndexPageData indexPageData) {
         Selenide.open(indexPageData.url);
     }
@@ -75,5 +81,15 @@ public class IndexPage {
         for (int i = 0; i < serviceDropdownItemsInLeftMenu.size(); i++) {
             serviceDropdownItemsInLeftMenu.get(i).shouldHave(text(serviceDropdownItems.get(i)));
         }
+    }
+
+    public void openDifferentElementsPage() {
+        serviceDropdownInHeader.click();
+        differentElementsPageItem.click();
+    }
+
+    public void openDatesPage() {
+        serviceDropdownInHeader.click();
+        datesPageItem.click();
     }
 }

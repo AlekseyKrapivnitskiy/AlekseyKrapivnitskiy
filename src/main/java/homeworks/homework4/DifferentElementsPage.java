@@ -10,12 +10,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class DifferentElementsPage {
 
-    @FindBy(css = ".dropdown")
-    private SelenideElement serviceDropdownInHeader;
-
-    @FindBy(css = ".dropdown-menu > li:nth-child(7)")
-    private SelenideElement differentElementsPageItem;
-
     @FindBy(css = ".label-checkbox")
     private ElementsCollection checkboxesList;
 
@@ -48,11 +42,6 @@ public class DifferentElementsPage {
 
     @FindBy(css = ".panel-body-list.logs > li")
     private SelenideElement logsPanel;
-
-    public void openDifferentElementsPage() {
-        serviceDropdownInHeader.click();
-        differentElementsPageItem.click();
-    }
 
     public void checkDifferentPageElements() {
         checkboxesList.shouldHaveSize(4);

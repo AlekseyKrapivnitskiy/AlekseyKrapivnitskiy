@@ -66,7 +66,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu);
 
         //7.Open through the header menu Service -> Different Elements Page
-        differentElementsPage.openDifferentElementsPage();
+        indexPage.openDifferentElementsPage();
 
         //8.Check interface on Different elements page, it contains all needed elements
         differentElementsPage.checkDifferentPageElements();
