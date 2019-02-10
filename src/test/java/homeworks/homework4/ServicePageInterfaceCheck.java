@@ -74,7 +74,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkLeftSection();
 
         //11.Select checkboxes
-        indexPage.selectWaterAndWindCheckboxes();
+        indexPage.clickOnWaterAndWindCheckboxes();
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
         List<String> checkboxesLabels = new ArrayList<>();
@@ -83,7 +83,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         checkboxesLabels.add(WIND.text);
         checkboxesLabels.add(FIRE.text);
 
-        indexPage.checkCheckboxesLabelsAndStatus(checkboxesLabels);
+        indexPage.checkCheckboxesLabelsAndCheckedStatuses(checkboxesLabels);
 
         //13.Select radio
         indexPage.selectSelenRadio();
@@ -102,7 +102,9 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
 
         //17.Unselect and assert checkboxes
+        indexPage.clickOnWaterAndWindCheckboxes();
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
+        indexPage.checkCheckboxesLabelsAndUncheckedStatuses(checkboxesLabels);
     }
 }

@@ -85,12 +85,12 @@ public class IndexPage {
         $(".mCustomScrollBox.mCS-light.mCSB_vertical.mCSB_inside").isDisplayed();
     }
 
-    public void selectWaterAndWindCheckboxes() {
+    public void clickOnWaterAndWindCheckboxes() {
         $(".label-checkbox:nth-child(1)").click();
         $(".label-checkbox:nth-child(3)").click();
     }
 
-    public void checkCheckboxesLabelsAndStatus(List<String> checkboxesLabelsTexts) {
+    public void checkCheckboxesLabelsAndCheckedStatuses(List<String> checkboxesLabelsTexts) {
         List<SelenideElement> checkboxesLabels = $$("sidebar-menu.menu-title");
 
         for (int i = 0; i < checkboxesLabels.size(); i++) {
@@ -113,5 +113,16 @@ public class IndexPage {
         }
 
         $(".label-radio:nth-child(4) > input[type=radio]").shouldBe(checked);
+    }
+
+    public void checkCheckboxesLabelsAndUncheckedStatuses(List<String> checkboxesLabelsTexts) {
+        List<SelenideElement> checkboxesLabels = $$("sidebar-menu.menu-title");
+
+        for (int i = 0; i < checkboxesLabels.size(); i++) {
+            checkboxesLabels.get(i).shouldHave(text(checkboxesLabelsTexts.get(i)));
+        }
+
+        $(".label-checkbox:nth-child(1) > input[type=checkbox]").shouldNotBe(checked);
+        $(".label-checkbox:nth-child(3) > input[type=checkbox]").shouldNotBe(checked);
     }
 }
