@@ -1,6 +1,7 @@
 package homeworks.homework4;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
@@ -11,9 +12,15 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class DifferentElementsPage {
 
+    @FindBy(css = ".dropdown")
+    private SelenideElement serviceDropdownInHeader;
+
+    @FindBy(css = ".dropdown-menu > li:nth-child(7)")
+    private SelenideElement differentElementsPageItem;
+
     public void openDifferentElementsPage() {
-        $(".dropdown").click();
-        $(".dropdown-menu > li:nth-child(7)").click();
+        serviceDropdownInHeader.click();
+        differentElementsPageItem.click();
     }
 
     public void checkDifferentPageElements() {

@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
 
 public class IndexPage {
 

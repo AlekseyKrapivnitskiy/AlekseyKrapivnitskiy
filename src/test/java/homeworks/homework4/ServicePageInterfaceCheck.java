@@ -29,6 +29,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.open(INDEX_PAGE_DATA);
 
         page(indexPage);
+        page(differentElementsPage);
     }
 
     @Test
