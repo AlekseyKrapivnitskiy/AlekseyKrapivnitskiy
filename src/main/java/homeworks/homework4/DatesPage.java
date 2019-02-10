@@ -1,6 +1,5 @@
 package homeworks.homework4;
 
-import base.lessons.lesson4.SelenideBase;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.interactions.Actions;
