@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.page;
+import static homeworks.homework4.enums.Checkboxes.*;
+import static homeworks.homework4.enums.Colors.YELLOW;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
+import static homeworks.homework4.enums.RadioButtons.SELEN;
 import static homeworks.homework4.enums.Service.*;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
@@ -75,27 +78,31 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.checkLeftSection();
 
         //11.Select checkboxes
-        differentElementsPage.clickOnWaterAndWindCheckboxes();
+        differentElementsPage.clickOnWaterCheckbox();
+        differentElementsPage.checkCheckboxesLogs(WATER, true);
+        differentElementsPage.clickOnWindCheckbox();
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLogs();
+        differentElementsPage.checkCheckboxesLogs(WIND, true);
 
         //13.Select radio
         differentElementsPage.selectSelenRadio();
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
-        differentElementsPage.checkRadiosLogs();
+        differentElementsPage.checkRadiosLogs(SELEN);
 
         //15.Select in dropdown
         differentElementsPage.selectYellowInDropdown();
 
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
-        differentElementsPage.checkDropdownLogs();
+        differentElementsPage.checkDropdownLogs(YELLOW);
 
         //17.Unselect and assert checkboxes
-        differentElementsPage.clickOnWaterAndWindCheckboxes();
+        differentElementsPage.clickOnWaterCheckbox();
+        differentElementsPage.checkCheckboxesLogs(WATER, false);
+        differentElementsPage.clickOnWindCheckbox();
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLabelsAndUncheckedStatuses();
+        differentElementsPage.checkCheckboxesLogs(WIND, false);
     }
 }

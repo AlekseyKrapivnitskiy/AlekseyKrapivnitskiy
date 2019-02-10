@@ -1,15 +1,12 @@
 package homeworks.homework4;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import homeworks.homework4.enums.Checkboxes;
+import homeworks.homework4.enums.Colors;
+import homeworks.homework4.enums.RadioButtons;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
-
-import static com.codeborne.selenide.Condition.checked;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class DifferentElementsPage {
 
@@ -49,6 +46,9 @@ public class DifferentElementsPage {
     @FindBy(css = "select.uui-form-element")
     private SelenideElement colorsDropdown;
 
+    @FindBy(css = ".panel-body-list.logs > li")
+    private SelenideElement logsPanel;
+
     public void openDifferentElementsPage() {
         serviceDropdownInHeader.click();
         differentElementsPageItem.click();
@@ -69,20 +69,24 @@ public class DifferentElementsPage {
         leftSection.isDisplayed();
     }
 
-    public void clickOnWaterAndWindCheckboxes() {
+    public void clickOnWaterCheckbox() {
         waterCheckbox.click();
+    }
+
+    public void clickOnWindCheckbox() {
         windCheckbox.click();
     }
 
-    public void checkCheckboxesLogs() {
-
+    public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status) {
+        logsPanel.shouldHave(Condition.text(checkbox.label + ": condition changed to " + status));
     }
 
     public void selectSelenRadio() {
         selenRadio.click();
     }
 
-    public void checkRadiosLogs() {
+    public void checkRadiosLogs(RadioButtons radioButton) {
+        logsPanel.shouldHave(Condition.text("metal: value changed to " + radioButton));
     }
 
     public void selectYellowInDropdown() {
@@ -90,11 +94,7 @@ public class DifferentElementsPage {
         colorsDropdown.selectOption("Yellow");
     }
 
-    public void checkDropdownLogs() {
-
-    }
-
-    public void checkCheckboxesLabelsAndUncheckedStatuses() {
-
+    public void checkDropdownLogs(Colors colors) {
+        logsPanel.shouldHave(Condition.text("Colors: value changed to " + colors.label));
     }
 }
