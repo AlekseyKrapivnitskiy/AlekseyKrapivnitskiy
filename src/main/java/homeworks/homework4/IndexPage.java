@@ -51,7 +51,7 @@ public class IndexPage {
         List<SelenideElement> serviceElements = $$("dropdown-menu > li");
 
         for (int i = 0; i < serviceElements.size(); i++) {
-            serviceElements.get(i).shouldNotHave(text(serviceDropdown.get(i)));
+            serviceElements.get(i).shouldHave(text(serviceDropdown.get(i)));
         }
     }
 
@@ -61,7 +61,7 @@ public class IndexPage {
         List<SelenideElement> serviceElements = $$("sidebar-menu.menu-title");
 
         for (int i = 0; i < serviceElements.size(); i++) {
-            serviceElements.get(i).shouldNotHave(text(serviceDropdown.get(i)));
+            serviceElements.get(i).shouldHave(text(serviceDropdown.get(i)));
         }
     }
 
@@ -74,7 +74,30 @@ public class IndexPage {
         $$(".label-checkbox").shouldHaveSize(4);
         $$(".label-radio").shouldHaveSize(4);
         $$("select.uui-form-element").shouldHaveSize(1);
-        $$("button.uui-button").shouldHaveSize(1);
-        $$("input.uui-button").shouldHaveSize(1);
+        $$("p").shouldHaveSize(2);
+    }
+
+    public void checkRightSection() {
+        $(".uui-side-bar.right-fix-panel.mCustomScrollbar._mCS_2 mCS_no_scrollbar").isDisplayed();
+    }
+
+    public void checkLeftSection() {
+        $(".mCustomScrollBox.mCS-light.mCSB_vertical.mCSB_inside").isDisplayed();
+    }
+
+    public void selectWaterAndWindCheckboxes() {
+        $(".label-checkbox:nth-child(1)").click();
+        $(".label-checkbox:nth-child(3)").click();
+    }
+
+    public void checkCheckboxesLabelsAndStatus(List<String> checkboxesLabelsTexts) {
+        List<SelenideElement> checkboxesLabels = $$("sidebar-menu.menu-title");
+
+        for (int i = 0; i < checkboxesLabels.size(); i++) {
+            checkboxesLabels.get(i).shouldHave(text(checkboxesLabelsTexts.get(i)));
+        }
+
+        $(".label-checkbox:nth-child(1) > input[type=checkbox]").shouldBe(checked);
+        $(".label-checkbox:nth-child(3) > input[type=checkbox]").shouldBe(checked);
     }
 }

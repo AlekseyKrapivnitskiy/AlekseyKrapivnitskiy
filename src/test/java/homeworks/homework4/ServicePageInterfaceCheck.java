@@ -10,6 +10,7 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.page;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.Service.*;
+import static homeworks.homework4.enums.SupportCheckboxes.*;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
 public class ServicePageInterfaceCheck extends SelenideBase {
@@ -66,12 +67,22 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkDifferentPageElements();
 
         //9.Assert that there is Right Section
+        indexPage.checkRightSection();
 
         //10.Assert that there is Left Section
+        indexPage.checkLeftSection();
 
         //11.Select checkboxes
+        indexPage.selectWaterAndWindCheckboxes();
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
+        List<String> checkboxesLabels = new ArrayList<>();
+        checkboxesLabels.add(WATER.text);
+        checkboxesLabels.add(EARTH.text);
+        checkboxesLabels.add(WIND.text);
+        checkboxesLabels.add(FIRE.text);
+
+        indexPage.checkCheckboxesLabelsAndStatus(checkboxesLabels);
 
         //13.Select radio
 
