@@ -8,10 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.page;
+import static homeworks.homework4.enums.Colors.*;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.Service.*;
-import static homeworks.homework4.enums.SupportCheckboxes.*;
-import static homeworks.homework4.enums.SupportRadios.*;
+import static homeworks.homework4.enums.Checkboxes.*;
+import static homeworks.homework4.enums.Radios.*;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
 public class ServicePageInterfaceCheck extends SelenideBase {
@@ -98,8 +99,16 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkRadiosLabelsAndStatus(radiosLabels);
 
         //15.Select in dropdown
+        indexPage.selectYellowInDropdown();
 
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
+        List<String> colorsList = new ArrayList<>();
+        radiosLabels.add(RED.text);
+        radiosLabels.add(GREEN.text);
+        radiosLabels.add(BLUE.text);
+        radiosLabels.add(YELLOW.text);
+
+        indexPage.checkDropdownOptionsAndStatus(colorsList);
 
         //17.Unselect and assert checkboxes
         indexPage.clickOnWaterAndWindCheckboxes();

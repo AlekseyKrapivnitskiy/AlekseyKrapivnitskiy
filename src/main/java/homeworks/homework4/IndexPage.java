@@ -115,10 +115,26 @@ public class IndexPage {
         $(".label-radio:nth-child(4) > input[type=radio]").shouldBe(checked);
     }
 
+    public void selectYellowInDropdown() {
+        $("select.uui-form-element").click();
+        $("select.uui-form-element").selectOption("Yellow");
+    }
+
+    public void checkDropdownOptionsAndStatus(List<String> colorsList) {
+        $("select.uui-form-element").click();
+        List<SelenideElement> colorsListInDropdown = $$("colors.uui-form-element");
+
+        for (int i = 0; i < colorsListInDropdown.size(); i++) {
+            colorsListInDropdown.get(i).shouldHave(text(colorsList.get(i)));
+        }
+
+        $("select.uui-form-element > option:nth-child(4)").isSelected();
+    }
+
     public void checkCheckboxesLabelsAndUncheckedStatuses(List<String> checkboxesLabelsTexts) {
         List<SelenideElement> checkboxesLabels = $$("sidebar-menu.menu-title");
 
-        for (int i = 0; i < checkboxesLabels.size(); i++) {
+        for (int i = 1; i < checkboxesLabels.size(); i++) {
             checkboxesLabels.get(i).shouldHave(text(checkboxesLabelsTexts.get(i)));
         }
 
