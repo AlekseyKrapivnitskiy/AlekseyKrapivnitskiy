@@ -1,6 +1,6 @@
 package homeworks.homework4.enums;
 
-public enum SupportCheckboxes {
+public enum Checkboxes {
 
     WATER("Water"),
     EARTH("Earth"),
@@ -9,7 +9,7 @@ public enum SupportCheckboxes {
 
     public String text;
 
-    SupportCheckboxes(String text) {
+    Checkboxes(String text) {
         this.text = text;
     }
 }
