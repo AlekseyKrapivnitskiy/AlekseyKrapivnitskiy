@@ -2,10 +2,10 @@ package homeworks.homework4.enums;
 
 public enum SupportCheckboxes {
 
-    WATER("Support"),
-    EARTH("Dates"),
-    WIND("Complex Table"),
-    FIRE("Simple Table");
+    WATER("Water"),
+    EARTH("Earth"),
+    WIND("Wind"),
+    FIRE("Fire");
 
     public String text;
 
