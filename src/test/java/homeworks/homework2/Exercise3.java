@@ -14,8 +14,8 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-// TODO missing space ){
-public class Exercise3{
+// TODO missing space ){ -- fixed
+public class Exercise3 {
 
     private WebDriver driver;
 
