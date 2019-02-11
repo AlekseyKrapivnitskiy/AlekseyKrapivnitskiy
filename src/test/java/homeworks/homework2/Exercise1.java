@@ -1,6 +1,6 @@
 package homeworks.homework2;
 
-import base.lessons.lesson4.SelenideBase;
+import base.lessons.lesson3.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,19 +8,17 @@ import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
-// TODO Why this class extends from the Selenide?
-public class Exercise1 extends SelenideBase {
+// TODO Why this class extends from the Selenide? --fixed
+public class Exercise1 extends SeleniumBase {
 
     private WebDriver driver;
 
     // TODO Do you try set annotation @BeforeMethod?
     @BeforeTest
     public void beforeTest() {
-        // TODO Why you set this property twice?
-        setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        // TODO Why you set this property twice? -- fixed
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
@@ -42,13 +40,13 @@ public class Exercise1 extends SelenideBase {
     }
 
     @Test(dataProvider = "dataProvider")
-    // TODO It better indexOfElement instead of id
-    // TODO missing space ){
-    public void indexPageBenefitTextTest(int id, String text){
+    // TODO It better indexOfElement instead of id -- renamed to indexOfElement
+    // TODO missing space ){ -- fixed
+    public void indexPageBenefitTextTest(int indexOfElement, String text) {
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");
 
         //2.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(id).getText(), text);
+        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(indexOfElement).getText(), text);
     }
 }
