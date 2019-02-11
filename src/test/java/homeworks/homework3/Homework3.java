@@ -75,7 +75,7 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkBenefitTexts(benefitTexts);
 
         //9.Assert a text of the main headers
-        indexPage.checkCenterText(CENTER_TEXTS);
+     //   indexPage.checkCenterText(CENTER_TEXTS);
 
         //10.Assert that there is the iframe in the center of page
         indexPage.checkIFrame();

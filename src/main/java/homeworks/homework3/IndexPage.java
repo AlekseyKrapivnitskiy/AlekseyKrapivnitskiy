@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static homeworks.homework3.enums.CenterTexts.MAIN_TEXT;
+import static homeworks.homework3.enums.CenterTexts.TITLE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -106,8 +108,8 @@ public class IndexPage {
     }
 
     public void checkCenterText(CenterTexts centerTexts) {
-        assertEquals(centerTextTitle.getText(), centerTexts.title);
-        assertEquals(centerText.getText(), centerTexts.mainText);
+        assertEquals(centerTextTitle.getText(), TITLE.text);
+        assertEquals(centerText.getText(), MAIN_TEXT.text);
     }
 
     public void checkIFrame() {
