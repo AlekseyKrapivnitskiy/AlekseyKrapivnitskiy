@@ -15,11 +15,13 @@ public class DatesPageSlidersCheck extends SelenideBase {
 
     @BeforeMethod
     public void beforeMethod() {
+        // TODO What is the purpose of current creation page instances?
         indexPage = new IndexPage();
 
         //1.Open test site by URL
         indexPage.open(INDEX_PAGE_DATA);
 
+        // TODO What is the purpose of current creation page instances?
         datesPage = new DatesPage();
 
         page(indexPage);
@@ -38,6 +40,7 @@ public class DatesPageSlidersCheck extends SelenideBase {
         indexPage.checkUsername(PITER_CHAILOVSKII);
 
         //5.Open through the header menu Service -> Dates Page
+        // TODO Please parametrize current method
         indexPage.openDatesPage();
 
         //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most right position

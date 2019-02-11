@@ -53,6 +53,7 @@ public class IndexPage {
     }
 
     public void checkTitle(IndexPageData indexPageData) {
+        // TODO Why you use this method? What was the concern with the getTitle()?
         pageTitle.shouldHave(attribute("text", indexPageData.title));
     }
 

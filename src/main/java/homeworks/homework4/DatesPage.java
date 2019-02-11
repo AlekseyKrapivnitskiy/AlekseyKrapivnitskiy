@@ -24,6 +24,7 @@ public class DatesPage{
     private Actions actions = new Actions(getWebDriver());
 
     public void moveLeftSlider(Integer value) {
+        // TODO Please try to avoid code duplication
         actions.clickAndHold(leftSlider).moveToElement(sliderLine,  ((sliderLine.getSize().width) * (value)/100 ),
                 0).release().build().perform();
     }
