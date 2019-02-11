@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
+// TODO Why this class extends from the Selenide?
 public class Exercise1 extends SelenideBase {
 
     private WebDriver driver;
@@ -18,6 +19,7 @@ public class Exercise1 extends SelenideBase {
     // TODO Do you try set annotation @BeforeMethod?
     @BeforeTest
     public void beforeTest() {
+        // TODO Why you set this property twice?
         setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -40,10 +42,8 @@ public class Exercise1 extends SelenideBase {
     }
 
     @Test(dataProvider = "dataProvider")
-    /* TODO
-        1. What does i mean? -- renamed to id
-        2. What does s mean? -- renamed to benefitText
-     */
+    // TODO It better indexOfElement instead of id
+    // TODO missing space ){
     public void indexPageBenefitTextTest(int id, String text){
         //1.Open test site by URL
         driver.navigate().to("https://epam.github.io/JDI/index.html");

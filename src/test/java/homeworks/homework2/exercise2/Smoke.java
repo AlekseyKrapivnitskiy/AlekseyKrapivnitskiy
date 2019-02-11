@@ -17,6 +17,8 @@ import static org.testng.Assert.assertTrue;
 
 public class Smoke extends SeleniumBase {
 
+    // TODO Why you cteate ThreadLocal in this way?
+    // TODO how much instatnces will be set in it?
     private ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>() {
         @Override
         protected WebDriver initialValue() {
@@ -30,7 +32,6 @@ public class Smoke extends SeleniumBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        // TODO Please check all classes this could be moved @BeforeMethods -- fixed
         getDriver().manage().window().maximize();
         getDriver().manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
     }
@@ -121,6 +122,7 @@ public class Smoke extends SeleniumBase {
         //16.Assert that there is Footer
         assertTrue(getDriver().findElement(By.cssSelector("footer")).isDisplayed());
 
+        // TODO Why it close here? Please check all methods and classes
         //17.Close Browser
         getDriver().close();
     }
