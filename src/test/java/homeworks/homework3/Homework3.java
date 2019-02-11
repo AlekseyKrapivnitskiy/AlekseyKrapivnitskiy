@@ -25,6 +25,7 @@ public class Homework3 extends SeleniumBase {
     public void beforeMethod() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        // TODO What is the purpose of two lines below?
         indexPage = new IndexPage(driver);
         PageFactory.initElements(driver, indexPage);
     }
@@ -52,6 +53,7 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkTitle(INDEX_PAGE_DATA);
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
+        // TODO Is it possible get list of values from the enum?
         List<String> headerItems = new ArrayList<String>();
         headerItems.add(HOME.text);
         headerItems.add(CONTACT_FORM.text);

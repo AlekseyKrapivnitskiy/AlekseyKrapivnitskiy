@@ -59,10 +59,12 @@ public class DifferentElementsPage {
     }
 
     public void clickOnWaterCheckbox() {
+        // TODO Hardcoded values
         waterCheckbox.click();
     }
 
     public void clickOnWindCheckbox() {
+        // TODO Hardcoded values
         windCheckbox.click();
     }
 
@@ -75,15 +77,18 @@ public class DifferentElementsPage {
     }
 
     public void checkRadiosLogs(RadioButtons radioButton) {
+        // TODO Hardcoded values
         logsPanel.shouldHave(Condition.text("metal: value changed to " + radioButton));
     }
 
     public void selectYellowInDropdown() {
         colorsDropdown.click();
+        // TODO Hardcoded values
         colorsDropdown.selectOption("Yellow");
     }
 
     public void checkDropdownLogs(Colors colors) {
+        // TODO Hardcoded values
         logsPanel.shouldHave(Condition.text("Colors: value changed to " + colors.label));
     }
 }

@@ -17,6 +17,8 @@ import static org.testng.Assert.assertTrue;
 
 public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
+    // TODO Why you cteate ThreadLocal in this way?
+    // TODO how much instatnces will be set in it?
     private ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>() {
         @Override
         protected WebDriver initialValue() {
@@ -30,13 +32,11 @@ public class RegressionAndSmokeSimultaneously extends SeleniumBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        // TODO Please check all classes this could be moved @BeforeMethods -- fixed
         getDriver().manage().window().maximize();
         getDriver().manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
     }
 
     @Test(groups = {"Regression", "Smoke"})
-    // TODO Code style -- fixed
     public void indexPageTest1() {
         //1.Open test site by URL
         getDriver().navigate().to("https://epam.github.io/JDI/index.html");

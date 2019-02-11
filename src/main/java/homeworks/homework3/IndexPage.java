@@ -15,13 +15,14 @@ import static org.testng.Assert.assertTrue;
 
 public class IndexPage {
 
+    // TODO Why it public?
     public WebDriver driver;
 
+    // TODO Should be after all class variables
     IndexPage(WebDriver driver){
         this.driver = driver;
     }
 
-    // TODO Why you don't use PageFactory? -- fixed
     @FindBy(css = "#user-icon")
     private WebElement userIcon;
 
@@ -67,17 +68,14 @@ public class IndexPage {
     @FindBy(css = "footer")
     private WebElement footer;
 
-    // TODO Why parameter is String -- fixed
     public void open(IndexPageData indexPageData) {
         driver.navigate().to(indexPageData.url);
     }
 
-    // TODO Why parameter is String -- fixed
     public void checkTitle(IndexPageData indexPageData) {
         assertEquals(driver.getTitle(), indexPageData.title);
     }
 
-    // TODO Why parameter is String and String -- fixed
     public void login(Users users) {
         userIcon.click();
         userField.sendKeys(users.login);
@@ -85,7 +83,6 @@ public class IndexPage {
         submitButton.click();
     }
 
-    // TODO Why parameter is String -- fixed
     public void checkUsername(Users users) {
         assertEquals(usernameLabel.getText(), users.username);
     }
