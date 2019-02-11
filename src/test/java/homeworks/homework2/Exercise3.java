@@ -8,8 +8,7 @@ import org.testng.annotations.*;
 
 import java.util.ArrayList;
 import java.util.List;
-// TODO Please do not forget delete unused imports
-import java.util.concurrent.TimeUnit;
+// TODO Please do not forget delete unused imports -- fixed
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
