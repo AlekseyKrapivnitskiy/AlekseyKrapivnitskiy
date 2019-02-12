@@ -13,20 +13,24 @@ import static org.testng.Assert.assertEquals;
 // TODO Why this class extends from the Selenide? --fixed
 public class Exercise1 extends SeleniumBase {
 
-    private WebDriver driver;
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    // TODO Do you try set annotation @BeforeMethod?
-    @BeforeTest
-    public void beforeTest() {
+    // TODO Do you try set annotation @BeforeMethod? -- changed to @BeforeMethod and @AfterMethod
+    @BeforeMethod
+    public void beforeMethod() {
         // TODO Why you set this property twice? -- fixed
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.manage().window().maximize();
+        webDriver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+        driver.set(webDriver);
     }
 
-    @AfterTest
-    public void afterTest() {
-        driver.close();
+    private WebDriver driver() {
+        WebDriver webDriver = driver.get();
+        if (webDriver == null) {
+            new ChromeDriver();
+        }
+        return webDriver;
     }
 
     @DataProvider(parallel = true)
@@ -39,14 +43,20 @@ public class Exercise1 extends SeleniumBase {
         };
     }
 
+    @AfterMethod
+    public void afterMethod() {
+        driver().close();
+    }
+
+
     @Test(dataProvider = "dataProvider")
     // TODO It better indexOfElement instead of id -- renamed to indexOfElement
     // TODO missing space ){ -- fixed
     public void indexPageBenefitTextTest(int indexOfElement, String text) {
         //1.Open test site by URL
-        driver.navigate().to("https://epam.github.io/JDI/index.html");
+        driver().navigate().to("https://epam.github.io/JDI/index.html");
 
         //2.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        assertEquals(driver.findElements(By.cssSelector(".benefit-txt")).get(indexOfElement).getText(), text);
+        assertEquals(driver().findElements(By.cssSelector(".benefit-txt")).get(indexOfElement).getText(), text);
     }
 }
