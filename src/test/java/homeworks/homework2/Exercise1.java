@@ -44,7 +44,6 @@ public class Exercise1 extends SeleniumBase {
         driver().close();
     }
 
-
     @Test(dataProvider = "dataProvider")
     // TODO It better indexOfElement instead of id -- renamed to indexOfElement
     // TODO missing space ){ -- fixed
