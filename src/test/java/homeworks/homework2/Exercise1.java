@@ -25,12 +25,8 @@ public class Exercise1 extends SeleniumBase {
         driver.set(webDriver);
     }
 
-    private WebDriver driver() {
-        WebDriver webDriver = driver.get();
-        if (webDriver == null) {
-            new ChromeDriver();
-        }
-        return webDriver;
+    public WebDriver driver() {
+        return driver.get();
     }
 
     @DataProvider(parallel = true)
