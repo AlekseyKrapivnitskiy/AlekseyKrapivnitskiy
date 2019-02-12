@@ -18,16 +18,16 @@ import static org.testng.Assert.assertTrue;
 
 public class Regression extends SeleniumBase {
 
-    // TODO Why you cteate ThreadLocal in this way?
-    // TODO how much instatnces will be set in it?
-     // thread local driver object for webdriver
+    // TODO Why you cteate ThreadLocal in this way? -- fixed
+    // TODO how much instatnces will be set in it? -- fixed
+     // thread local driver object for webdriver -- fixed
     private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public WebDriver driver() {
         return driver.get();
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
         WebDriver webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
@@ -35,7 +35,7 @@ public class Regression extends SeleniumBase {
         driver.set(webDriver);
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void afterMethod() {
         driver().close();
     }
@@ -126,7 +126,7 @@ public class Regression extends SeleniumBase {
         //16.Assert that there is Footer
         assertTrue(driver().findElement(By.cssSelector("footer")).isDisplayed());
     }
-/*
+
     @Test(groups = "Regression")
     public void indexPageTest2() {
         //1.Open test site by URL
@@ -305,5 +305,5 @@ public class Regression extends SeleniumBase {
 
         //17.Close Browser
         driver().close();
-    }*/
+    }
 }
