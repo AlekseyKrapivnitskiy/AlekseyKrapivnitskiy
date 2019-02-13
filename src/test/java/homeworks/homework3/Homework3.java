@@ -12,8 +12,6 @@ import java.util.List;
 import static homeworks.homework3.enums.BenefitTexts.*;
 import static homeworks.homework3.enums.HeaderItems.*;
 import static homeworks.homework3.enums.IndexPageData.*;
-import static homeworks.homework3.enums.JdiGithub.JDI_GITHUB_TITLE;
-import static homeworks.homework3.enums.JdiGithub.JDI_GITHUB_LINK;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
@@ -91,10 +89,10 @@ public class Homework3 extends SeleniumBase {
         driver.switchTo().defaultContent();
 
         //13.Assert a text of the sub header
-        indexPage.checkSubHeaderTitle(JDI_GITHUB_TITLE);
+        indexPage.checkSubHeaderTitle(JDI_GITHUB);
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
-        indexPage.checkSubHeaderLink(JDI_GITHUB_LINK);
+        indexPage.checkSubHeaderLink(JDI_GITHUB);
 
         // 15.Assert that there is Left Section
         indexPage.checkLeftMenu();

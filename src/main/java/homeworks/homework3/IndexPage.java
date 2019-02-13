@@ -1,18 +1,14 @@
 package homeworks.homework3;
 
 import homeworks.homework3.enums.IndexPageData;
-import homeworks.homework3.enums.JdiGithub;
 import homeworks.homework3.enums.MainHeader;
 import homeworks.homework3.enums.Users;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import sun.applet.Main;
 
 import java.util.List;
 
-import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
-import static homeworks.homework3.enums.MainHeader.TITLE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -128,12 +124,12 @@ public class IndexPage {
         assertTrue(epamLogo.isDisplayed());
     }
 
-    public void checkSubHeaderTitle(JdiGithub jdiGithub) {
-        assertEquals(jdiGithubLink.getText(), jdiGithub.text);
+    public void checkSubHeaderTitle(IndexPageData indexPageData) {
+        assertEquals(jdiGithubLink.getText(), indexPageData.title);
     }
 
-    public void checkSubHeaderLink(JdiGithub jdiGithub) {
-        assertEquals(jdiGithubLink.getAttribute("href"), jdiGithub.text);
+    public void checkSubHeaderLink(IndexPageData indexPageData) {
+        assertEquals(jdiGithubLink.getAttribute("href"), indexPageData.url);
     }
 
     public void checkLeftMenu() {
