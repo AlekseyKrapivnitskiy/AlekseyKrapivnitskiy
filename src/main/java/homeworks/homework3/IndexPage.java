@@ -128,12 +128,12 @@ public class IndexPage {
         assertTrue(epamLogo.isDisplayed());
     }
 
-    public void checkSubHeader(JdiGithub jdiGithub) {
-        assertEquals(jdiGithubLink.getText(), jdiGithub.title);
+    public void checkSubHeaderTitle(JdiGithub jdiGithub) {
+        assertEquals(jdiGithubLink.getText(), jdiGithub.text);
     }
 
     public void checkSubHeaderLink(JdiGithub jdiGithub) {
-        assertEquals(jdiGithubLink.getAttribute("href"), jdiGithub.url);
+        assertEquals(jdiGithubLink.getAttribute("href"), jdiGithub.text);
     }
 
     public void checkLeftMenu() {

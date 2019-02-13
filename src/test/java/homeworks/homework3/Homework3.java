@@ -1,7 +1,6 @@
 package homeworks.homework3;
 
 import base.lessons.lesson3.SeleniumBase;
-import homeworks.homework3.enums.MainHeader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +12,8 @@ import java.util.List;
 import static homeworks.homework3.enums.BenefitTexts.*;
 import static homeworks.homework3.enums.HeaderItems.*;
 import static homeworks.homework3.enums.IndexPageData.*;
-import static homeworks.homework3.enums.JdiGithub.*;
+import static homeworks.homework3.enums.JdiGithub.JDI_GITHUB_TITLE;
+import static homeworks.homework3.enums.JdiGithub.JDI_GITHUB_LINK;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
@@ -91,10 +91,10 @@ public class Homework3 extends SeleniumBase {
         driver.switchTo().defaultContent();
 
         //13.Assert a text of the sub header
-        indexPage.checkSubHeader(JDI_GITHUB);
+        indexPage.checkSubHeaderTitle(JDI_GITHUB_TITLE);
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
-        indexPage.checkSubHeaderLink(JDI_GITHUB);
+        indexPage.checkSubHeaderLink(JDI_GITHUB_LINK);
 
         // 15.Assert that there is Left Section
         indexPage.checkLeftMenu();
