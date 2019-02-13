@@ -17,9 +17,6 @@ import static org.testng.Assert.assertTrue;
 
 public class IndexPage {
 
-    // TODO Why it public? -- changed to private
-    private WebDriver driver;
-
     @FindBy(css = "#user-icon")
     private WebElement userIcon;
 
@@ -65,8 +62,11 @@ public class IndexPage {
     @FindBy(css = "footer")
     private WebElement footer;
 
+    // TODO Why it public? -- changed to private
+    private WebDriver driver;
+
     // TODO Should be after all class variables -- fixed
-    IndexPage(WebDriver driver){
+    public IndexPage(WebDriver driver){
         this.driver = driver;
     }
 

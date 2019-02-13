@@ -18,16 +18,16 @@ import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
 
 public class Homework3 extends SeleniumBase {
 
-    private IndexPage indexPage;
     private WebDriver driver;
+    private IndexPage indexPage;
+
 
     @BeforeMethod
     public void beforeMethod() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        // TODO What is the purpose of two lines below?
-        indexPage = new IndexPage(driver);
-        PageFactory.initElements(driver, indexPage);
+        // TODO What is the purpose of two lines below? -- fixed
+        indexPage = PageFactory.initElements(driver, IndexPage.class);
     }
 
     @AfterMethod
@@ -75,7 +75,7 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkBenefitTexts(benefitTexts);
 
         //9.Assert a text of the main headers
-     //   indexPage.checkCenterText(CENTER_TEXTS);
+        indexPage.checkCenterText(CENTER_TEXTS);
 
         //10.Assert that there is the iframe in the center of page
         indexPage.checkIFrame();
