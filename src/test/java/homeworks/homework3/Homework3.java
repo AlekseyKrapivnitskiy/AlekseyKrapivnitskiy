@@ -1,6 +1,7 @@
 package homeworks.homework3;
 
 import base.lessons.lesson3.SeleniumBase;
+import homeworks.homework3.enums.MainHeader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -10,10 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static homeworks.homework3.enums.BenefitTexts.*;
-import static homeworks.homework3.enums.CenterTexts.*;
 import static homeworks.homework3.enums.HeaderItems.*;
 import static homeworks.homework3.enums.IndexPageData.*;
 import static homeworks.homework3.enums.JdiGithub.*;
+import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
+import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework3.enums.Users.PITER_CHAILOVSKII;
 
 public class Homework3 extends SeleniumBase {
@@ -54,7 +56,7 @@ public class Homework3 extends SeleniumBase {
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
         // TODO Is it possible get list of values from the enum?
-        List<String> headerItems = new ArrayList<String>();
+        List<String> headerItems = new ArrayList<>();
         headerItems.add(HOME.text);
         headerItems.add(CONTACT_FORM.text);
         headerItems.add(SERVICE.text);
@@ -75,7 +77,8 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkBenefitTexts(benefitTexts);
 
         //9.Assert a text of the main headers
-        indexPage.checkCenterText(CENTER_TEXTS);
+        indexPage.checkMainHeaderTitle(TITLE);
+        indexPage.checkMainHeaderText(MAIN_TEXT);
 
         //10.Assert that there is the iframe in the center of page
         indexPage.checkIFrame();

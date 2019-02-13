@@ -1,17 +1,18 @@
 package homeworks.homework3;
 
-import homeworks.homework3.enums.CenterTexts;
 import homeworks.homework3.enums.IndexPageData;
 import homeworks.homework3.enums.JdiGithub;
+import homeworks.homework3.enums.MainHeader;
 import homeworks.homework3.enums.Users;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import sun.applet.Main;
 
 import java.util.List;
 
-import static homeworks.homework3.enums.CenterTexts.MAIN_TEXT;
-import static homeworks.homework3.enums.CenterTexts.TITLE;
+import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
+import static homeworks.homework3.enums.MainHeader.TITLE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -45,10 +46,10 @@ public class IndexPage {
     private WebElement iFrame;
 
     @FindBy(css = ".main-title.text-center")
-    private WebElement centerTextTitle;
+    private WebElement mainHeaderTitle;
 
     @FindBy(css = ".main-txt.text-center")
-    private WebElement centerText;
+    private WebElement mainHeaderText;
 
     @FindBy(css = "#epam_logo")
     private WebElement epamLogo;
@@ -107,9 +108,12 @@ public class IndexPage {
         }
     }
 
-    public void checkCenterText(CenterTexts centerTexts) {
-        assertEquals(centerTextTitle.getText(), TITLE.text);
-        assertEquals(centerText.getText(), MAIN_TEXT.text);
+    public void checkMainHeaderTitle(MainHeader mainHeader) {
+        assertEquals(mainHeaderTitle.getText(), mainHeader.text);
+    }
+
+    public void checkMainHeaderText(MainHeader mainHeader) {
+        assertEquals(mainHeaderText.getText(), mainHeader.text);
     }
 
     public void checkIFrame() {
