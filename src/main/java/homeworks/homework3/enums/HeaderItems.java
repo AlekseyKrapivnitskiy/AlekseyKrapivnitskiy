@@ -1,5 +1,8 @@
 package homeworks.homework3.enums;
 
+import java.util.Arrays;
+import java.util.List;
+
 public enum HeaderItems {
 
     HOME("HOME"),
@@ -11,5 +14,9 @@ public enum HeaderItems {
 
     HeaderItems(String text) {
         this.text = text;
+    }
+
+    public static List<HeaderItems> listOfHeaderItems() {
+        return Arrays.asList(HeaderItems.values());
     }
 }

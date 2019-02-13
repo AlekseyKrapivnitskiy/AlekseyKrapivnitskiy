@@ -1,5 +1,6 @@
 package homeworks.homework3;
 
+import homeworks.homework3.enums.HeaderItems;
 import homeworks.homework3.enums.IndexPageData;
 import homeworks.homework3.enums.MainHeader;
 import homeworks.homework3.enums.Users;
@@ -86,9 +87,9 @@ public class IndexPage {
         assertEquals(usernameLabel.getText(), users.username);
     }
 
-    public void checkHeaderItems(List<String> headerItems) {
+    public void checkHeaderItems(List<HeaderItems> headerItems) {
         for (int i = 0; i < navigationBar.size(); i ++) {
-            assertEquals(navigationBar.get(i).getText(), headerItems.get(i));
+            assertEquals(navigationBar.get(i).getText(), headerItems.get(i).text);
         }
     }
 
