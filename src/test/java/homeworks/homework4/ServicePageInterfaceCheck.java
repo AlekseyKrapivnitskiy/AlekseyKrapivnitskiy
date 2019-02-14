@@ -4,15 +4,12 @@ import base.lessons.lesson4.SelenideBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static com.codeborne.selenide.Selenide.page;
 import static homeworks.homework4.enums.Checkboxes.*;
 import static homeworks.homework4.enums.Colors.YELLOW;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.RadioButtons.SELEN;
-import static homeworks.homework4.enums.Service.*;
+import static homeworks.homework4.enums.Service.getServiceDropdownList;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
 public class ServicePageInterfaceCheck extends SelenideBase {
@@ -46,27 +43,11 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkUsername(PITER_CHAILOVSKII);
 
         //5.Click on "Service" subcategory in the header and check that drop down contains options
-        // TODO Is it possible get this list of values from the enum?
-        List<String> serviceDropdownInHeader = new ArrayList<>();
-        serviceDropdownInHeader.add(SUPPORT.text);
-        serviceDropdownInHeader.add(DATES.text);
-        serviceDropdownInHeader.add(COMPLEX_TABLE.text);
-        serviceDropdownInHeader.add(SIMPLE_TABLE.text);
-        serviceDropdownInHeader.add(TABLES_WITH_PAGE.text);
-        serviceDropdownInHeader.add(DIFFERENT_ELEMENTS.text);
-
-        indexPage.checkServiceDropdownListInHeader(serviceDropdownInHeader);
+        // TODO Is it possible get this list of values from the enum? -- fixed
+        indexPage.checkServiceDropdownListInHeader(getServiceDropdownList());
 
         //6.Click on Service subcategory in the left section and check that drop down contains options
-        List<String> serviceDropdownInLeftMenu = new ArrayList<>();
-        serviceDropdownInLeftMenu.add(SUPPORT.text);
-        serviceDropdownInLeftMenu.add(DATES.text);
-        serviceDropdownInLeftMenu.add(COMPLEX_TABLE.text);
-        serviceDropdownInLeftMenu.add(SIMPLE_TABLE.text);
-        serviceDropdownInLeftMenu.add(TABLES_WITH_PAGE.text);
-        serviceDropdownInLeftMenu.add(DIFFERENT_ELEMENTS.text);
-
-        indexPage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu);
+        indexPage.checkServiceDropdownListInLeftMenu(getServiceDropdownList());
 
         //7.Open through the header menu Service -> Different Elements Page
         // TODO Please parametrize current method
@@ -84,7 +65,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
         //11.Select checkboxes
         // TODO Why you decide use separate method for each checkbox?
-        differentElementsPage.clickOnWaterCheckbox();
+        differentElementsPage.clickOnWaterCheckbox(2);
         differentElementsPage.checkCheckboxesLogs(WATER, true);
         differentElementsPage.clickOnWindCheckbox();
 
@@ -108,7 +89,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         //17.Unselect and assert checkboxes
         // TODO Why you decide use separate method for each checkbox?
 
-        differentElementsPage.clickOnWaterCheckbox();
+        differentElementsPage.clickOnWaterCheckbox(2);
         differentElementsPage.checkCheckboxesLogs(WATER, false);
         differentElementsPage.clickOnWindCheckbox();
 
