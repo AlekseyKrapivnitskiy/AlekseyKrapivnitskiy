@@ -99,7 +99,6 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
         //17.Unselect and assert checkboxes
         // TODO Why you decide use separate method for each checkbox? -- fixed
-
         differentElementsPage.clickOnCheckbox(WATER);
         differentElementsPage.clickOnCheckbox(WIND);
 
