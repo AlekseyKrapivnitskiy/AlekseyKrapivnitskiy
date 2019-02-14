@@ -1,7 +1,6 @@
 package homeworks.homework3.enums;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public enum HeaderItems {
@@ -20,8 +19,8 @@ public enum HeaderItems {
     public static List<String> getHeaderItemsList() {
         List<String> listOfHeaderItems = new ArrayList<>();
 
-        for (int i = 0; i < HeaderItems.values().length; i++) {
-            listOfHeaderItems.add(Arrays.asList(HeaderItems.values()).get(i).text);
+        for (HeaderItems headerItems : HeaderItems.values()) {
+            listOfHeaderItems.add(headerItems.text);
         }
         return listOfHeaderItems;
     }
