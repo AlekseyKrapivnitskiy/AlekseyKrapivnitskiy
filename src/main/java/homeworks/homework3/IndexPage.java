@@ -41,16 +41,16 @@ public class IndexPage {
     @FindBy(css = "#iframe")
     private WebElement iFrame;
 
-    @FindBy(css = ".main-title.text-center")
+    @FindBy(css = ".main-title.label-center")
     private WebElement mainHeaderTitle;
 
-    @FindBy(css = ".main-txt.text-center")
+    @FindBy(css = ".main-txt.label-center")
     private WebElement mainHeaderText;
 
     @FindBy(css = "#epam_logo")
     private WebElement epamLogo;
 
-    @FindBy(css = ".text-center > a")
+    @FindBy(css = ".label-center > a")
     private WebElement jdiGithubLink;
 
     @FindBy(css = "#mCSB_1")

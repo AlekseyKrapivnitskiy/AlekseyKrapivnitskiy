@@ -51,7 +51,7 @@ public class Exercise1 extends SeleniumBase {
         //1.Open test site by URL
         driver().navigate().to("https://epam.github.io/JDI/index.html");
 
-        //2.Assert that there are 4 texts on the Index Page under icons and they have proper text
+        //2.Assert that there are 4 texts on the Index Page under icons and they have proper label
         assertEquals(driver().findElements(By.cssSelector(".benefit-txt")).get(indexOfElement).getText(), text);
     }
 }

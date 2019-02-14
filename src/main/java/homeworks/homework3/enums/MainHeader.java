@@ -2,7 +2,7 @@ package homeworks.homework3.enums;
 
 public enum MainHeader {
 
-    // TODO It will be better if each text have separate enum value -- fixed
+    // TODO It will be better if each label have separate enum value -- fixed
     // TODO What is fixed? -- sorry, first fixed, then changed to different implementation. rolled back to correct implementation
     TITLE("EPAM FRAMEWORK WISHES…"),
     MAIN_TEXT("LOREM IPSUM DOLOR SIT AMET, " +

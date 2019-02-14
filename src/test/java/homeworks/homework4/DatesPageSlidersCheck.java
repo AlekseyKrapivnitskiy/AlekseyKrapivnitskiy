@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.page;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
+import static homeworks.homework4.enums.Service.DATES;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
 public class DatesPageSlidersCheck extends SelenideBase {
@@ -47,8 +48,8 @@ public class DatesPageSlidersCheck extends SelenideBase {
         indexPage.checkUsername(PITER_CHAILOVSKII);
 
         //5.Open through the header menu Service -> Dates Page
-        // TODO Please parametrize current method
-        indexPage.openDatesPage();
+        // TODO Please parametrize current method -- fixed
+        datesPage.selectPageInServiceDropdown(DATES);
 
         //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most right position
         datesPage.moveLeftSlider(0);

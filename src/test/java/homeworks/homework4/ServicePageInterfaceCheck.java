@@ -12,6 +12,7 @@ import static homeworks.homework4.enums.Colors.YELLOW;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.LogsMessages.*;
 import static homeworks.homework4.enums.RadioButtons.SELEN;
+import static homeworks.homework4.enums.Service.DIFFERENT_ELEMENTS;
 import static homeworks.homework4.enums.Service.getServiceDropdownList;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
@@ -52,14 +53,16 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
         //5.Click on "Service" subcategory in the header and check that drop down contains options
         // TODO Is it possible get this list of values from the enum? -- fixed
+        indexPage.clickOnServiceDropdownInHeader();
         indexPage.checkServiceDropdownListInHeader(getServiceDropdownList());
 
         //6.Click on Service subcategory in the left section and check that drop down contains options
+        indexPage.clickOnServiceDropdownInLeftMenu();
         indexPage.checkServiceDropdownListInLeftMenu(getServiceDropdownList());
 
         //7.Open through the header menu Service -> Different Elements Page
-        // TODO Please parametrize current method
-        indexPage.openDifferentElementsPage();
+        // TODO Please parametrize current method -- fixed
+        indexPage.selectPageInServiceDropdown(DIFFERENT_ELEMENTS);
 
         //8.Check interface on Different elements page, it contains all needed elements
         differentElementsPage.checkDifferentPageElements();
@@ -67,9 +70,9 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         //9.Assert that there is Right Section
         differentElementsPage.checkRightSection();
 
-        // TODO Let's try avoid code duplication with the indexPage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu);
+        // TODO Let's try avoid code duplication with the indexPage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu); -- fixed
         //10.Assert that there is Left Section
-        differentElementsPage.checkLeftSection();
+        indexPage.checkServiceDropdownListInLeftMenu(getServiceDropdownList());
 
         //11.Select checkboxes
         // TODO Why you decide use separate method for each checkbox? -- fixed

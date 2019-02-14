@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
 
-public class DifferentElementsPage {
+public class DifferentElementsPage extends NavigationBars{
 
     @FindBy(css = ".label-checkbox")
     private ElementsCollection checkboxesList;
@@ -23,9 +23,6 @@ public class DifferentElementsPage {
 
     @FindBy(css = "p")
     private ElementsCollection buttonsList;
-
-    @FindBy(css = ".right-fix-panel")
-    private SelenideElement rightSection;
 
     @FindBy(css = "#mCSB_1")
     private SelenideElement leftSection;
@@ -43,9 +40,7 @@ public class DifferentElementsPage {
         buttonsList.shouldHaveSize(2);
     }
 
-    public void checkRightSection() {
-        rightSection.isDisplayed();
-    }
+
 
     public void checkLeftSection() {
         leftSection.isDisplayed();

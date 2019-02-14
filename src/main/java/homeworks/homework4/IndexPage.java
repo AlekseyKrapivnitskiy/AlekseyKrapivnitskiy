@@ -1,8 +1,10 @@
 package homeworks.homework4;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.IndexPageData;
+import homeworks.homework4.enums.Service;
 import homeworks.homework4.enums.Users;
 import org.openqa.selenium.support.FindBy;
 
@@ -12,7 +14,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.testng.Assert.assertEquals;
 
-public class IndexPage {
+public class IndexPage extends NavigationBars{
 
     @FindBy(css = "#user-icon")
     private SelenideElement userIcon;
@@ -28,24 +30,6 @@ public class IndexPage {
 
     @FindBy(css = "#user-name")
     private SelenideElement usernameLabel;
-
-    @FindBy(css = ".dropdown")
-    private SelenideElement serviceDropdownInHeader;
-
-    @FindBy(css = "dropdown-menu > li")
-    private List<SelenideElement> serviceDropdownItemsInHeader;
-
-    @FindBy(css = ".menu-title")
-    private SelenideElement serviceDropdownInLeftMenu;
-
-    @FindBy(css = "menu-title > a")
-    private List<SelenideElement> serviceDropdownItemsInLeftMenu;
-
-    @FindBy(css = ".dropdown-menu > li:nth-child(7)")
-    private SelenideElement differentElementsPageItem;
-
-    @FindBy(css = ".dropdown-menu > li:nth-child(2)")
-    private SelenideElement datesPageItem;
 
     public void open(IndexPageData indexPageData) {
         Selenide.open(indexPageData.url);
@@ -65,31 +49,5 @@ public class IndexPage {
 
     public void checkUsername(Users users) {
         usernameLabel.shouldHave(text(users.username));
-    }
-
-    public void checkServiceDropdownListInHeader(List<String> serviceDropdownItems) {
-        serviceDropdownInHeader.click();
-
-        for (int i = 0; i < serviceDropdownItemsInHeader.size(); i++) {
-            serviceDropdownItemsInHeader.get(i).shouldHave(text(serviceDropdownItems.get(i)));
-        }
-    }
-
-    public void checkServiceDropdownListInLeftMenu(List<String> serviceDropdownItems) {
-        serviceDropdownInLeftMenu.click();
-
-        for (int i = 0; i < serviceDropdownItemsInLeftMenu.size(); i++) {
-            serviceDropdownItemsInLeftMenu.get(i).shouldHave(text(serviceDropdownItems.get(i)));
-        }
-    }
-
-    public void openDifferentElementsPage() {
-        serviceDropdownInHeader.click();
-        differentElementsPageItem.click();
-    }
-
-    public void openDatesPage() {
-        serviceDropdownInHeader.click();
-        datesPageItem.click();
     }
 }

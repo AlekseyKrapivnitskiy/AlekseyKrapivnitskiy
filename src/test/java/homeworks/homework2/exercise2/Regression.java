@@ -76,7 +76,7 @@ public class Regression extends SeleniumBase {
             assertTrue(benefitIcon.isDisplayed());
         }
 
-        //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
+        //8.Assert that there are 4 texts on the Index Page under icons and they have proper label
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -90,9 +90,9 @@ public class Regression extends SeleniumBase {
             assertEquals(benefitTxt.get(i).getText(), benefitTexts.get(i));
         }
 
-        //9.Assert a text of the main headers
-        assertEquals(driver().findElement(By.cssSelector(".main-title.text-center")).getText(), "EPAM FRAMEWORK WISHES…");
-        assertEquals(driver().findElement(By.cssSelector(".main-txt.text-center")).getText(), "LOREM IPSUM DOLOR SIT AMET, " +
+        //9.Assert a label of the main headers
+        assertEquals(driver().findElement(By.cssSelector(".main-title.label-center")).getText(), "EPAM FRAMEWORK WISHES…");
+        assertEquals(driver().findElement(By.cssSelector(".main-txt.label-center")).getText(), "LOREM IPSUM DOLOR SIT AMET, " +
                 "CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. " +
                 "UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA " +
                 "COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE " +
@@ -108,11 +108,11 @@ public class Regression extends SeleniumBase {
         //12.Switch to original window back
         driver().switchTo().defaultContent();
 
-        //13.Assert a text of the sub header
-        assertEquals(driver().findElement(By.cssSelector(".text-center > a")).getText(), "JDI GITHUB");
+        //13.Assert a label of the sub header
+        assertEquals(driver().findElement(By.cssSelector(".label-center > a")).getText(), "JDI GITHUB");
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
-        assertEquals(driver().findElement(By.cssSelector(".text-center > a")).getAttribute("href"), "https://github.com/epam/JDI");
+        assertEquals(driver().findElement(By.cssSelector(".label-center > a")).getAttribute("href"), "https://github.com/epam/JDI");
 
         // 15.Assert that there is Left Section
         assertTrue(driver().findElement(By.cssSelector("#mCSB_1")).isDisplayed());
@@ -166,7 +166,7 @@ public class Regression extends SeleniumBase {
             assertTrue(benefitIcon.isDisplayed());
         }
 
-        //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
+        //8.Assert that there are 4 texts on the Index Page under icons and they have proper label
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -180,9 +180,9 @@ public class Regression extends SeleniumBase {
             assertEquals(benefitTxt.get(i).getText(), benefitTexts.get(i));
         }
 
-        //9.Assert a text of the main headers
-        assertEquals(driver().findElement(By.cssSelector(".main-title.text-center")).getText(), "EPAM FRAMEWORK WISHES…");
-        assertEquals(driver().findElement(By.cssSelector(".main-txt.text-center")).getText(), "LOREM IPSUM DOLOR SIT AMET, " +
+        //9.Assert a label of the main headers
+        assertEquals(driver().findElement(By.cssSelector(".main-title.label-center")).getText(), "EPAM FRAMEWORK WISHES…");
+        assertEquals(driver().findElement(By.cssSelector(".main-txt.label-center")).getText(), "LOREM IPSUM DOLOR SIT AMET, " +
                 "CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. " +
                 "UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA " +
                 "COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE " +
@@ -198,11 +198,11 @@ public class Regression extends SeleniumBase {
         //12.Switch to original window back
         driver().switchTo().defaultContent();
 
-        //13.Assert a text of the sub header
-        assertEquals(driver().findElement(By.cssSelector(".text-center > a")).getText(), "JDI GITHUB");
+        //13.Assert a label of the sub header
+        assertEquals(driver().findElement(By.cssSelector(".label-center > a")).getText(), "JDI GITHUB");
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
-        assertEquals(driver().findElement(By.cssSelector(".text-center > a")).getAttribute("href"), "https://github.com/epam/JDI");
+        assertEquals(driver().findElement(By.cssSelector(".label-center > a")).getAttribute("href"), "https://github.com/epam/JDI");
 
         // 15.Assert that there is Left Section
         assertTrue(driver().findElement(By.cssSelector("#mCSB_1")).isDisplayed());
@@ -256,7 +256,7 @@ public class Regression extends SeleniumBase {
             assertTrue(benefitIcon.isDisplayed());
         }
 
-        //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
+        //8.Assert that there are 4 texts on the Index Page under icons and they have proper label
         List<String> benefitTexts = new ArrayList<String>();
         benefitTexts.add("To include good practices\n" + "and ideas from successful\n" + "EPAM project");
         benefitTexts.add("To be flexible and\n" + "customizable");
@@ -270,9 +270,9 @@ public class Regression extends SeleniumBase {
             assertEquals(benefitTxt.get(i).getText(), benefitTexts.get(i));
         }
 
-        //9.Assert a text of the main headers
-        assertEquals(driver().findElement(By.cssSelector(".main-title.text-center")).getText(), "EPAM FRAMEWORK WISHES…");
-        assertEquals(driver().findElement(By.cssSelector(".main-txt.text-center")).getText(), "LOREM IPSUM DOLOR SIT AMET, " +
+        //9.Assert a label of the main headers
+        assertEquals(driver().findElement(By.cssSelector(".main-title.label-center")).getText(), "EPAM FRAMEWORK WISHES…");
+        assertEquals(driver().findElement(By.cssSelector(".main-txt.label-center")).getText(), "LOREM IPSUM DOLOR SIT AMET, " +
                 "CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. " +
                 "UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA " +
                 "COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE " +
@@ -288,11 +288,11 @@ public class Regression extends SeleniumBase {
         //12.Switch to original window back
         driver().switchTo().defaultContent();
 
-        //13.Assert a text of the sub header
-        assertEquals(driver().findElement(By.cssSelector(".text-center > a")).getText(), "JDI GITHUB");
+        //13.Assert a label of the sub header
+        assertEquals(driver().findElement(By.cssSelector(".label-center > a")).getText(), "JDI GITHUB");
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
-        assertEquals(driver().findElement(By.cssSelector(".text-center > a")).getAttribute("href"), "https://github.com/epam/JDI");
+        assertEquals(driver().findElement(By.cssSelector(".label-center > a")).getAttribute("href"), "https://github.com/epam/JDI");
 
         // 15.Assert that there is Left Section
         assertTrue(driver().findElement(By.cssSelector("#mCSB_1")).isDisplayed());
