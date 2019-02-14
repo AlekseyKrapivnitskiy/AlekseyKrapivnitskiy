@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
 
-public class DifferentElementsPage extends NavigationBars{
+public class DifferentElementsPage extends Navigation {
 
     @FindBy(css = ".label-checkbox")
     private ElementsCollection checkboxesList;

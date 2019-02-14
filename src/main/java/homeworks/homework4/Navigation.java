@@ -9,7 +9,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
 
-public abstract class NavigationBars {
+public abstract class Navigation {
 
     @FindBy(css = ".dropdown")
     private SelenideElement serviceDropdownInHeader;

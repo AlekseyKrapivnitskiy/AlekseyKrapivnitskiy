@@ -1,20 +1,16 @@
 package homeworks.homework4;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.IndexPageData;
-import homeworks.homework4.enums.Service;
 import homeworks.homework4.enums.Users;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.testng.Assert.assertEquals;
 
-public class IndexPage extends NavigationBars{
+public class IndexPage extends Navigation {
 
     @FindBy(css = "#user-icon")
     private SelenideElement userIcon;

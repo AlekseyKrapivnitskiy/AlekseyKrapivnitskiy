@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class DatesPage extends NavigationBars{
+public class DatesPage extends Navigation {
 
     @FindBy(css = "a.ui-slider-handle:nth-child(1)")
     private SelenideElement leftSlider;
