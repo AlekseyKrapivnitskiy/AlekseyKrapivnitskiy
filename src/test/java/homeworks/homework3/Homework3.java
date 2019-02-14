@@ -59,10 +59,10 @@ public class Homework3 extends SeleniumBase {
         //7.Assert that there are 4 images on the Index Page and they are displayed
         indexPage.checkBenefitIcons();
 
-        //8.Assert that there are 4 texts on the Index Page under icons and they have proper label
+        //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
         indexPage.checkBenefitTexts(getBenefitTextsList());
 
-        //9.Assert a label of the main headers
+        //9.Assert a text of the main headers
         indexPage.checkMainHeaderTitle(TITLE);
         indexPage.checkMainHeaderText(MAIN_TEXT);
 
@@ -76,7 +76,7 @@ public class Homework3 extends SeleniumBase {
         //12.Switch to original window back
         driver.switchTo().defaultContent();
 
-        //13.Assert a label of the sub header
+        //13.Assert a text of the sub header
         indexPage.checkSubHeaderTitle(JDI_GITHUB);
 
         //14.Assert that JDI GITHUB is a link and has a proper URL
