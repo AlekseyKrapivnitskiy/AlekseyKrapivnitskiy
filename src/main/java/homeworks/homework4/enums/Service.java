@@ -18,7 +18,7 @@ public enum Service {
         this.text = text;
     }
 
-    public static List<String> getServiceDopdownList() {
+    public static List<String> getServiceDropdownList() {
         List<String> listServiceDropdownTexts = new ArrayList<>();
 
         for (Service service : Service.values()) {
