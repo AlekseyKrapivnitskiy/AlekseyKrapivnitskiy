@@ -1,6 +1,5 @@
 package homeworks.homework4;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.Checkboxes;
@@ -34,7 +33,7 @@ public class DifferentElementsPage {
     private SelenideElement colorsDropdown;
 
     @FindBy(css = ".logs")
-    private ElementsCollection logsPanel;
+    private SelenideElement logsPanel;
 
     public void checkDifferentPageElements() {
         checkboxesList.shouldHaveSize(4);
