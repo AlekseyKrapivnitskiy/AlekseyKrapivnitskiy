@@ -69,7 +69,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
         // TODO Let's try avoid code duplication with the indexPage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu);
         //10.Assert that there is Left Section
-        differentElementsPage.checkLeftSection();
+        indexPage.checkServiceDropdownListInLeftMenu(getServiceDropdownList());
 
         //11.Select checkboxes
         // TODO Why you decide use separate method for each checkbox? -- fixed

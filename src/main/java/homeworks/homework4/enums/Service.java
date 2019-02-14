@@ -10,7 +10,8 @@ public enum Service {
     COMPLEX_TABLE("Complex Table"),
     SIMPLE_TABLE("Simple Table"),
     TABLES_WITH_PAGE("Tables With Pages"),
-    DIFFERENT_ELEMENTS("Different Elements");
+    DIFFERENT_ELEMENTS("Different Elements"),
+    PERFORMANCE("Performance");
 
     public String text;
 
