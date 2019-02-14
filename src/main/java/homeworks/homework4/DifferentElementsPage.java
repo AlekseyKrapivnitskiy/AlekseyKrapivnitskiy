@@ -28,15 +28,6 @@ public class DifferentElementsPage {
     @FindBy(css = "#mCSB_1")
     private SelenideElement leftSection;
 
-    @FindBy(css = ".label-checkbox > input[type=checkbox]")
-    private ElementsCollection waterCheckbox;
-
-    @FindBy(css = ".label-checkbox:nth-child(3) > input[type=checkbox]")
-    private SelenideElement windCheckbox;
-
-    @FindBy(css = ".label-radio:nth-child(4)")
-    private SelenideElement selenRadio;
-
     @FindBy(css = "select.uui-form-element")
     private SelenideElement colorsDropdown;
 
@@ -58,22 +49,17 @@ public class DifferentElementsPage {
         leftSection.isDisplayed();
     }
 
-    public void clickOnWaterCheckbox(Integer indexOfCheckbox) {
-        // TODO Hardcoded values
-        waterCheckbox.get(indexOfCheckbox).click();
-    }
-
-    public void clickOnWindCheckbox() {
-        // TODO Hardcoded values
-        windCheckbox.click();
+    public void clickOnCheckbox(int indexOfCheckbox) {
+        // TODO Hardcoded values -- fixed
+        checkboxesList.get(indexOfCheckbox).click();
     }
 
     public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status) {
         logsPanel.shouldHave(Condition.text(checkbox.label + ": condition changed to " + status));
     }
 
-    public void selectSelenRadio() {
-        selenRadio.click();
+    public void clickOnRadioButton(int indexOfRadioButton) {
+        radioButtonsList.get(indexOfRadioButton).click();
     }
 
     public void checkRadiosLogs(RadioButtons radioButton) {
@@ -81,10 +67,10 @@ public class DifferentElementsPage {
         logsPanel.shouldHave(Condition.text("metal: value changed to " + radioButton));
     }
 
-    public void selectYellowInDropdown() {
+    public void selectOptionInDropdown(int indexOfOption) {
         colorsDropdown.click();
-        // TODO Hardcoded values
-        colorsDropdown.selectOption("Yellow");
+        // TODO Hardcoded values -- fixed
+        colorsDropdown.selectOption(3);
     }
 
     public void checkDropdownLogs(Colors colors) {

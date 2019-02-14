@@ -65,23 +65,23 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
         //11.Select checkboxes
         // TODO Why you decide use separate method for each checkbox?
-        differentElementsPage.clickOnWaterCheckbox(2);
+        differentElementsPage.clickOnCheckbox(0);
         differentElementsPage.checkCheckboxesLogs(WATER, true);
-        differentElementsPage.clickOnWindCheckbox();
+        differentElementsPage.clickOnCheckbox(2);
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
         differentElementsPage.checkCheckboxesLogs(WIND, true);
 
         //13.Select radio
         // TODO Why you decide use separate method for each radio?
-        differentElementsPage.selectSelenRadio();
+        differentElementsPage.clickOnRadioButton(3);
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
         differentElementsPage.checkRadiosLogs(SELEN);
 
         //15.Select in dropdown
         // TODO Why you decide use separate method for each dropdown value?
-        differentElementsPage.selectYellowInDropdown();
+        differentElementsPage.selectOptionInDropdown(3);
 
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
         differentElementsPage.checkDropdownLogs(YELLOW);
@@ -89,9 +89,9 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         //17.Unselect and assert checkboxes
         // TODO Why you decide use separate method for each checkbox?
 
-        differentElementsPage.clickOnWaterCheckbox(2);
+        differentElementsPage.clickOnCheckbox(0);
         differentElementsPage.checkCheckboxesLogs(WATER, false);
-        differentElementsPage.clickOnWindCheckbox();
+        differentElementsPage.clickOnCheckbox(2);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
         differentElementsPage.checkCheckboxesLogs(WIND, false);
