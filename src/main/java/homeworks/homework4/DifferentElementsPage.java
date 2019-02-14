@@ -24,9 +24,6 @@ public class DifferentElementsPage extends Navigation {
     @FindBy(css = "p")
     private ElementsCollection buttonsList;
 
-    @FindBy(css = "#mCSB_1")
-    private SelenideElement leftSection;
-
     @FindBy(css = "select.uui-form-element")
     private SelenideElement colorsDropdown;
 
@@ -38,12 +35,6 @@ public class DifferentElementsPage extends Navigation {
         radioButtonsList.shouldHaveSize(4);
         dropdownList.shouldHaveSize(1);
         buttonsList.shouldHaveSize(2);
-    }
-
-
-
-    public void checkLeftSection() {
-        leftSection.isDisplayed();
     }
 
     public void clickOnCheckbox(Checkboxes checkboxes) {
