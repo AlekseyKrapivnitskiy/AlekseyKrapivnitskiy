@@ -54,7 +54,7 @@ public class Homework3 extends SeleniumBase {
 
         //6.Assert that there are 4 items on the header section are displayed and they have proper texts
         // TODO Is it possible get list of values from the enum? -- fixed
-        indexPage.checkHeaderItems(listOfHeaderItems());
+        indexPage.checkHeaderItems(getHeaderItemsList());
 
         //7.Assert that there are 4 images on the Index Page and they are displayed
         indexPage.checkBenefitIcons();
