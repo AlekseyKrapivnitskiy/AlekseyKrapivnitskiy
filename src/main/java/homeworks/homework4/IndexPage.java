@@ -1,6 +1,5 @@
 package homeworks.homework4;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.IndexPageData;
 import homeworks.homework4.enums.Users;
@@ -26,10 +25,6 @@ public class IndexPage extends Navigation {
 
     @FindBy(css = "#user-name")
     private SelenideElement usernameLabel;
-
-    public void open(IndexPageData indexPageData) {
-        Selenide.open(indexPageData.url);
-    }
 
     public void checkTitle(IndexPageData indexPageData) {
         // TODO Why you use this method? What was the concern with the getTitle()? -- fixed

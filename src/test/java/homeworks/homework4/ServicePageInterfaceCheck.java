@@ -5,8 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.close;
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 import static homeworks.homework4.enums.Checkboxes.*;
 import static homeworks.homework4.enums.Colors.YELLOW;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
@@ -23,16 +22,12 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        // TODO What is the purpose of current creation page instances?
-        indexPage = new IndexPage();
-        differentElementsPage = new DifferentElementsPage();
-
+        // TODO What is the purpose of current creation page instances? -- fixed
         //1.Open test site by URL
-        indexPage.open(INDEX_PAGE_DATA);
+        open(INDEX_PAGE_DATA.url);
 
-        // TODO What is the purpose of current creation page instances?
-        page(indexPage);
-        page(differentElementsPage);
+        indexPage = page(IndexPage.class);
+        differentElementsPage = page(DifferentElementsPage.class);
     }
 
     @AfterMethod
