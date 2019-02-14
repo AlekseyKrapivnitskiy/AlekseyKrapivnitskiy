@@ -74,7 +74,7 @@ public class DatesPageSlidersCheck extends SelenideBase {
         datesPage.moveSlider(RIGHT, 100);
 
         //11.Assert that for "From" and "To" sliders there are logs rows with corresponding values
-        datesPage.checkLogs("from", 100);
+        datesPage.checkLogs("to", 100);
         datesPage.checkLogs("to", 100);
 
         //12.Using drag-and-drop set Range sliders.
