@@ -60,13 +60,7 @@ public class Homework3 extends SeleniumBase {
         indexPage.checkBenefitIcons();
 
         //8.Assert that there are 4 texts on the Index Page under icons and they have proper text
-        List<String> benefitTexts = new ArrayList<>();
-        benefitTexts.add(PRACTISE.text);
-        benefitTexts.add(CUSTOMIZE.text);
-        benefitTexts.add(MULTIPLATFORM.text);
-        benefitTexts.add(BASE.text);
-
-        indexPage.checkBenefitTexts(benefitTexts);
+        indexPage.checkBenefitTexts(getBenefitTextsList());
 
         //9.Assert a text of the main headers
         indexPage.checkMainHeaderTitle(TITLE);

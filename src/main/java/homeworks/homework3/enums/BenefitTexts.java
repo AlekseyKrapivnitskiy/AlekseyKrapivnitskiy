@@ -1,6 +1,9 @@
 package homeworks.homework3.enums;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum BenefitTexts {
 
     PRACTISE("To include good practices\n" + "and ideas from successful\n" + "EPAM project"),
@@ -12,5 +15,14 @@ public enum BenefitTexts {
 
     BenefitTexts(String  text) {
         this.text = text;
+    }
+
+    public static List<String> getBenefitTextsList() {
+        List<String> listOfBenefitTexts = new ArrayList<>();
+
+        for (BenefitTexts benefitTexts : BenefitTexts.values()) {
+            listOfBenefitTexts.add(benefitTexts.text);
+        }
+        return listOfBenefitTexts;
     }
 }
