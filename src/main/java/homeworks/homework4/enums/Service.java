@@ -5,10 +5,11 @@ import java.util.List;
 
 public enum Service {
 
-    SUPPORT(1, "Support"),
-    DATES(2, "Dates"),
-    COMPLEX_TABLE(3,"Complex Table"),
-    SIMPLE_TABLE(4,"Simple Table"),
+    SUPPORT(0, "Support"),
+    DATES(1, "Dates"),
+    COMPLEX_TABLE(2,"Complex Table"),
+    SIMPLE_TABLE(3,"Simple Table"),
+    USER_TABLE(4,"User Table"),
     TABLES_WITH_PAGE(5,"Tables With Pages"),
     DIFFERENT_ELEMENTS(6,"Different Elements"),
     PERFORMANCE(7,"Performance");
