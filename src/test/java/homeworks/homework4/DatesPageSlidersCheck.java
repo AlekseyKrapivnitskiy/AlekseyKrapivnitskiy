@@ -9,6 +9,8 @@ import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.page;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.Service.DATES;
+import static homeworks.homework4.enums.Sliders.LEFT;
+import static homeworks.homework4.enums.Sliders.RIGHT;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
 public class DatesPageSlidersCheck extends SelenideBase {
@@ -52,35 +54,35 @@ public class DatesPageSlidersCheck extends SelenideBase {
         datesPage.selectPageInServiceDropdown(DATES);
 
         //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most right position
-        datesPage.moveLeftSlider(0);
-        datesPage.checkLogs("from", 0);
-        datesPage.moveRightSlider(100);
+        datesPage.moveSlider(LEFT, 0);
+        datesPage.moveSlider(RIGHT, 100);
 
         //7.Assert that for "From" and "To" sliders there are logs rows with corresponding values
+        datesPage.checkLogs("from", 0);
         datesPage.checkLogs("to", 100);
 
         //8.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most left position
-        datesPage.moveLeftSlider(0);
-        datesPage.checkLogs("from", 0);
-        datesPage.moveRightSlider(0);
+        datesPage.moveSlider(LEFT, 0);
+        datesPage.moveSlider(RIGHT, 0);
 
         //9.Assert that for "From" and "To" sliders there are logs rows with corresponding values
+        datesPage.checkLogs("from", 0);
         datesPage.checkLogs("to", 0);
 
         //10.Using drag-and-drop set Range sliders. left sliders - the most right position, right slider - the most right position
-        datesPage.moveRightSlider(100);
-        datesPage.checkLogs("to", 100);
-        datesPage.moveLeftSlider(100);
+        datesPage.moveSlider(LEFT, 100);
+        datesPage.moveSlider(RIGHT, 100);
 
         //11.Assert that for "From" and "To" sliders there are logs rows with corresponding values
         datesPage.checkLogs("from", 100);
+        datesPage.checkLogs("to", 100);
 
         //12.Using drag-and-drop set Range sliders.
-        datesPage.moveLeftSlider(30);
-        datesPage.checkLogs("to", 100);
-        datesPage.moveRightSlider(70);
+        datesPage.moveSlider(LEFT, 30);
+        datesPage.moveSlider(RIGHT, 70);
 
         //13.Assert that for "From" and "To" sliders there are logs rows with corresponding values
         datesPage.checkLogs("to", 70);
+        datesPage.checkLogs("to", 100);
     }
 }

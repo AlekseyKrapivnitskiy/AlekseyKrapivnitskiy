@@ -1,7 +1,9 @@
 package homeworks.homework4;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import homeworks.homework4.enums.Sliders;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
@@ -9,11 +11,8 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class DatesPage extends Navigation {
 
-    @FindBy(css = "a.ui-slider-handle:nth-child(1)")
-    private SelenideElement leftSlider;
-
-    @FindBy(css = "a.ui-slider-handle:nth-child(3)")
-    private SelenideElement rightSlider;
+    @FindBy(css = "a.ui-slider-handle")
+    private ElementsCollection slider;
 
     @FindBy(css = ".uui-slider")
     public SelenideElement sliderLine;
@@ -23,14 +22,9 @@ public class DatesPage extends Navigation {
 
     private Actions actions = new Actions(getWebDriver());
 
-    public void moveLeftSlider(Integer value) {
+    public void moveSlider(Sliders sliders, int value) {
         // TODO Please try to avoid code duplication
-        actions.clickAndHold(leftSlider).moveToElement(sliderLine,  ((sliderLine.getSize().width) * (value)/100 ),
-                0).release().build().perform();
-    }
-
-    public void moveRightSlider(Integer value) {
-        actions.clickAndHold(rightSlider).moveToElement(sliderLine, ((sliderLine.getSize().width) * (value)/100 ),
+        actions.clickAndHold(slider.get(sliders.index)).moveToElement(sliderLine,  ((sliderLine.getSize().width) * (value)/100 ),
                 0).release().build().perform();
     }
 
