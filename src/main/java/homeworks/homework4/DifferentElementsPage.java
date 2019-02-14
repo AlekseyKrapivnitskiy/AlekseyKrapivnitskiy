@@ -20,7 +20,7 @@ public class DifferentElementsPage {
     private ElementsCollection dropdownList;
 
     @FindBy(css = "p")
-    private ElementsCollection buttonesList;
+    private ElementsCollection buttonsList;
 
     @FindBy(css = ".right-fix-panel")
     private SelenideElement rightSection;
@@ -28,8 +28,8 @@ public class DifferentElementsPage {
     @FindBy(css = "#mCSB_1")
     private SelenideElement leftSection;
 
-    @FindBy(css = ".label-checkbox:nth-child(1) > input[type=checkbox]")
-    private SelenideElement waterCheckbox;
+    @FindBy(css = ".label-checkbox > input[type=checkbox]")
+    private ElementsCollection waterCheckbox;
 
     @FindBy(css = ".label-checkbox:nth-child(3) > input[type=checkbox]")
     private SelenideElement windCheckbox;
@@ -47,7 +47,7 @@ public class DifferentElementsPage {
         checkboxesList.shouldHaveSize(4);
         radioButtonsList.shouldHaveSize(4);
         dropdownList.shouldHaveSize(1);
-        buttonesList.shouldHaveSize(2);
+        buttonsList.shouldHaveSize(2);
     }
 
     public void checkRightSection() {
@@ -58,9 +58,9 @@ public class DifferentElementsPage {
         leftSection.isDisplayed();
     }
 
-    public void clickOnWaterCheckbox() {
+    public void clickOnWaterCheckbox(Integer indexOfCheckbox) {
         // TODO Hardcoded values
-        waterCheckbox.click();
+        waterCheckbox.get(indexOfCheckbox).click();
     }
 
     public void clickOnWindCheckbox() {

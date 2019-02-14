@@ -1,5 +1,8 @@
 package homeworks.homework4.enums;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum Service {
 
     SUPPORT("Support"),
@@ -13,5 +16,14 @@ public enum Service {
 
     Service(String text) {
         this.text = text;
+    }
+
+    public static List<String> getServiceDopdownList() {
+        List<String> listServiceDropdownTexts = new ArrayList<>();
+
+        for (Service service : Service.values()) {
+            listServiceDropdownTexts.add(service.text);
+        }
+        return listServiceDropdownTexts;
     }
 }
