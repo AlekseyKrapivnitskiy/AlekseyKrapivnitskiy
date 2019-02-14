@@ -1,9 +1,11 @@
 package homeworks.homework4;
 
 import base.lessons.lesson4.SelenideBase;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.page;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
@@ -26,6 +28,11 @@ public class DatesPageSlidersCheck extends SelenideBase {
 
         page(indexPage);
         page(datesPage);
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        close();
     }
 
     @Test

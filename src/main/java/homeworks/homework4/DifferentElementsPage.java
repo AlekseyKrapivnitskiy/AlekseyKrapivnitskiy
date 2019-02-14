@@ -4,6 +4,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.Checkboxes;
 import homeworks.homework4.enums.Colors;
+import homeworks.homework4.enums.LogsTexts;
 import homeworks.homework4.enums.RadioButtons;
 import org.openqa.selenium.support.FindBy;
 
@@ -55,17 +56,8 @@ public class DifferentElementsPage {
         checkboxesList.get(indexOfCheckbox).click();
     }
 
-    public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status) {
-        logsPanel.shouldHave(text(checkbox.label + ": condition changed to " + status));
-    }
-
     public void clickOnRadioButton(int indexOfRadioButton) {
         radioButtonsList.get(indexOfRadioButton).click();
-    }
-
-    public void checkRadiosLogs(RadioButtons radioButton) {
-        // TODO Hardcoded values
-        logsPanel.shouldHave(text("metal: value changed to " + radioButton));
     }
 
     public void selectOptionInDropdown(int indexOfOption) {
@@ -74,8 +66,17 @@ public class DifferentElementsPage {
         colorsDropdown.selectOption(indexOfOption);
     }
 
-    public void checkDropdownLogs(Colors colors) {
-        // TODO Hardcoded values
-        logsPanel.shouldHave(text("Colors: value changed to " + colors.label));
+    public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status, LogsTexts logsTexts) {
+        logsPanel.shouldHave(text(checkbox.label + logsTexts.text + status));
+    }
+
+    public void checkRadiosLogs(RadioButtons radioButton, LogsTexts logsTexts) {
+        // TODO Hardcoded values -- fixed
+        logsPanel.shouldHave(text(logsTexts.text + radioButton));
+    }
+
+    public void checkDropdownLogs(Colors colors, LogsTexts logsTexts) {
+        // TODO Hardcoded values -- fixed
+        logsPanel.shouldHave(text(logsTexts.text + colors.label));
     }
 }
