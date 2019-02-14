@@ -104,6 +104,6 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.checkCheckboxesLogs(WATER, false, CHECKBOX_LOG);
         differentElementsPage.checkCheckboxesLogs(WIND, false, CHECKBOX_LOG);
 
-        // TODO Where is closing of the browser? -- fixed in @afterMethod
+        // TODO Where is closing of the browser? -- fixed, please check in @afterMethod
     }
 }
