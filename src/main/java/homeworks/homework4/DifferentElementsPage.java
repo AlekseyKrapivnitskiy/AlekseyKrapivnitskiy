@@ -51,19 +51,19 @@ public class DifferentElementsPage {
         leftSection.isDisplayed();
     }
 
-    public void clickOnCheckbox(int indexOfCheckbox) {
+    public void clickOnCheckbox(Checkboxes checkboxes) {
         // TODO Hardcoded values -- fixed
-        checkboxesList.get(indexOfCheckbox).click();
+        checkboxesList.get(checkboxes.index).click();
     }
 
-    public void clickOnRadioButton(int indexOfRadioButton) {
-        radioButtonsList.get(indexOfRadioButton).click();
+    public void clickOnRadioButton(RadioButtons radioButtons) {
+        radioButtonsList.get(radioButtons.index).click();
     }
 
-    public void selectOptionInDropdown(int indexOfOption) {
+    public void selectOptionInDropdown(Colors colors) {
         colorsDropdown.click();
         // TODO Hardcoded values -- fixed
-        colorsDropdown.selectOption(indexOfOption);
+        colorsDropdown.selectOption(colors.index);
     }
 
     public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status, LogsMessages logsMessages) {

@@ -69,12 +69,12 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
         // TODO Let's try avoid code duplication with the indexPage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu);
         //10.Assert that there is Left Section
-        indexPage.checkServiceDropdownListInLeftMenu(getServiceDropdownList());
+        differentElementsPage.checkLeftSection();
 
         //11.Select checkboxes
         // TODO Why you decide use separate method for each checkbox? -- fixed
-        differentElementsPage.clickOnCheckbox(0);
-        differentElementsPage.clickOnCheckbox(2);
+        differentElementsPage.clickOnCheckbox(WATER);
+        differentElementsPage.clickOnCheckbox(WIND);
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
         differentElementsPage.checkCheckboxesLogs(WATER, true, CHECKBOX_LOG);
@@ -82,14 +82,14 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
         //13.Select radio
         // TODO Why you decide use separate method for each radio? -- fixed
-        differentElementsPage.clickOnRadioButton(3);
+        differentElementsPage.clickOnRadioButton(SELEN);
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
         differentElementsPage.checkRadiosLogs(SELEN, RADIOBUTTON_LOG);
 
         //15.Select in dropdown
         // TODO Why you decide use separate method for each dropdown value? -- fixed
-        differentElementsPage.selectOptionInDropdown(3);
+        differentElementsPage.selectOptionInDropdown(YELLOW);
 
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
         differentElementsPage.checkDropdownLogs(YELLOW, DROPDOWN_LOG);
@@ -97,8 +97,8 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         //17.Unselect and assert checkboxes
         // TODO Why you decide use separate method for each checkbox? -- fixed
 
-        differentElementsPage.clickOnCheckbox(0);
-        differentElementsPage.clickOnCheckbox(2);
+        differentElementsPage.clickOnCheckbox(WATER);
+        differentElementsPage.clickOnCheckbox(WIND);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
         differentElementsPage.checkCheckboxesLogs(WATER, false, CHECKBOX_LOG);

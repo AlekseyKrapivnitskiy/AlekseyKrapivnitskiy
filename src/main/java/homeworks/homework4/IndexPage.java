@@ -38,7 +38,7 @@ public class IndexPage {
     @FindBy(css = ".menu-title")
     private SelenideElement serviceDropdownInLeftMenu;
 
-    @FindBy(css = "sub > li")
+    @FindBy(css = "menu-title > a")
     private List<SelenideElement> serviceDropdownItemsInLeftMenu;
 
     @FindBy(css = ".dropdown-menu > li:nth-child(7)")
