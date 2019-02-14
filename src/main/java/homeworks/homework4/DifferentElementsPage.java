@@ -4,7 +4,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.Checkboxes;
 import homeworks.homework4.enums.Colors;
-import homeworks.homework4.enums.LogsTexts;
+import homeworks.homework4.enums.LogsMessages;
 import homeworks.homework4.enums.RadioButtons;
 import org.openqa.selenium.support.FindBy;
 
@@ -66,17 +66,17 @@ public class DifferentElementsPage {
         colorsDropdown.selectOption(indexOfOption);
     }
 
-    public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status, LogsTexts logsTexts) {
-        logsPanel.shouldHave(text(checkbox.label + logsTexts.text + status));
+    public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status, LogsMessages logsMessages) {
+        logsPanel.shouldHave(text(checkbox.label + logsMessages.text + status));
     }
 
-    public void checkRadiosLogs(RadioButtons radioButton, LogsTexts logsTexts) {
+    public void checkRadiosLogs(RadioButtons radioButton, LogsMessages logsMessages) {
         // TODO Hardcoded values -- fixed
-        logsPanel.shouldHave(text(logsTexts.text + radioButton));
+        logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }
 
-    public void checkDropdownLogs(Colors colors, LogsTexts logsTexts) {
+    public void checkDropdownLogs(Colors colors, LogsMessages logsMessages) {
         // TODO Hardcoded values -- fixed
-        logsPanel.shouldHave(text(logsTexts.text + colors.label));
+        logsPanel.shouldHave(text(logsMessages.text + colors.label));
     }
 }

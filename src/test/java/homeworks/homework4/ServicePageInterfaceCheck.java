@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.page;
 import static homeworks.homework4.enums.Checkboxes.*;
 import static homeworks.homework4.enums.Colors.YELLOW;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
-import static homeworks.homework4.enums.LogsTexts.*;
+import static homeworks.homework4.enums.LogsMessages.*;
 import static homeworks.homework4.enums.RadioButtons.SELEN;
 import static homeworks.homework4.enums.Service.getServiceDropdownList;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
@@ -77,8 +77,8 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.clickOnCheckbox(2);
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLogs(WATER, true, CHECBOX_LOG);
-        differentElementsPage.checkCheckboxesLogs(WIND, true, CHECBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WATER, true, CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WIND, true, CHECKBOX_LOG);
 
         //13.Select radio
         // TODO Why you decide use separate method for each radio? -- fixed
@@ -101,8 +101,8 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.clickOnCheckbox(2);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLogs(WATER, false, CHECBOX_LOG);
-        differentElementsPage.checkCheckboxesLogs(WIND, false, CHECBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WATER, false, CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WIND, false, CHECKBOX_LOG);
 
         // TODO Where is closing of the browser? -- fixed in @afterMethod
     }
