@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static org.testng.Assert.assertEquals;
 
 public class IndexPage {
 
@@ -23,9 +25,6 @@ public class IndexPage {
 
     @FindBy(css = "#login-button")
     private SelenideElement submitButton;
-
-    @FindBy(css = "title")
-    private SelenideElement pageTitle;
 
     @FindBy(css = "#user-name")
     private SelenideElement usernameLabel;
@@ -53,8 +52,8 @@ public class IndexPage {
     }
 
     public void checkTitle(IndexPageData indexPageData) {
-        // TODO Why you use this method? What was the concern with the getTitle()?
-        pageTitle.shouldHave(attribute("text", indexPageData.title));
+        // TODO Why you use this method? What was the concern with the getTitle()? -- fixed
+        assertEquals(getWebDriver().getTitle(), indexPageData.title);
     }
 
     public void login(Users users) {
