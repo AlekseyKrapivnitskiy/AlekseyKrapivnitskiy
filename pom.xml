@@ -8,6 +8,10 @@
     <artifactId>automation-winter-2019</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <aspectj.version>1.8.10</aspectj.version>
+    </properties>
+
  <dependencies>
 
      <dependency>
@@ -31,7 +35,7 @@
      <dependency>
          <groupId>io.qameta.allure</groupId>
          <artifactId>allure-testng</artifactId>
-         <version>RELEASE</version>
+         <version>LATEST</version>
          <scope>test</scope>
      </dependency>
 
@@ -80,10 +84,8 @@
 
         </plugins>
 
-    </build>
 
-    <properties>
-        <aspectj.version>1.8.10</aspectj.version>
-    </properties>
+
+    </build>
 
 </project>
