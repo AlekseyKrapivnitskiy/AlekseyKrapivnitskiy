@@ -4,8 +4,8 @@ import base.homeworks.homework4.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework5.enums.IndexPageData;
 import homeworks.homework5.enums.Users;
-import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
