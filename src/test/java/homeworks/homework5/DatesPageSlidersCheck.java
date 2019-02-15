@@ -6,6 +6,7 @@ import homeworks.homework4.IndexPage;
 import io.qameta.allure.Step;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -15,6 +16,7 @@ import static homeworks.homework4.enums.Sliders.LEFT;
 import static homeworks.homework4.enums.Sliders.RIGHT;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
 
+@Listeners(Listener.class)
 public class DatesPageSlidersCheck extends SelenideBase {
 
     private IndexPage indexPage;
