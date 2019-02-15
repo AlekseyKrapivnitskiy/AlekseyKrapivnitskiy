@@ -41,6 +41,12 @@
             <version>RELEASE</version>
         </dependency>
 
+     <dependency>
+         <groupId>io.qameta.allure</groupId>
+         <artifactId>allure-selenide</artifactId>
+         <version>RELEASE</version>
+     </dependency>
+
     </dependencies>
 
     <build>
