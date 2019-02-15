@@ -1,12 +1,13 @@
 package homeworks.homework5;
 
-import base.homeworks.homework4.BasePage;
+import base.homeworks.homework5.BasePage;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework5.enums.Checkboxes;
 import homeworks.homework5.enums.Colors;
 import homeworks.homework5.enums.LogsMessages;
 import homeworks.homework5.enums.RadioButtons;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
@@ -31,6 +32,7 @@ public class DifferentElementsPage extends BasePage {
     @FindBy(css = ".logs")
     private SelenideElement logsPanel;
 
+    @Step()
     public void checkDifferentPageElements() {
         checkboxesList.shouldHaveSize(4);
         radioButtonsList.shouldHaveSize(4);

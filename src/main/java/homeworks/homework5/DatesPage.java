@@ -1,6 +1,6 @@
 package homeworks.homework5;
 
-import base.homeworks.homework4.BasePage;
+import base.homeworks.homework5.BasePage;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework5.enums.Sliders;
