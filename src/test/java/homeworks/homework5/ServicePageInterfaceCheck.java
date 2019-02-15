@@ -23,7 +23,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
     private IndexPage indexPage;
     private DifferentElementsPage differentElementsPage;
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod
     @Step("1.Open test site by URL")
     public void beforeMethod() {
         open(INDEX_PAGE_DATA.url);

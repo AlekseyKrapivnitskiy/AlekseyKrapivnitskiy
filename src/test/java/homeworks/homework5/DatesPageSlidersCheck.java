@@ -20,7 +20,7 @@ public class DatesPageSlidersCheck extends SelenideBase {
     private IndexPage indexPage;
     private DatesPage datesPage;
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod
     @Step("1.Open test site by URL")
     public void beforeMethod() {
         open(INDEX_PAGE_DATA.url);
