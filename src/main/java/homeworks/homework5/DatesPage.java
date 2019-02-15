@@ -24,7 +24,6 @@ public class DatesPage extends BasePage {
     private Actions actions = new Actions(getWebDriver());
 
     public void moveSlider(Sliders sliders, int value) {
-        // TODO Please try to avoid code duplication -- fixed
         actions.clickAndHold(slider.get(sliders.index)).moveToElement(sliderLine,  ((sliderLine.getSize().width) * (value)/100 ),
                 0).release().build().perform();
     }
