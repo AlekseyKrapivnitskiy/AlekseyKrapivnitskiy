@@ -3,6 +3,7 @@ package homeworks.homework5;
 import base.lessons.lesson4.SelenideBase;
 import homeworks.homework4.DifferentElementsPage;
 import homeworks.homework4.IndexPage;
+import io.qameta.allure.Step;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,6 +24,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
     private DifferentElementsPage differentElementsPage;
 
     @BeforeMethod
+    @Step("1.Open test site by URL")
     public void beforeMethod() {
         open(INDEX_PAGE_DATA.url);
         indexPage = page(IndexPage.class);
