@@ -32,7 +32,7 @@ public class DifferentElementsPage extends BasePage {
     @FindBy(css = ".logs")
     private SelenideElement logsPanel;
 
-    @Step()
+    @Step("8.Check interface on Different elements page, it contains all needed elements")
     public void checkDifferentPageElements() {
         checkboxesList.shouldHaveSize(4);
         radioButtonsList.shouldHaveSize(4);
@@ -40,30 +40,36 @@ public class DifferentElementsPage extends BasePage {
         buttonsList.shouldHaveSize(2);
     }
 
+    @Step("11.Select checkboxes: {checkboxes}")
     public void clickOnCheckbox(Checkboxes checkboxes) {
         // TODO Hardcoded values -- fixed
         checkboxesList.get(checkboxes.index).click();
     }
 
+    @Step("13.Select radio: {radioButtons}")
     public void clickOnRadioButton(RadioButtons radioButtons) {
         radioButtonsList.get(radioButtons.index).click();
     }
 
+    @Step("15.Select in dropdown: {colors}")
     public void selectOptionInDropdown(Colors colors) {
         colorsDropdown.click();
         // TODO Hardcoded values -- fixed
         colorsDropdown.selectOption(colors.index);
     }
 
+    @Step("12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox")
     public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status, LogsMessages logsMessages) {
         logsPanel.shouldHave(text(checkbox.label + logsMessages.text + status));
     }
 
+    @Step("14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton")
     public void checkRadiosLogs(RadioButtons radioButton, LogsMessages logsMessages) {
         // TODO Hardcoded values -- fixed
         logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }
 
+    @Step("16.Assert that for dropdown there is a log row and value is corresponded to the selected value")
     public void checkDropdownLogs(Colors colors, LogsMessages logsMessages) {
         // TODO Hardcoded values -- fixed
         logsPanel.shouldHave(text(logsMessages.text + colors.label));
