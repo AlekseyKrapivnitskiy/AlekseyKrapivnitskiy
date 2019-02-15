@@ -21,7 +21,6 @@ public class DatesPageSlidersCheck extends SelenideBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        // TODO What is the purpose of current creation page instances? -- fixed
         open(INDEX_PAGE_DATA.url);
         indexPage = page(IndexPage.class);
         datesPage = page(DatesPage.class);
@@ -44,7 +43,6 @@ public class DatesPageSlidersCheck extends SelenideBase {
         indexPage.checkUsername(PITER_CHAILOVSKII);
 
         //5.Open through the header menu Service -> Dates Page
-        // TODO Please parametrize current method -- fixed
         datesPage.selectPageInServiceDropdown(DATES);
 
         //6.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most right position

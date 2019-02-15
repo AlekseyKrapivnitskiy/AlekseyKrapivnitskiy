@@ -25,7 +25,6 @@ public class ServicePageInterfaceCheck extends SelenideBase {
 
     @BeforeMethod
     public void beforeMethod() {
-        // TODO What is the purpose of current creation page instances? -- fixed
         open(INDEX_PAGE_DATA.url);
         indexPage = page(IndexPage.class);
         differentElementsPage = page(DifferentElementsPage.class);
@@ -48,7 +47,6 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkUsername(PITER_CHAILOVSKII);
 
         //5.Click on "Service" subcategory in the header and check that drop down contains options
-        // TODO Is it possible get this list of values from the enum? -- fixed
         indexPage.clickOnServiceDropdownInHeader();
         indexPage.checkServiceDropdownListInHeader(getServiceDropdownList());
 
@@ -57,7 +55,6 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.checkServiceDropdownListInLeftMenu(getServiceDropdownList());
 
         //7.Open through the header menu Service -> Different Elements Page
-        // TODO Please parametrize current method -- fixed
         indexPage.selectPageInServiceDropdown(DIFFERENT_ELEMENTS);
 
         //8.Check interface on Different elements page, it contains all needed elements
@@ -66,12 +63,10 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         //9.Assert that there is Right Section
         differentElementsPage.checkRightSection();
 
-        // TODO Let's try avoid code duplication with the indexPage.checkServiceDropdownListInLeftMenu(serviceDropdownInLeftMenu); -- fixed
         //10.Assert that there is Left Section
         indexPage.checkServiceDropdownListInLeftMenu(getServiceDropdownList());
 
         //11.Select checkboxes
-        // TODO Why you decide use separate method for each checkbox? -- fixed
         differentElementsPage.clickOnCheckbox(WATER);
         differentElementsPage.clickOnCheckbox(WIND);
 
@@ -80,28 +75,23 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.checkCheckboxesLogs(WIND, true, CHECKBOX_LOG);
 
         //13.Select radio
-        // TODO Why you decide use separate method for each radio? -- fixed
         differentElementsPage.clickOnRadioButton(SELEN);
 
         //14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton
         differentElementsPage.checkRadiosLogs(SELEN, RADIOBUTTON_LOG);
 
         //15.Select in dropdown
-        // TODO Why you decide use separate method for each dropdown value? -- fixed
         differentElementsPage.selectOptionInDropdown(YELLOW);
 
         //16.Assert that for dropdown there is a log row and value is corresponded to the selected value
         differentElementsPage.checkDropdownLogs(YELLOW, DROPDOWN_LOG);
 
         //17.Unselect and assert checkboxes
-        // TODO Why you decide use separate method for each checkbox? -- fixed
         differentElementsPage.clickOnCheckbox(WATER);
         differentElementsPage.clickOnCheckbox(WIND);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLogs(WATER, false, CHECKBOX_LOG);
-        differentElementsPage.checkCheckboxesLogs(WIND, false, CHECKBOX_LOG);
-
-        // TODO Where is closing of the browser? -- fixed, please check in @afterMethod
+        differentElementsPage.checkCheckboxesLogs(WATER, true, CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WIND, true, CHECKBOX_LOG);
     }
 }
