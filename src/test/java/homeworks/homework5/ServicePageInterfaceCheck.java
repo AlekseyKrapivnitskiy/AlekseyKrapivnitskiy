@@ -34,7 +34,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         close();
     }
 
-    @Test(testName = "Service Page Interface Check")
+    @Test
     public void servicePageInterfaceTest() {
         //2.Assert Browser title
         indexPage.checkTitle(INDEX_PAGE_DATA);

@@ -33,7 +33,7 @@ public class DatesPageSlidersCheck extends SelenideBase {
         close();
     }
 
-    @Test(testName = "Dates Page Sliders Check")
+    @Test
     public void datesPageSlidersTest() {
         //2.Assert Browser title
         indexPage.checkTitle(INDEX_PAGE_DATA);
