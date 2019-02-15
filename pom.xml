@@ -35,7 +35,7 @@
      <dependency>
          <groupId>ru.yandex.qatools.allure</groupId>
          <artifactId>allure-testng-adaptor</artifactId>
-         <version>LATEST</version>
+         <version>1.5.4</version>
      </dependency>
 
  </dependencies>
