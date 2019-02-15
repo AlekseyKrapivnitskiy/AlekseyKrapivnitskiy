@@ -50,31 +50,31 @@ public class DatesPageSlidersCheck extends SelenideBase {
         datesPage.moveSlider(RIGHT, 100);
 
         //7.Assert that for "From" and "To" sliders there are logs rows with corresponding values
-        datesPage.checkLogs("from", 0);
-        datesPage.checkLogs("to", 100);
+        datesPage.checkSliderLogs("from", 0);
+        datesPage.checkSliderLogs("to", 100);
 
         //8.Using drag-and-drop set Range sliders. left sliders - the most left position, right slider - the most left position
         datesPage.moveSlider(LEFT, 0);
         datesPage.moveSlider(RIGHT, 0);
 
         //9.Assert that for "From" and "To" sliders there are logs rows with corresponding values
-        datesPage.checkLogs("from", 0);
-        datesPage.checkLogs("to", 0);
+        datesPage.checkSliderLogs("from", 0);
+        datesPage.checkSliderLogs("to", 0);
 
         //10.Using drag-and-drop set Range sliders. left sliders - the most right position, right slider - the most right position
         datesPage.moveSlider(LEFT, 100);
         datesPage.moveSlider(RIGHT, 100);
 
         //11.Assert that for "From" and "To" sliders there are logs rows with corresponding values
-        datesPage.checkLogs("to", 100);
-        datesPage.checkLogs("to", 100);
+        datesPage.checkSliderLogs("to", 100);
+        datesPage.checkSliderLogs("to", 100);
 
         //12.Using drag-and-drop set Range sliders.
         datesPage.moveSlider(LEFT, 30);
         datesPage.moveSlider(RIGHT, 70);
 
         //13.Assert that for "From" and "To" sliders there are logs rows with corresponding values
-        datesPage.checkLogs("to", 70);
-        datesPage.checkLogs("to", 100);
+        datesPage.checkSliderLogs("to", 70);
+        datesPage.checkSliderLogs("to", 100);
     }
 }

@@ -29,7 +29,7 @@ public class DatesPage extends BasePage {
                 0).release().build().perform();
     }
 
-    public void checkLogs(String direction, Integer value) {
+    public void checkSliderLogs(String direction, Integer value) {
         logsPanel.shouldHave(text("Range 2(" + direction + "):" + value + " link clicked"));
     }
 }
