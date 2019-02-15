@@ -2,10 +2,11 @@
 
 <suite name="Test Suite">
 
-    <test name="Exercise 3" >
+    <test name="Homework 5" >
 
         <classes>
-            <class name="homeworks.homework2.Exercise3" />
+            <class name="homeworks.homework5.DatesPageSlidersCheck" />
+            <class name="homeworks.homework5.DifferentElementsPage" />
         </classes>
 
     </test>
