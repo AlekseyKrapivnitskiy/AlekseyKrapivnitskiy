@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <suiteXmlFile>testng-homework5m.xml</suiteXmlFile>
+        <suiteXmlFile>testng-homework5.xml</suiteXmlFile>
         <allure.version>2.9</allure.version>
         <aspectj.version>1.8.12</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
