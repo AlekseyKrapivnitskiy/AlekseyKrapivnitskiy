@@ -20,9 +20,7 @@ public class DatesPageSlidersCheck extends SelenideBase {
     @BeforeMethod
     public void beforeMethod() {
         // TODO What is the purpose of current creation page instances? -- fixed
-        //1.Open test site by URL
         open(INDEX_PAGE_DATA.url);
-
         indexPage = page(IndexPage.class);
         datesPage = page(DatesPage.class);
     }

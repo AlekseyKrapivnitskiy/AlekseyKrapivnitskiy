@@ -1,5 +1,6 @@
 package homeworks.homework4;
 
+import base.homeworks.homework4.BasePage;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.Checkboxes;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
 
-public class DifferentElementsPage extends Navigation {
+public class DifferentElementsPage extends BasePage {
 
     @FindBy(css = ".label-checkbox")
     private ElementsCollection checkboxesList;

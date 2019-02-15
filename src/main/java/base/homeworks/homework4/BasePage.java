@@ -1,4 +1,4 @@
-package homeworks.homework4;
+package base.homeworks.homework4;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
 
-public abstract class Navigation {
+public abstract class BasePage {
 
     @FindBy(css = ".dropdown")
     private SelenideElement serviceDropdownInHeader;

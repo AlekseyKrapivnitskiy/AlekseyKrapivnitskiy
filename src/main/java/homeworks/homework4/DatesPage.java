@@ -1,5 +1,6 @@
 package homeworks.homework4;
 
+import base.homeworks.homework4.BasePage;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.Sliders;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class DatesPage extends Navigation {
+public class DatesPage extends BasePage {
 
     @FindBy(css = "a.ui-slider-handle")
     private ElementsCollection slider;

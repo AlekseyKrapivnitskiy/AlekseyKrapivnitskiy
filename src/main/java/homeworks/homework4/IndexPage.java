@@ -1,5 +1,6 @@
 package homeworks.homework4;
 
+import base.homeworks.homework4.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.IndexPageData;
 import homeworks.homework4.enums.Users;
@@ -9,7 +10,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.testng.Assert.assertEquals;
 
-public class IndexPage extends Navigation {
+public class IndexPage extends BasePage {
 
     @FindBy(css = "#user-icon")
     private SelenideElement userIcon;
