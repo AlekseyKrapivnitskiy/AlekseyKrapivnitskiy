@@ -8,8 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static homeworks.homework4.enums.Checkboxes.WATER;
-import static homeworks.homework4.enums.Checkboxes.WIND;
+import static homeworks.homework4.enums.Checkboxes.*;
 import static homeworks.homework4.enums.Colors.YELLOW;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.LogsMessages.*;
@@ -91,7 +90,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.clickOnCheckbox(WIND);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLogs(WATER, true, CHECKBOX_LOG);
-        differentElementsPage.checkCheckboxesLogs(WIND, true, CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(FIRE, false, CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WIND, false, CHECKBOX_LOG);
     }
 }
