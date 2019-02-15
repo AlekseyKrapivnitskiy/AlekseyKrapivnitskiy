@@ -17,7 +17,7 @@ public class DatesPage extends BasePage {
     private ElementsCollection slider;
 
     @FindBy(css = ".uui-slider")
-    public SelenideElement sliderLine;
+    private SelenideElement sliderLine;
 
     @FindBy(css = ".panel-body-list.logs")
     private SelenideElement logsPanel;
