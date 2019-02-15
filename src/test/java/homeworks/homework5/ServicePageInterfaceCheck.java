@@ -49,7 +49,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         indexPage.clickOnServiceDropdownInHeader();
         indexPage.checkServiceDropdownListInHeader(getServiceDropdownList());
 
-        //6.Click on Service subcategory in the left section and check that drop down contains options
+        //6.Click on "Service" subcategory in the left section and check that drop down contains options
         indexPage.clickOnServiceDropdownInLeftMenu();
         indexPage.checkServiceDropdownListInLeftMenu(getServiceDropdownList());
 
