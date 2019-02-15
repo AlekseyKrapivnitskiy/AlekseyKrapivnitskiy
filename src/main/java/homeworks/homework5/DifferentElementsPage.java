@@ -7,6 +7,8 @@ import homeworks.homework5.enums.Checkboxes;
 import homeworks.homework5.enums.Colors;
 import homeworks.homework5.enums.LogsMessages;
 import homeworks.homework5.enums.RadioButtons;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
@@ -33,6 +35,7 @@ public class DifferentElementsPage extends BasePage {
     private SelenideElement logsPanel;
 
     @Step("8.Check interface on Different elements page, it contains all needed elements")
+    @Severity(SeverityLevel.BLOCKER)
     public void checkDifferentPageElements() {
         checkboxesList.shouldHaveSize(4);
         radioButtonsList.shouldHaveSize(4);
