@@ -1,13 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Test Suite">
-
+<suite name="Test Suite" parallel="methods" thread-count="3">
     <test name="Homework 5" >
 
-        <classes>
-            <class name="homeworks.homework5.DatesPageSlidersCheck" />
-            <class name="homeworks.homework5.DifferentElementsPage" />
-        </classes>
+        <packages>
+            <package name="homeworks.homework5"/>
+        </packages>
 
     </test>
 
