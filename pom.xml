@@ -11,7 +11,7 @@
     <properties>
         <suiteXmlFile>testng-homework5.xml</suiteXmlFile>
         <allure.version>2.9</allure.version>
-        <aspectj.version>1.8.12</aspectj.version>
+        <aspectj.version>2.20.1</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -72,7 +72,7 @@
                         <suiteXmlFile>src\test\resources\${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.8.12/aspectjweaver-1.8.12.jar"
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-1.8.12.jar"
                     </argLine>
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
