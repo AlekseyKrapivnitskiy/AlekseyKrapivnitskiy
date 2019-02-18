@@ -30,7 +30,7 @@ public abstract class BasePage {
     @FindBy(css = ".right-fix-panel")
     private SelenideElement rightSection;
 
-    @Step("5.Click on \"Service\" subcategory in the header and check that drop down contains options")
+    @Step("Click on \"Service\" subcategory in the header and check that drop down contains options")
     public void clickOnServiceDropdownInHeader() {
         serviceDropdownInHeader.click();
     }
@@ -45,20 +45,20 @@ public abstract class BasePage {
         serviceDropdownInLeftMenu.click();
     }
 
-    @Step("6.Click on \"Service\" subcategory in the left section and check that drop down contains options")
+    @Step("Click on \"Service\" subcategory in the left section and check that drop down contains options")
     public void checkServiceDropdownListInLeftMenu(List<String> serviceDropdownItems) {
         for (int i = 0; i < serviceDropdownItemsInLeftMenu.size(); i++) {
             serviceDropdownItemsInLeftMenu.get(i).shouldHave(text(serviceDropdownItems.get(i)));
         }
     }
 
-    @Step("7.Open through the header menu Service -> Different Elements Page")
+    @Step("Open through the header menu Service -> {service}")
     public void selectPageInServiceDropdown(Service service) {
         serviceDropdownInHeader.click();
         serviceDropdownItemsInHeader.get(service.index).click();
     }
 
-    @Step("9.Assert that there is Right Section")
+    @Step("Assert that there is Right Section")
     public void checkRightSection() {
         rightSection.isDisplayed();
     }
