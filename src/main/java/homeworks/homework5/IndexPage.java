@@ -6,13 +6,11 @@ import homeworks.homework5.enums.IndexPageData;
 import homeworks.homework5.enums.Users;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.Listeners;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.testng.Assert.assertEquals;
 
-@Listeners(Listener.class)
 public class IndexPage extends BasePage {
 
     @FindBy(css = "#user-icon")
