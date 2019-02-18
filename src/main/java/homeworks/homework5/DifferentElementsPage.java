@@ -34,7 +34,7 @@ public class DifferentElementsPage extends BasePage {
     @FindBy(css = ".logs")
     private SelenideElement logsPanel;
 
-    @Step("8.Check interface on Different elements page, it contains all needed elements")
+    @Step("Check interface on Different elements page, it contains all needed elements")
     @Severity(SeverityLevel.BLOCKER)
     public void checkDifferentPageElements() {
         checkboxesList.shouldHaveSize(4);
