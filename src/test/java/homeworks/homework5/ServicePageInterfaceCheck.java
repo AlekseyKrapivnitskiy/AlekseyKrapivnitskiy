@@ -26,7 +26,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
     private DifferentElementsPage differentElementsPage;
 
     @BeforeMethod
-    @Step("1.Open test site by URL")
+    @Step("Open test site by URL")
     public void beforeMethod() {
         open(INDEX_PAGE_DATA.url);
         indexPage = page(IndexPage.class);
