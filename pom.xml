@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <suiteXmlFile>testng-homework5.xml</suiteXmlFile>
+        <suiteXmlFile>src\test\resources\testng-homework5.xml</suiteXmlFile>
         <allure.version>2.9</allure.version>
         <aspectj.version>1.8.12</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,7 +54,7 @@
      <dependency>
          <groupId>io.qameta.allure</groupId>
          <artifactId>allure-java-commons</artifactId>
-         <version>2.9.0</version>
+         <version>2.6.0</version>
          <exclusions>
              <exclusion>
                  <groupId>org.slf4j</groupId>
@@ -78,13 +78,12 @@
      <dependency>
          <groupId>org.aspectj</groupId>
          <artifactId>aspectjweaver</artifactId>
-         <version>${aspectj.version}</version>
+         <version>1.8.12</version>
      </dependency>
 
  </dependencies>
 
     <build>
-
         <plugins>
 
             <plugin>
@@ -103,7 +102,7 @@
                 <version>2.20.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\test\resources\${suiteXmlFile}</suiteXmlFile>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
@@ -124,11 +123,14 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>${allure.version}</version>
+                <version>2.9</version>
+                <configuration>
+                    <reportVersion>2.7.0</reportVersion>
+                    <resultsDirectory>target/allure-results</resultsDirectory>
+                </configuration>
             </plugin>
 
         </plugins>
-
     </build>
 
     <reporting>

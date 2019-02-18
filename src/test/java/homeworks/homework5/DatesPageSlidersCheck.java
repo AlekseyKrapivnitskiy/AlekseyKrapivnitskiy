@@ -37,7 +37,6 @@ public class DatesPageSlidersCheck extends SelenideBase {
         close();
     }
 
-
     @Feature("Dates page in Service")
     @Story("Automation tests")
     @Test
