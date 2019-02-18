@@ -43,33 +43,33 @@ public class DifferentElementsPage extends BasePage {
         buttonsList.shouldHaveSize(2);
     }
 
-    @Step("11.Select checkboxes: {checkboxes}")
+    @Step("Select checkbox: {checkboxes}")
     public void clickOnCheckbox(Checkboxes checkboxes) {
         checkboxesList.get(checkboxes.index).click();
     }
 
-    @Step("13.Select radio: {radioButtons}")
+    @Step("Select radio: {radioButtons}")
     public void clickOnRadioButton(RadioButtons radioButtons) {
         radioButtonsList.get(radioButtons.index).click();
     }
 
-    @Step("15.Select in dropdown: {colors}")
+    @Step("Select in dropdown: {colors}")
     public void selectOptionInDropdown(Colors colors) {
         colorsDropdown.click();
         colorsDropdown.selectOption(colors.index);
     }
 
-    @Step("12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox")
+    @Step("Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox")
     public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status, LogsMessages logsMessages) {
         logsPanel.shouldHave(text(checkbox.label + logsMessages.text + status));
     }
 
-    @Step("14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton")
+    @Step("Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton")
     public void checkRadiosLogs(RadioButtons radioButton, LogsMessages logsMessages) {
         logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }
 
-    @Step("16.Assert that for dropdown there is a log row and value is corresponded to the selected value")
+    @Step("Assert that for dropdown there is a log row and value is corresponded to the selected value")
     public void checkDropdownLogs(Colors colors, LogsMessages logsMessages) {
         logsPanel.shouldHave(text(logsMessages.text + colors.label));
     }

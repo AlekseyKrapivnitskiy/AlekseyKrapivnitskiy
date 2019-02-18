@@ -24,13 +24,13 @@ public class DatesPage extends BasePage {
 
     private Actions actions = new Actions(getWebDriver());
 
-    @Step("6.Using drag-and-drop set Range sliders:{sliders} {value}")
+    @Step("Using drag-and-drop set Range sliders:{sliders} {value}")
     public void moveSlider(Sliders sliders, int value) {
         actions.clickAndHold(slider.get(sliders.index)).moveToElement(sliderLine,  ((sliderLine.getSize().width) * (value)/100 ),
                 0).release().build().perform();
     }
 
-    @Step("11.Assert that for \"From\" and \"To\" sliders there are logs rows with corresponding values")
+    @Step("Assert that for \"From\" and \"To\" sliders there are logs rows with corresponding values")
     public void checkSliderLogs(String direction, Integer value) {
         logsPanel.shouldHave(text("Range 2(" + direction + "):" + value + " link clicked"));
     }

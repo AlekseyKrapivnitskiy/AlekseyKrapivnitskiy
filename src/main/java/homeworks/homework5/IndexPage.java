@@ -28,12 +28,12 @@ public class IndexPage extends BasePage {
     @FindBy(css = "#user-name")
     private SelenideElement usernameLabel;
 
-    @Step("2.Assert Browser title")
+    @Step("Assert Browser title")
     public void checkTitle(IndexPageData indexPageData) {
         assertEquals(getWebDriver().getTitle(), indexPageData.title);
     }
 
-    @Step("3.Perform login")
+    @Step("Perform login")
     public void login(Users users) {
         userIcon.click();
         userField.sendKeys(users.login);
@@ -41,7 +41,7 @@ public class IndexPage extends BasePage {
         submitButton.click();
     }
 
-    @Step("4.Assert User name in the left-top side of screen that user is logged in")
+    @Step("Assert User name in the left-top side of screen that user is logged in")
     public void checkUsername(Users users) {
         usernameLabel.shouldHave(text(users.username));
     }
