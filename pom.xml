@@ -13,7 +13,6 @@
         <suiteXmlFile>src\test\resources\testng-homework5.xml</suiteXmlFile>
         <allure.version>2.9</allure.version>
         <aspectj.version>1.8.10</aspectj.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
  <dependencies>
