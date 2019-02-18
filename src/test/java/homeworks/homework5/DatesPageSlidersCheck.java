@@ -1,8 +1,6 @@
 package homeworks.homework5;
 
 import base.lessons.lesson4.SelenideBase;
-import homeworks.homework4.DatesPage;
-import homeworks.homework4.IndexPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
@@ -12,11 +10,11 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
-import static homeworks.homework4.enums.Service.DATES;
-import static homeworks.homework4.enums.Sliders.LEFT;
-import static homeworks.homework4.enums.Sliders.RIGHT;
-import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
+import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
+import static homeworks.homework5.enums.Service.DATES;
+import static homeworks.homework5.enums.Sliders.LEFT;
+import static homeworks.homework5.enums.Sliders.RIGHT;
+import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 @Listeners(Listener.class)
 public class DatesPageSlidersCheck extends SelenideBase {

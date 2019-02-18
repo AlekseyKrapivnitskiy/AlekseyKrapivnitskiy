@@ -1,8 +1,6 @@
 package homeworks.homework5;
 
 import base.lessons.lesson4.SelenideBase;
-import homeworks.homework4.DifferentElementsPage;
-import homeworks.homework4.IndexPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
@@ -12,14 +10,14 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static homeworks.homework4.enums.Checkboxes.*;
-import static homeworks.homework4.enums.Colors.YELLOW;
-import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
-import static homeworks.homework4.enums.LogsMessages.*;
-import static homeworks.homework4.enums.RadioButtons.SELEN;
-import static homeworks.homework4.enums.Service.DIFFERENT_ELEMENTS;
-import static homeworks.homework4.enums.Service.getServiceDropdownList;
-import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;
+import static homeworks.homework5.enums.Checkboxes.*;
+import static homeworks.homework5.enums.Colors.YELLOW;
+import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
+import static homeworks.homework5.enums.LogsMessages.*;
+import static homeworks.homework5.enums.RadioButtons.SELEN;
+import static homeworks.homework5.enums.Service.DIFFERENT_ELEMENTS;
+import static homeworks.homework5.enums.Service.getServiceDropdownList;
+import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 @Listeners(Listener.class)
 public class ServicePageInterfaceCheck extends SelenideBase {

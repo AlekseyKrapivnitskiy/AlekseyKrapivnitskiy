@@ -2,7 +2,7 @@ package base.homeworks.homework5;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import homeworks.homework4.enums.Service;
+import homeworks.homework5.enums.Service;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
