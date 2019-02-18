@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
         <suiteXmlFile>src\test\resources\testng-homework5.xml</suiteXmlFile>
         <allure.version>2.9</allure.version>
         <aspectj.version>1.8.10</aspectj.version>
@@ -39,46 +40,13 @@
          <groupId>io.qameta.allure</groupId>
          <artifactId>allure-testng</artifactId>
          <version>2.6.0</version>
-         <exclusions>
-             <exclusion>
-                 <groupId>org.testng</groupId>
-                 <artifactId>testng</artifactId>
-             </exclusion>
-             <exclusion>
-                 <groupId>commons-io</groupId>
-                 <artifactId>commons-io</artifactId>
-             </exclusion>
-         </exclusions>
+         <scope>test</scope>
      </dependency>
 
      <dependency>
          <groupId>io.qameta.allure</groupId>
          <artifactId>allure-java-commons</artifactId>
          <version>2.6.0</version>
-         <exclusions>
-             <exclusion>
-                 <groupId>org.slf4j</groupId>
-                 <artifactId>slf4j-api</artifactId>
-             </exclusion>
-             <exclusion>
-                 <groupId>org.apache.commons</groupId>
-                 <artifactId>commons-lang3</artifactId>
-             </exclusion>
-             <exclusion>
-                 <groupId>com.google.guava</groupId>
-                 <artifactId>guava</artifactId>
-             </exclusion>
-             <exclusion>
-                 <artifactId>junit</artifactId>
-                 <groupId>junit</groupId>
-             </exclusion>
-         </exclusions>
-     </dependency>
-
-     <dependency>
-         <groupId>org.aspectj</groupId>
-         <artifactId>aspectjweaver</artifactId>
-         <version>1.8.12</version>
      </dependency>
 
  </dependencies>
@@ -97,9 +65,18 @@
             </plugin>
 
             <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <reportVersion>2.6.0</reportVersion>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
