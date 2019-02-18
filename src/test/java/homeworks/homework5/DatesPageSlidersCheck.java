@@ -3,7 +3,9 @@ package homeworks.homework5;
 import base.lessons.lesson4.SelenideBase;
 import homeworks.homework4.DatesPage;
 import homeworks.homework4.IndexPage;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -35,6 +37,9 @@ public class DatesPageSlidersCheck extends SelenideBase {
         close();
     }
 
+
+    @Feature("Dates page in Service")
+    @Story("Automation tests")
     @Test
     public void datesPageSlidersTest() {
         //2.Assert Browser title
