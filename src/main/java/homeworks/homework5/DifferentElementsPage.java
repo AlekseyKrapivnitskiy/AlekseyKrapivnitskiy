@@ -45,7 +45,6 @@ public class DifferentElementsPage extends BasePage {
 
     @Step("11.Select checkboxes: {checkboxes}")
     public void clickOnCheckbox(Checkboxes checkboxes) {
-        // TODO Hardcoded values -- fixed
         checkboxesList.get(checkboxes.index).click();
     }
 
@@ -57,7 +56,6 @@ public class DifferentElementsPage extends BasePage {
     @Step("15.Select in dropdown: {colors}")
     public void selectOptionInDropdown(Colors colors) {
         colorsDropdown.click();
-        // TODO Hardcoded values -- fixed
         colorsDropdown.selectOption(colors.index);
     }
 
@@ -68,13 +66,11 @@ public class DifferentElementsPage extends BasePage {
 
     @Step("14.Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton")
     public void checkRadiosLogs(RadioButtons radioButton, LogsMessages logsMessages) {
-        // TODO Hardcoded values -- fixed
         logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }
 
     @Step("16.Assert that for dropdown there is a log row and value is corresponded to the selected value")
     public void checkDropdownLogs(Colors colors, LogsMessages logsMessages) {
-        // TODO Hardcoded values -- fixed
         logsPanel.shouldHave(text(logsMessages.text + colors.label));
     }
 }
