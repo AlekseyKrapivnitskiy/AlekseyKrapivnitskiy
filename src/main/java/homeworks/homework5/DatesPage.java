@@ -7,10 +7,12 @@ import homeworks.homework5.enums.Sliders;
 import io.qameta.allure.Step;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Listeners;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
+@Listeners(Listener.class)
 public class DatesPage extends BasePage {
 
     @FindBy(css = "a.ui-slider-handle")

@@ -11,9 +11,11 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Listeners;
 
 import static com.codeborne.selenide.Condition.text;
 
+@Listeners(Listener.class)
 public class DifferentElementsPage extends BasePage {
 
     @FindBy(css = ".label-checkbox")
