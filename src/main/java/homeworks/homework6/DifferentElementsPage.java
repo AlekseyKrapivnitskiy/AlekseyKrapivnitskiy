@@ -39,7 +39,6 @@ public class DifferentElementsPage extends BasePage {
     }
 
     public void clickOnCheckbox(Checkboxes checkboxes) {
-        // TODO Hardcoded values -- fixed
         checkboxesList.get(checkboxes.index).click();
     }
 
@@ -49,7 +48,6 @@ public class DifferentElementsPage extends BasePage {
 
     public void selectOptionInDropdown(Colors colors) {
         colorsDropdown.click();
-        // TODO Hardcoded values -- fixed
         colorsDropdown.selectOption(colors.index);
     }
 
@@ -58,12 +56,10 @@ public class DifferentElementsPage extends BasePage {
     }
 
     public void checkRadiosLogs(RadioButtons radioButton, LogsMessages logsMessages) {
-        // TODO Hardcoded values -- fixed
         logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }
 
     public void checkDropdownLogs(Colors colors, LogsMessages logsMessages) {
-        // TODO Hardcoded values -- fixed
         logsPanel.shouldHave(text(logsMessages.text + colors.label));
     }
 }
