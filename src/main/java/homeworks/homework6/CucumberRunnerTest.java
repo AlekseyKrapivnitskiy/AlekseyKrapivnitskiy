@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.close;
         glue = "src/main/homeworks/homework6"
 )
 
-public class CucumberTestRunner extends AbstractTestNGCucumberTests {
+public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
 
     @BeforeMethod
     public void beforeMethod() {
