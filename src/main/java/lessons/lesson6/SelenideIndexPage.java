@@ -27,7 +27,7 @@ public class SelenideIndexPage {
     @FindBy(css = "#user-name")
     private SelenideElement usernameLabel;
 
-    @When("I login as user 'epam' with password '1234'")
+    @When("^I login as user (\\\\D+) with password (\\\\d+)$")
     public void login(String name, String password) {
         userIcon.click();
         userField.sendKeys(name);
@@ -35,12 +35,12 @@ public class SelenideIndexPage {
         submitButton.click();
     }
 
-    @Given("I open EPAM JDI site")
+    @Given("^I open EPAM JDI site&")
     public void openPage() {
         open("https://epam.github.io/JDI/index.html");
     }
 
-    @Then("User name should be 'PITER CHAILOVSKII'")
+    @Then("^User name should be 'PITER CHAILOVSKII'$")
     public void checkUsername(Users users) {
         usernameLabel.shouldHave(text(users.username));
     }
