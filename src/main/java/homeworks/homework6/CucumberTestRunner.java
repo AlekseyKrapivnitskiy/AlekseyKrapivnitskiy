@@ -15,8 +15,8 @@ import static com.codeborne.selenide.Selenide.close;
 
 public class CucumberTestRunner extends AbstractTestNGCucumberTests {
 
-    @BeforeMethod()
-    public void driverSetUp() {
+    @BeforeMethod
+    public void beforeMethod() {
         Configuration.startMaximized = true;
     }
 
