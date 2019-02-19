@@ -2,6 +2,7 @@ package base.homeworks.homework6;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import homeworks.homework6.enums.IndexPageData;
 import homeworks.homework6.enums.Service;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.open;
 
 public abstract class BasePage {
 
@@ -29,6 +31,10 @@ public abstract class BasePage {
 
     @FindBy(css = ".right-fix-panel")
     private SelenideElement rightSection;
+
+    public void openPage(IndexPageData indexPageData) {
+        open(indexPageData.url);
+    }
 
     public void clickOnServiceDropdownInHeader() {
         serviceDropdownInHeader.click();
