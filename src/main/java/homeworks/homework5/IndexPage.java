@@ -58,6 +58,10 @@ public class IndexPage extends BasePage {
         assertEquals(getWebDriver().getTitle(), indexPageData.title);
     }
 
+    public void checkTitleOfAnyPage(String title) {
+        assertEquals(getWebDriver().getTitle(), title);
+    }
+
     public void loginAs(String login, String password) {
         userIcon.click();
         userField.sendKeys(login);

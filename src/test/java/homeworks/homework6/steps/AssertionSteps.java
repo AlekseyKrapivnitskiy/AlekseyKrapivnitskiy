@@ -2,21 +2,21 @@ package homeworks.homework6.steps;
 
 import com.fasterxml.jackson.databind.node.BooleanNode;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
+import homeworks.homework5.enums.UserTablePage;
 
 import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
 import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework5.enums.Checkboxes.*;
-import static homeworks.homework5.enums.Colors.YELLOW;
 import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework5.enums.LogsMessages.*;
-import static homeworks.homework5.enums.RadioButtons.SELEN;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
@@ -73,5 +73,40 @@ public class AssertionSteps {
     @Then("^Corresponding log appears according to selected option in drop-down list: '([^\"]*)''([^\"]*)'$")
     public void correspondingLogAppearsAccordingToSelectedOptionInDropDownList(String logMessage, String color) {
         new DifferentElementsPage().checkDropdownLogs(getDropdownItem(color), getLogMessage(logMessage));
+    }
+
+    @Then("^'([^\"]*)\' page is opened$")
+    public void pageIsOpened(String title) {
+        new IndexPage().checkTitleOfAnyPage(title);
+    }
+
+    @And("^6 NumberType Dropdowns are displayed on Users Table on User Table Page$")
+    public void numbertypeDropdownsAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfDropdowns();
+    }
+
+    @And("^6 User names are displayed on Users Table on User Table Page$")
+    public void userNamesAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfUsernames();
+    }
+
+    @And("^6 Description images are displayed on Users Table on User Table Page$")
+    public void descriptionImagesAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfUserImages();
+    }
+
+    @And("^6 Description texts under images are displayed on Users Table on User Table Page$")
+    public void descriptionTextsUnderImagesAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfUserDescriptions();
+    }
+
+    @And("^6 checkboxes are displayed on Users Table on User Table Page$")
+    public void checkboxesAreDisplayedOnUsersTableOnUserTablePage() {
+        new UserTablePage().checkAmountOfCheckboxes();
+    }
+
+    @Then("^1 log row has '([^\"]*)''([^\"]*)' text in log section$")
+    public void logRowHasTextInLogSection(String logMessage, String status)  {
+        new UserTablePage().checkLogs(getLogMessage(logMessage), status);
     }
 }
