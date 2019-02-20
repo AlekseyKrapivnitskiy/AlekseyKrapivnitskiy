@@ -3,14 +3,9 @@ package homeworks.homework6.steps;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import homeworks.homework3.enums.HeaderItems;
 import homeworks.homework5.IndexPage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
-import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
@@ -23,7 +18,7 @@ public class AssertionSteps {
         new IndexPage().checkTitle(INDEX_PAGE_DATA);
     }
 
-    @Then("^User name is 'PITER CHAILOVSKII'$")
+    @Then("^User name is \"PITER CHAILOVSKII\"$")
     public void userNameIsPITERCHAILOVSKII() {
         new IndexPage().checkUsername(PITER_CHAILOVSKII);
     }
