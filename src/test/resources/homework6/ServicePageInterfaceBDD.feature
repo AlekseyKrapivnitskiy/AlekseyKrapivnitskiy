@@ -29,4 +29,11 @@ Feature: Service Page Interface BDD
     When I open "Different Elements" page through "Service" drop-down list in header
     Then Page contains left section
     And Page contains right section
-    When I select checkboxes "Water" and "Wind"
+    When I click on checkboxes "Water" and "Wind"
+    Then Corresponding log appears according to selected checkboxes:
+    When I select "Selen" radiobutton
+    Then Corresponding log appears according to selected radiobutton
+    When I select "Yellow" in drop-down list
+    Then Corresponding log appears according to selected option in drop-down list
+    When I click on checkboxes "Water" and "Wind"
+    Then Corresponding log appears according to selected checkboxes:

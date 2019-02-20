@@ -5,6 +5,8 @@ import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
 
 import static homeworks.homework5.enums.Checkboxes.WATER;
+import static homeworks.homework5.enums.Colors.YELLOW;
+import static homeworks.homework5.enums.RadioButtons.SELEN;
 import static homeworks.homework5.enums.Service.DIFFERENT_ELEMENTS;
 import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
@@ -30,9 +32,19 @@ public class ActionSteps {
         new IndexPage().selectPageInServiceDropdown(DIFFERENT_ELEMENTS);
     }
 
-    @When("^I select checkboxes \"Water\" and \"Wind\"$")
+    @When("^I click on checkboxes \"Water\" and \"Wind\"$")
     public void iSelectCheckboxesAnd() {
         new DifferentElementsPage().clickOnCheckbox(WATER);
         new DifferentElementsPage().clickOnCheckbox(WATER);
+    }
+
+    @When("^I select \"Selen\" radiobutton$")
+    public void iSelectRadiobutton() {
+        new DifferentElementsPage().clickOnRadioButton(SELEN);
+    }
+
+    @When("^I select \"Yellow\" in drop-down list$")
+    public void iSelectInDropDownList() {
+        new DifferentElementsPage().selectOptionInDropdown(YELLOW);
     }
 }

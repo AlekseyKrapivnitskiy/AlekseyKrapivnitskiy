@@ -10,7 +10,13 @@ import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
 import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
+import static homeworks.homework5.enums.Checkboxes.WATER;
+import static homeworks.homework5.enums.Checkboxes.WIND;
+import static homeworks.homework5.enums.Colors.YELLOW;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
+import static homeworks.homework5.enums.LogsMessages.CHECKBOX_LOG;
+import static homeworks.homework5.enums.LogsMessages.RADIOBUTTON_LOG;
+import static homeworks.homework5.enums.RadioButtons.SELEN;
 import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class AssertionSteps {
@@ -51,5 +57,21 @@ public class AssertionSteps {
     @And("^Page contains right section$")
     public void pageContainsRightSection() {
         new DifferentElementsPage().checkRightSection();
+    }
+
+    @Then("^Corresponding log appears according to selected checkboxes:$")
+    public void correspondingLogAppearsAccordingToSelectedCheckboxes() {
+        new DifferentElementsPage().checkCheckboxesLogs(WATER, true, CHECKBOX_LOG);
+        new DifferentElementsPage().checkCheckboxesLogs(WIND, true, CHECKBOX_LOG);
+    }
+
+    @Then("^Corresponding log appears according to selected radiobutton$")
+    public void correspondingLogAppearsAccordingToSelectedRadiobutton() {
+        new DifferentElementsPage().checkRadiosLogs(SELEN, RADIOBUTTON_LOG);
+    }
+
+    @Then("^Corresponding log appears according to selected option in drop-down list$")
+    public void correspondingLogAppearsAccordingToSelectedOptionInDropDownList() {
+        new DifferentElementsPage().checkDropdownLogs(YELLOW, RADIOBUTTON_LOG);
     }
 }
