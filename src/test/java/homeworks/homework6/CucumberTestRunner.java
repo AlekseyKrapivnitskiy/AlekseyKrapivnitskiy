@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.close;
 
 @CucumberOptions(features = "classpath:homework6", glue = "classpath:homeworks.homework6.steps")
 
-public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
+public class CucumberTestRunner extends AbstractTestNGCucumberTests {
 
     @BeforeMethod
     public void beforeMethod() {
