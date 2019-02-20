@@ -1,8 +1,13 @@
 package homeworks.homework6.steps;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import homeworks.homework3.enums.HeaderItems;
 import homeworks.homework5.IndexPage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
 import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
@@ -32,12 +37,12 @@ public class AssertionSteps {
     }
 
     @Then("^Service drop-down list in header contains options:$")
-    public void serviceDropDownListContainsOptions() {
-        new IndexPage().checkServiceDropdownListInHeader(getHeaderItemsList());
+    public void serviceDropDownListContainsOptions(DataTable headerItems) {
+        new IndexPage().checkServiceDropdownListInHeader(headerItems.asList(String.class));
     }
 
     @Then("^Service drop-down list in left menu contains options:$")
-    public void serviceDropDownListInLeftMenuContainsOptions() {
-        new IndexPage().checkServiceDropdownListInLeftMenu(getHeaderItemsList());
+    public void serviceDropDownListInLeftMenuContainsOptions(DataTable leftmenuItems) {
+        new IndexPage().checkServiceDropdownListInLeftMenu(leftmenuItems.asList(String.class));
     }
 }

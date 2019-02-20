@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.page;
 
 public abstract class BasePage {
 
@@ -29,6 +30,10 @@ public abstract class BasePage {
 
     @FindBy(css = ".right-fix-panel")
     private SelenideElement rightSection;
+
+    public BasePage() {
+        page(this);
+    }
 
     @Step("Click on \"Service\" subcategory in the header and check that drop down contains options")
     public void clickOnServiceDropdownInHeader() {

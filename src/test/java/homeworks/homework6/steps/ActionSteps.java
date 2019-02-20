@@ -16,7 +16,7 @@ public class ActionSteps {
         new IndexPage().clickOnServiceDropdownInHeader();
     }
 
-    @When("^I click on \"([^\"]*)\" subcategory in the left menu$")
+    @When("^I click on \"Service\" subcategory in the left menu$")
     public void iClickOnSubcategoryInTheLeftMenu() {
         new IndexPage().clickOnServiceDropdownInLeftMenu();
     }
