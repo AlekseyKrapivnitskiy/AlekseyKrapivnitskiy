@@ -6,7 +6,7 @@ import homeworks.homework5.enums.Users;
 
 public class ActionSteps {
 
-    @When("^I login as user '([^\"]*)' with password '([^\"]*)'$")
+    @When("^I login as user epam with password 1234$")
     public void iLoginAs() {
         new IndexPage().login(Users.PITER_CHAILOVSKII);
     }

@@ -13,6 +13,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.page;
 
 public class DifferentElementsPage extends BasePage {
 
@@ -33,6 +34,10 @@ public class DifferentElementsPage extends BasePage {
 
     @FindBy(css = ".logs")
     private SelenideElement logsPanel;
+
+    public DifferentElementsPage() {
+        page(this);
+    }
 
     @Step("Check interface on Different elements page, it contains all needed elements")
     @Severity(SeverityLevel.BLOCKER)

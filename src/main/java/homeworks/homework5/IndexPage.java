@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -47,6 +48,10 @@ public class IndexPage extends BasePage {
 
     @FindBy(css = ".main-txt.text-center")
     private WebElement mainHeaderText;
+
+    public IndexPage() {
+        page(this);
+    }
 
     @Step("Assert Browser title")
     public void checkTitle(IndexPageData indexPageData) {
