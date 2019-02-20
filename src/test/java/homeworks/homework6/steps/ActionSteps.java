@@ -1,5 +1,6 @@
 package homeworks.homework6.steps;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
@@ -12,12 +13,17 @@ import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class ActionSteps {
 
-    @When("^I login as user epam with password 1234$")
-    public void iLoginAs() {
+    @When("^I login as user '([^\"]*)' with password '([^\"]*)'$")
+    public void iLoginAs(String login, String password) {
+        new IndexPage().loginAs(login, password);
+    }
+
+    @And("^I login as user \"Piter Chailovskii\"$")
+    public void iLoginAsPiterChailovskii() {
         new IndexPage().login(PITER_CHAILOVSKII);
     }
 
-    @When("^I click on \"Service\" subcategory in the header$")
+    @When("^I click on \"Service\" button in Header$")
     public void iClickOnSubcategoryInTheHeader() {
         new IndexPage().clickOnServiceDropdownInHeader();
     }
