@@ -3,23 +3,24 @@ package homeworks.homework5.enums;
 import base.homeworks.homework5.BasePage;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import cucumber.api.DataTable;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Map;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.page;
-import static homeworks.homework5.enums.LogsMessages.VIP_CHECKBOX_LOG;
 
 public class UserTablePage extends BasePage {
 
     @FindBy(css = "select")
     private ElementsCollection dropdown;
 
-    @FindBy(css = "td a")
+    @FindBy(css = "td > a")
     private ElementsCollection usernames;
 
-    @FindBy(css = "td img")
+    @FindBy(css = "td > img")
     private ElementsCollection userImages;
 
     @FindBy(css = ".user-descr")
@@ -58,12 +59,21 @@ public class UserTablePage extends BasePage {
         checkboxes.shouldHaveSize(6);
     }
 
+    public void checkUsersTable(DataTable userTable) {
+        List<Map<String, String>> list = userTable.asMaps(String.class, String.class);
+
+        for (Map<String, String> options : list) {
+            usernames.findBy(text(options.get("User"))).shouldHave(text(options.get("User")));
+            userDescriptions.findBy(text(options.get("Description"))).shouldHave(text(options.get("Description")));
+        }
+    }
+
     public void selectCheckbox(UsersInTable usersInTable) {
         checkboxes.get(usersInTable.index).click();
     }
 
     public void checkLogs(LogsMessages logsMessages, String status) {
-        logsPanel.shouldHave(text(VIP_CHECKBOX_LOG.text + status));
+        logsPanel.shouldHave(text(logsMessages.text + status));
     }
 
     public void openDropdownList(UsersInTable usersInTable) {

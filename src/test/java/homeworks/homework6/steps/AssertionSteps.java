@@ -9,6 +9,10 @@ import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
 import homeworks.homework5.enums.UserTablePage;
 
+import java.util.List;
+import java.util.Map;
+
+import static com.codeborne.selenide.Condition.text;
 import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
 import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
@@ -104,6 +108,11 @@ public class AssertionSteps {
     @And("^6 checkboxes are displayed on Users Table on User Table Page$")
     public void checkboxesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfCheckboxes();
+    }
+
+    @And("^User table contains following values:$")
+    public void userTableContainsFollowingValues(DataTable usersTable) {
+        new UserTablePage().checkUsersTable(usersTable);
     }
 
     @Then("^1 log row has '([^\"]*)''([^\"]*)' text in log section$")
