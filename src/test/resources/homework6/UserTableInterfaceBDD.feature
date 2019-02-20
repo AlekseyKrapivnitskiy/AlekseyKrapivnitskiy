@@ -23,7 +23,7 @@ Feature: User Table Page Interface BDD
     When I select 'vip' checkbox for 'Sergey Ivan'
     Then 1 log row has 'Vip: condition changed to ''true' text in log section
 
-    When I click on dropdown in column Type for user Roman
+    When I click on dropdown in column Type for user 'Roman'
     Then droplist contains values
       | Admin   |
       | User    |

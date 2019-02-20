@@ -18,6 +18,7 @@ import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework5.enums.LogsMessages.*;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
+import static homeworks.homework5.enums.UserRoles.getUserRoles;
 import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class AssertionSteps {
@@ -108,5 +109,10 @@ public class AssertionSteps {
     @Then("^1 log row has '([^\"]*)''([^\"]*)' text in log section$")
     public void logRowHasTextInLogSection(String logMessage, String status)  {
         new UserTablePage().checkLogs(getLogMessage(logMessage), status);
+    }
+
+    @Then("^droplist contains values$")
+    public void droplistContainsValues(DataTable userRolesList) {
+        new UserTablePage().checkUserRolesInDropdown(getUserRoles());
     }
 }

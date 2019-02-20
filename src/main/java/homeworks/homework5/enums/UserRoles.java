@@ -17,7 +17,7 @@ public enum UserRoles {
         this.label = label;
     }
 
-    public static List<String> getUsersRoles() {
+    public static List<String> getUserRoles() {
         List<String> listOfUsersRoles = new ArrayList<>();
 
         for (UserRoles userRoles : UserRoles.values()) {

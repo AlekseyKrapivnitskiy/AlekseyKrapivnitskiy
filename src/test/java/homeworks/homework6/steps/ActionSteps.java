@@ -60,4 +60,9 @@ public class ActionSteps {
     public void iSelectVipCheckboxForSergeyIvan(String user) {
         new UserTablePage().selectCheckbox(UsersInTable.getUser(user));
     }
+
+    @When("^I click on dropdown in column Type for user '([^\"]*)'$")
+    public void iClickOnDropdownInColumnTypeForUserRoman(String user) {
+        new UserTablePage().openDropdownList(UsersInTable.getUser(user));
+    }
 }
