@@ -113,6 +113,6 @@ public class AssertionSteps {
 
     @Then("^droplist contains values$")
     public void droplistContainsValues(DataTable userRolesList) {
-        new UserTablePage().checkUserRolesInDropdown(getUserRoles());
+        new UserTablePage().checkUserRolesInDropdown(userRolesList.asList(String.class));
     }
 }
