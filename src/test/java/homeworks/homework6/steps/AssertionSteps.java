@@ -3,9 +3,11 @@ package homeworks.homework6.steps;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
 
 import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
+import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
@@ -39,5 +41,15 @@ public class AssertionSteps {
     @Then("^Service drop-down list in left menu contains options:$")
     public void serviceDropDownListInLeftMenuContainsOptions(DataTable leftmenuItems) {
         new IndexPage().checkServiceDropdownListInLeftMenu(leftmenuItems.asList(String.class));
+    }
+
+    @Then("^Page contains left section$")
+    public void pageContainsLeftSection() {
+        new homeworks.homework5.DifferentElementsPage().checkServiceDropdownListInLeftMenu(getHeaderItemsList());
+    }
+
+    @And("^Page contains right section$")
+    public void pageContainsRightSection() {
+        new DifferentElementsPage().checkRightSection();
     }
 }
