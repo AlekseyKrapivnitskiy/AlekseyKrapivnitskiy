@@ -7,6 +7,7 @@ Feature: Service Page Interface BDD
     Then User name is "PITER CHAILOVSKII"
     And Page contains all needed elements
     When I click on "Service" subcategory in the header
+
     Then Service drop-down list in header contains options:
       |Support|
       |Dates|
@@ -16,6 +17,7 @@ Feature: Service Page Interface BDD
       |Table with pages|
       |Different Elements|
       |Performance|
+
     When I click on "Service" subcategory in the left menu
     Then Service drop-down list in left menu contains options:
       |Support|
@@ -26,6 +28,7 @@ Feature: Service Page Interface BDD
       |Table with pages|
       |Different Elements|
       |Performance|
+
     When I open "Different Elements" page through "Service" drop-down list in header
     Then Page contains left section
     And Page contains right section
