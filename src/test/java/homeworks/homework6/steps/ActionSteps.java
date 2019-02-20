@@ -33,7 +33,7 @@ public class ActionSteps {
         new IndexPage().clickOnServiceDropdownInLeftMenu();
     }
 
-    @When("^I open (.+) page through \"Service\" drop-down list in header$")
+    @When("^I open '([^\"]*)' page through \"Service\" drop-down list in header$")
     public void iOpenPageThroughDropDownListInHeader(String item) {
         new IndexPage().selectPageInServiceDropdown(getServiceDropdownItem(item));
     }

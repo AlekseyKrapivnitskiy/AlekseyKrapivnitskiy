@@ -29,7 +29,7 @@ Feature: Service Page Interface BDD
       |Different Elements|
       |Performance|
 
-    When I open Different Elements page through "Service" drop-down list in header
+    When I open 'Different Elements' page through "Service" drop-down list in header
     Then Page contains left section
     And Page contains right section
     When I click on checkboxes "Water" and "Wind"
