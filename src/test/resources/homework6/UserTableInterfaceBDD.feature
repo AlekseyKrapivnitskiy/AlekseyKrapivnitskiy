@@ -1,4 +1,4 @@
-Feature:
+Feature: User Table Page Interface BDD
 
   Scenario: User Table Page test
     Given I am on "Home Page"
