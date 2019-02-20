@@ -17,9 +17,9 @@ public enum Service {
     public int index;
     public String label;
 
-    Service(int index, String text) {
+    Service(int index, String label) {
         this.index = index;
-        this.label = text;
+        this.label = label;
     }
 
     public static List<String> getServiceDropdownList() {
@@ -29,5 +29,14 @@ public enum Service {
             listServiceDropdownTexts.add(service.label);
         }
         return listServiceDropdownTexts;
+    }
+
+    public static Service getServiceDropdownItem(String itemName) {
+        for (Service item : Service.values()) {
+            if (item.label.equals(itemName)) {
+                return item;
+            }
+        }
+        return null;
     }
 }

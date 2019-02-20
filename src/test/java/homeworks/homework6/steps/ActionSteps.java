@@ -8,7 +8,7 @@ import homeworks.homework5.IndexPage;
 import static homeworks.homework5.enums.Checkboxes.WATER;
 import static homeworks.homework5.enums.Colors.YELLOW;
 import static homeworks.homework5.enums.RadioButtons.SELEN;
-import static homeworks.homework5.enums.Service.DIFFERENT_ELEMENTS;
+import static homeworks.homework5.enums.Service.getServiceDropdownItem;
 import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class ActionSteps {
@@ -33,9 +33,9 @@ public class ActionSteps {
         new IndexPage().clickOnServiceDropdownInLeftMenu();
     }
 
-    @When("^I open \"Different Elements\" page through \"Service\" drop-down list in header$")
-    public void iOpenPageThroughDropDownListInHeader() {
-        new IndexPage().selectPageInServiceDropdown(DIFFERENT_ELEMENTS);
+    @When("^I open (.+) page through \"Service\" drop-down list in header$")
+    public void iOpenPageThroughDropDownListInHeader(String item) {
+        new IndexPage().selectPageInServiceDropdown(getServiceDropdownItem(item));
     }
 
     @When("^I click on checkboxes \"Water\" and \"Wind\"$")
