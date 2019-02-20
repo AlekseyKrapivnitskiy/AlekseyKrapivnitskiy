@@ -5,6 +5,7 @@ import cucumber.api.java.en.Then;
 import homeworks.homework5.IndexPage;
 
 import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
+import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
@@ -28,5 +29,15 @@ public class AssertionSteps {
         new IndexPage().checkBenefitTexts(getBenefitTextsList());
         new IndexPage().checkMainHeaderTitle(TITLE);
         new IndexPage().checkMainHeaderText(MAIN_TEXT);
+    }
+
+    @Then("^Service drop-down list in header contains options:$")
+    public void serviceDropDownListContainsOptions() {
+        new IndexPage().checkServiceDropdownListInHeader(getHeaderItemsList());
+    }
+
+    @Then("^Service drop-down list in left menu contains options:$")
+    public void serviceDropDownListInLeftMenuContainsOptions() {
+        new IndexPage().checkServiceDropdownListInLeftMenu(getHeaderItemsList());
     }
 }

@@ -10,4 +10,14 @@ public class ActionSteps {
     public void iLoginAs() {
         new IndexPage().login(Users.PITER_CHAILOVSKII);
     }
+
+    @When("^I click on \"Service\" subcategory in the header$")
+    public void iClickOnSubcategoryInTheHeader() {
+        new IndexPage().clickOnServiceDropdownInHeader();
+    }
+
+    @When("^I click on \"([^\"]*)\" subcategory in the left menu$")
+    public void iClickOnSubcategoryInTheLeftMenu() {
+        new IndexPage().clickOnServiceDropdownInLeftMenu();
+    }
 }
