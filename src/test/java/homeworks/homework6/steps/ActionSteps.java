@@ -8,6 +8,7 @@ import homeworks.homework5.IndexPage;
 import static homeworks.homework5.enums.Checkboxes.WATER;
 import static homeworks.homework5.enums.Checkboxes.getCheckbox;
 import static homeworks.homework5.enums.Colors.YELLOW;
+import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.RadioButtons.SELEN;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 import static homeworks.homework5.enums.Service.getServiceDropdownItem;
@@ -50,8 +51,8 @@ public class ActionSteps {
         new DifferentElementsPage().clickOnRadioButton(getRadiobutton(radiobuttonName));
     }
 
-    @When("^I select \"Yellow\" in drop-down list$")
-    public void iSelectInDropDownList() {
-        new DifferentElementsPage().selectOptionInDropdown(YELLOW);
+    @When("^I select '([^\"]*)' in drop-down list$")
+    public void iSelectInDropDownList(String color) {
+        new DifferentElementsPage().selectOptionInDropdown(getDropdownItem(color));
     }
 }

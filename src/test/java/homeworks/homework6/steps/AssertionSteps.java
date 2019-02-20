@@ -13,6 +13,7 @@ import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework5.enums.Checkboxes.*;
 import static homeworks.homework5.enums.Colors.YELLOW;
+import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework5.enums.LogsMessages.*;
 import static homeworks.homework5.enums.RadioButtons.SELEN;
@@ -69,8 +70,8 @@ public class AssertionSteps {
         new DifferentElementsPage().checkRadiosLogs(getRadiobutton(radiobutton), getLogMessage(logMessage));
     }
 
-    @Then("^Corresponding log appears according to selected option in drop-down list$")
-    public void correspondingLogAppearsAccordingToSelectedOptionInDropDownList() {
-        new DifferentElementsPage().checkDropdownLogs(YELLOW, RADIOBUTTON_LOG);
+    @Then("^Corresponding log appears according to selected option in drop-down list: '([^\"]*)''([^\"]*)'$")
+    public void correspondingLogAppearsAccordingToSelectedOptionInDropDownList(String logMessage, String color) {
+        new DifferentElementsPage().checkDropdownLogs(getDropdownItem(color), getLogMessage(logMessage));
     }
 }

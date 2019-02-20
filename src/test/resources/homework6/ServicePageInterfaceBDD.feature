@@ -38,7 +38,9 @@ Feature: Service Page Interface BDD
     Then Corresponding log appears according to selected checkbox: 'Wind'': condition changed to ''true'
     When I select 'Selen' radiobutton
     Then Corresponding log appears according to selected radiobutton: 'metal: value changed to ''Selen'
-    When I select "Yellow" in drop-down list
-    Then Corresponding log appears according to selected option in drop-down list
-    When I click on checkboxes "Water" and "Wind"
-    Then Corresponding log appears according to selected checkboxes:
+    When I select 'Yellow' in drop-down list
+    Then Corresponding log appears according to selected option in drop-down list: 'Colors: value changed to ''Yellow'
+    When I click on checkbox: 'Water'
+    Then Corresponding log appears according to selected checkbox: 'Water'': condition changed to ''false'
+    When I click on checkbox: 'Wind'
+    Then Corresponding log appears according to selected checkbox: 'Wind'': condition changed to ''false'

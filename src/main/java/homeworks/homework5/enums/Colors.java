@@ -14,4 +14,13 @@ public enum Colors {
         this.index = index;
         this.label = label;
     }
+
+    public static Colors getDropdownItem(String itemName) {
+        for (Colors color : Colors.values()) {
+            if (color.label.equals(itemName)) {
+                return color;
+            }
+        }
+        return null;
+    }
 }
