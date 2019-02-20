@@ -76,8 +76,8 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.clickOnCheckbox(WIND);
 
         //12.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLogs(WATER, true, CHECKBOX_LOG);
-        differentElementsPage.checkCheckboxesLogs(WIND, true, CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WATER, "true", CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WIND, "true", CHECKBOX_LOG);
 
         //13.Select radio
         differentElementsPage.clickOnRadioButton(SELEN);
@@ -96,7 +96,7 @@ public class ServicePageInterfaceCheck extends SelenideBase {
         differentElementsPage.clickOnCheckbox(WIND);
 
         //18.Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox
-        differentElementsPage.checkCheckboxesLogs(FIRE, false, CHECKBOX_LOG);
-        differentElementsPage.checkCheckboxesLogs(WIND, false, CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(FIRE, "false", CHECKBOX_LOG);
+        differentElementsPage.checkCheckboxesLogs(WIND, "false", CHECKBOX_LOG);
     }
 }

@@ -65,7 +65,7 @@ public class DifferentElementsPage extends BasePage {
     }
 
     @Step("Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox")
-    public void checkCheckboxesLogs(Checkboxes checkbox, Boolean status, LogsMessages logsMessages) {
+    public void checkCheckboxesLogs(Checkboxes checkbox, String status, LogsMessages logsMessages) {
         logsPanel.shouldHave(text(checkbox.label + logsMessages.text + status));
     }
 

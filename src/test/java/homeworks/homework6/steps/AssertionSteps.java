@@ -1,5 +1,6 @@
 package homeworks.homework6.steps;
 
+import com.fasterxml.jackson.databind.node.BooleanNode;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -10,13 +11,12 @@ import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
 import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
-import static homeworks.homework5.enums.Checkboxes.WATER;
-import static homeworks.homework5.enums.Checkboxes.WIND;
+import static homeworks.homework5.enums.Checkboxes.*;
 import static homeworks.homework5.enums.Colors.YELLOW;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
-import static homeworks.homework5.enums.LogsMessages.CHECKBOX_LOG;
-import static homeworks.homework5.enums.LogsMessages.RADIOBUTTON_LOG;
+import static homeworks.homework5.enums.LogsMessages.*;
 import static homeworks.homework5.enums.RadioButtons.SELEN;
+import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class AssertionSteps {
@@ -59,15 +59,14 @@ public class AssertionSteps {
         new DifferentElementsPage().checkRightSection();
     }
 
-    @Then("^Corresponding log appears according to selected checkboxes:$")
-    public void correspondingLogAppearsAccordingToSelectedCheckboxes() {
-        new DifferentElementsPage().checkCheckboxesLogs(WATER, true, CHECKBOX_LOG);
-        new DifferentElementsPage().checkCheckboxesLogs(WIND, true, CHECKBOX_LOG);
+    @Then("^Corresponding log appears according to selected checkbox: '([^\"]*)''([^\"]*)''([^\"]*)'$")
+    public void correspondingLogAppearsAccordingToSelectedCheckboxes(String checkbox, String logMessage, String status) {
+        new DifferentElementsPage().checkCheckboxesLogs(getCheckbox(checkbox), status, getLogMessage(logMessage));
     }
 
-    @Then("^Corresponding log appears according to selected radiobutton$")
-    public void correspondingLogAppearsAccordingToSelectedRadiobutton() {
-        new DifferentElementsPage().checkRadiosLogs(SELEN, RADIOBUTTON_LOG);
+    @Then("^Corresponding log appears according to selected radiobutton: '([^\"]*)''([^\"]*)'$")
+    public void correspondingLogAppearsAccordingToSelectedRadiobutton(String logMessage, String radiobutton) {
+        new DifferentElementsPage().checkRadiosLogs(getRadiobutton(radiobutton), getLogMessage(logMessage));
     }
 
     @Then("^Corresponding log appears according to selected option in drop-down list$")

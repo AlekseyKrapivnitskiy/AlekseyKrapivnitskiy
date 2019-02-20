@@ -14,4 +14,13 @@ public enum Checkboxes {
         this.index = index;
         this.label = label;
     }
+
+    public static Checkboxes getCheckbox(String checkbox) {
+        for (Checkboxes checkboxItem : Checkboxes.values()) {
+            if (checkboxItem.label.equals(checkbox)) {
+                return checkboxItem;
+            }
+        }
+        return null;
+    }
 }

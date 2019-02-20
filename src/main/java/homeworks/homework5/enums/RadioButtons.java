@@ -14,4 +14,13 @@ public enum  RadioButtons {
         this.index = index;
         this.label = label;
     }
+
+    public static RadioButtons getRadiobutton(String radioButtonName) {
+        for (RadioButtons radiobutton : RadioButtons.values()) {
+            if (radiobutton.label.equals(radioButtonName)) {
+                return radiobutton;
+            }
+        }
+        return null;
+    }
 }

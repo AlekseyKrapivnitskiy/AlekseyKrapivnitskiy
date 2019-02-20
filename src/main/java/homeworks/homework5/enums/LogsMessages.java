@@ -11,4 +11,13 @@ public enum LogsMessages {
     LogsMessages(String text) {
         this.text = text;
     }
+
+    public static LogsMessages getLogMessage(String log) {
+        for (LogsMessages logMessage : LogsMessages.values()) {
+            if (logMessage.text.equals(log)) {
+                return logMessage;
+            }
+        }
+        return null;
+    }
 }
