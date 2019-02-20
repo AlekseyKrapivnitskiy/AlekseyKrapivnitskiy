@@ -17,10 +17,10 @@ public class UserTablePage extends BasePage {
     @FindBy(css = "select")
     private ElementsCollection dropdown;
 
-    @FindBy(css = "td > a")
+    @FindBy(css = "td  a")
     private ElementsCollection usernames;
 
-    @FindBy(css = "td > img")
+    @FindBy(css = "td  img")
     private ElementsCollection userImages;
 
     @FindBy(css = ".user-descr")
@@ -60,11 +60,11 @@ public class UserTablePage extends BasePage {
     }
 
     public void checkUsersTable(DataTable userTable) {
-        List<Map<String, String>> list = userTable.asMaps(String.class, String.class);
+        List<Map<String, String>> table = userTable.asMaps(String.class, String.class);
 
-        for (Map<String, String> options : list) {
-            usernames.findBy(text(options.get("User"))).shouldHave(text(options.get("User")));
-            userDescriptions.findBy(text(options.get("Description"))).shouldHave(text(options.get("Description")));
+        for (int i = 0; i < table.size(); i++) {
+            usernames.get(i).should(text(table.get(i).get("User")));
+            userDescriptions.get(i).should(text(table.get(i).get("Description")));
         }
     }
 
