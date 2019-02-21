@@ -1,6 +1,5 @@
 package homeworks.homework6.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import homeworks.homework5.DifferentElementsPage;
