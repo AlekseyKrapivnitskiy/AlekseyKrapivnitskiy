@@ -1,8 +1,6 @@
 package homeworks.homework6.steps;
 
-import com.fasterxml.jackson.databind.node.BooleanNode;
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import homeworks.homework5.DifferentElementsPage;
