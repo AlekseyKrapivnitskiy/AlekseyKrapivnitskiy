@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import static com.codeborne.selenide.Selenide.close;
 
 @CucumberOptions(features = "classpath:homework6", glue = "classpath:homeworks.homework6.steps")
-
 public class CucumberTestRunner extends AbstractTestNGCucumberTests {
 
     @BeforeMethod
