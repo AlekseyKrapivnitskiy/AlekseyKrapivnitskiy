@@ -9,10 +9,6 @@ import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
 import homeworks.homework5.enums.UserTablePage;
 
-import java.util.List;
-import java.util.Map;
-
-import static com.codeborne.selenide.Condition.text;
 import static homeworks.homework3.enums.BenefitTexts.getBenefitTextsList;
 import static homeworks.homework3.enums.HeaderItems.getHeaderItemsList;
 import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
@@ -22,7 +18,6 @@ import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework5.enums.LogsMessages.*;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
-import static homeworks.homework5.enums.UserRoles.getUserRoles;
 import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class AssertionSteps {
