@@ -20,16 +20,20 @@ import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class AssertionSteps {
 
+    // TODO Why is it hardcoded?
     @Then("^Browser title is \"Home Page\"$")
     public void browserTitleIs() {
         new IndexPage().checkTitle(INDEX_PAGE_DATA);
     }
 
+    // TODO Why is it hardcoded?
     @Then("^User name is \"PITER CHAILOVSKII\"$")
     public void userNameIsPITERCHAILOVSKII() {
         new IndexPage().checkUsername(PITER_CHAILOVSKII);
     }
 
+    // TODO What does 'And' mean?
+    // TODO Which elements needed?
     @And("^Page contains all needed elements$")
     public void pageContainsAllNeededElements() {
         new IndexPage().checkBenefitIcons();
@@ -58,6 +62,12 @@ public class AssertionSteps {
         new DifferentElementsPage().checkRightSection();
     }
 
+    /* TODO
+        * Corresponding log appears according to selected checkbox:
+        * Corresponding log appears according to selected radiobutton:
+        * Corresponding log appears according to selected option in drop-down list:
+        * Could be combined into one step
+     */
     @Then("^Corresponding log appears according to selected checkbox: '([^\"]*)''([^\"]*)''([^\"]*)'$")
     public void correspondingLogAppearsAccordingToSelectedCheckboxes(String checkbox, String logMessage, String status) {
         new DifferentElementsPage().checkCheckboxesLogs(getCheckbox(checkbox), status, getLogMessage(logMessage));
@@ -78,26 +88,31 @@ public class AssertionSteps {
         new IndexPage().checkTitleOfAnyPage(title);
     }
 
+    // TODO Why is it hardcoded?
     @And("^6 NumberType Dropdowns are displayed on Users Table on User Table Page$")
     public void numbertypeDropdownsAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfDropdowns();
     }
 
+    // TODO Why is it hardcoded?
     @And("^6 User names are displayed on Users Table on User Table Page$")
     public void userNamesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfUsernames();
     }
 
+    // TODO Why is it hardcoded?
     @And("^6 Description images are displayed on Users Table on User Table Page$")
     public void descriptionImagesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfUserImages();
     }
 
+    // TODO Why is it hardcoded?
     @And("^6 Description texts under images are displayed on Users Table on User Table Page$")
     public void descriptionTextsUnderImagesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfUserDescriptions();
     }
 
+    // TODO Why is it hardcoded?
     @And("^6 checkboxes are displayed on Users Table on User Table Page$")
     public void checkboxesAreDisplayedOnUsersTableOnUserTablePage() {
         new UserTablePage().checkAmountOfCheckboxes();
@@ -108,6 +123,7 @@ public class AssertionSteps {
         new UserTablePage().checkUsersTable(usersTable);
     }
 
+    // TODO Why is it hardcoded?
     @Then("^1 log row has '([^\"]*)''([^\"]*)' text in log section$")
     public void logRowHasTextInLogSection(String logMessage, String status)  {
         new UserTablePage().checkLogs(getLogMessage(logMessage), status);
