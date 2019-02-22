@@ -58,9 +58,9 @@ public class ActionSteps {
         new DifferentElementsPage().selectOptionInDropdown(getDropdownItem(color));
     }
 
-    // TODO Why is it hardcoded?
+    // TODO Why is it hardcoded? -- fixed
     @When("^I select 'vip' checkbox for '([^\"]*)'$")
-    public void iSelectVipCheckboxForSergeyIvan(String user) {
+    public void iSelectVipCheckboxForUser(String user) {
         new UserTablePage().selectCheckbox(UsersInTable.getUser(user));
     }
 
