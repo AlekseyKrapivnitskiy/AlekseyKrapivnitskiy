@@ -48,8 +48,8 @@ public class AssertionSteps {
     }
 
     @Then("^Service drop-down list in left menu contains options:$")
-    public void serviceDropDownListInLeftMenuContainsOptions(DataTable leftmenuItems) {
-        new IndexPage().checkServiceDropdownListInLeftMenu(leftmenuItems.asList(String.class));
+    public void serviceDropDownListInLeftMenuContainsOptions(DataTable leftMenuItems) {
+        new IndexPage().checkServiceDropdownListInLeftMenu(leftMenuItems.asList(String.class));
     }
 
     @Then("^Page contains left section$")
