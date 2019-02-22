@@ -29,7 +29,7 @@ public enum UsersInTable {
         return listUsersLabels;
     }
 
-    public static UsersInTable getUser(String user) {
+    public static UsersInTable getUserInTable(String user) {
         for (UsersInTable username : UsersInTable.values()) {
             if (username.label.equals(user)) {
                 return username;

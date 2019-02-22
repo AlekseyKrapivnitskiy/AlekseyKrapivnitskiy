@@ -61,11 +61,11 @@ public class ActionSteps {
     // TODO Why is it hardcoded? -- fixed
     @When("^I select 'vip' checkbox for '([^\"]*)'$")
     public void iSelectVipCheckboxForUser(String user) {
-        new UserTablePage().selectCheckbox(UsersInTable.getUser(user));
+        new UserTablePage().selectCheckbox(UsersInTable.getUserInTable(user));
     }
 
     @When("^I click on dropdown in column Type for user '([^\"]*)'$")
     public void iClickOnDropdownInColumnTypeForUserRoman(String user) {
-        new UserTablePage().openDropdownList(UsersInTable.getUser(user));
+        new UserTablePage().openDropdownList(UsersInTable.getUserInTable(user));
     }
 }

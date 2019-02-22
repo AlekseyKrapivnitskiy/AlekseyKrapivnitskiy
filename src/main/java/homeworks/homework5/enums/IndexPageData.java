@@ -11,4 +11,13 @@ public enum IndexPageData {
         this.url = url;
         this.title = title;
     }
+
+    public static IndexPageData getIndexPageDataByTtitle(String indexPageDataName) {
+        for (IndexPageData indexPageData : IndexPageData.values()) {
+            if (indexPageData.title.equals(indexPageDataName)) {
+                return indexPageData;
+            }
+        }
+        return null;
+    }
 }

@@ -14,22 +14,23 @@ import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework5.enums.Checkboxes.*;
 import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
+import static homeworks.homework5.enums.IndexPageData.getIndexPageDataByTtitle;
 import static homeworks.homework5.enums.LogsMessages.*;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class AssertionSteps {
 
-    // TODO Why is it hardcoded?
-    @Then("^Browser title is \"Home Page\"$")
-    public void browserTitleIs() {
-        new IndexPage().checkTitle(INDEX_PAGE_DATA);
+    // TODO Why is it hardcoded? -- fixed
+    @Then("^Browser title is '([^\"]*)'")
+    public void browserTitleIs(String title) {
+        new IndexPage().checkTitle(getIndexPageDataByTtitle(title));
     }
 
-    // TODO Why is it hardcoded?
-    @Then("^User name is \"PITER CHAILOVSKII\"$")
-    public void userNameIsPITERCHAILOVSKII() {
-        new IndexPage().checkUsername(PITER_CHAILOVSKII);
+    // TODO Why is it hardcoded? -- fixed
+    @Then("^User name is '([^\"]*)'$")
+    public void userNameIsPITERCHAILOVSKII(String username) {
+        new IndexPage().checkUsernameByName(username);
     }
 
     // TODO What does 'And' mean?

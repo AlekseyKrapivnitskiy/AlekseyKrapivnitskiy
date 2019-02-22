@@ -13,4 +13,13 @@ public enum Users {
         this.password = password;
         this.username = username;
     }
+
+    public static Users getUser(String username) {
+        for (Users user : Users.values()) {
+            if (user.username.equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }
