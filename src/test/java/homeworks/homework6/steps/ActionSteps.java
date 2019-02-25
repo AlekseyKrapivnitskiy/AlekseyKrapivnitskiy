@@ -3,13 +3,12 @@ package homeworks.homework6.steps;
 import cucumber.api.java.en.When;
 import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
-import homeworks.homework5.enums.NavigationItems;
 import homeworks.homework5.enums.UserTablePage;
 import homeworks.homework5.enums.UsersInTable;
 
 import static homeworks.homework5.enums.Checkboxes.getCheckbox;
 import static homeworks.homework5.enums.Colors.getDropdownItem;
-import static homeworks.homework5.enums.NavigationItems.getNavigationItem;
+import static homeworks.homework5.enums.HeaderItems.getNavigationItem;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 import static homeworks.homework5.enums.Service.getServiceDropdownItem;
 import static homeworks.homework5.enums.Users.getUser;

@@ -2,7 +2,7 @@ package base.homeworks.homework5;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import homeworks.homework5.enums.NavigationItems;
+import homeworks.homework5.enums.HeaderItems;
 import homeworks.homework5.enums.Service;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
@@ -44,7 +44,7 @@ public abstract class BasePage {
         serviceDropdownInHeader.click();
     }
 
-    public void clickOnItemInHeader(NavigationItems navigationItems) {
+    public void clickOnItemInHeader(HeaderItems navigationItems) {
         headerItems.get(navigationItems.index).click();
     }
 
