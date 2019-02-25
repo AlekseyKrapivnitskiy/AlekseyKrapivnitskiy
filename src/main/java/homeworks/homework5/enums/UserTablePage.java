@@ -32,6 +32,9 @@ public class UserTablePage extends BasePage {
     @FindBy(css = ".panel-body-list.logs")
     private SelenideElement logsPanel;
 
+    @FindBy(css = ".panel-body-list.logs > li")
+    private ElementsCollection logs;
+
     @FindBy(css = "tbody > tr:nth-child(2) option")
     private ElementsCollection itemsInUserRolesDropdown;
 
@@ -73,8 +76,9 @@ public class UserTablePage extends BasePage {
         checkboxes.get(usersInTable.index).click();
     }
 
-    public void checkLogs(LogsMessages logsMessages, String status) {
+    public void checkLogs(LogsMessages logsMessages, String status, int amount) {
         logsPanel.shouldHave(text(logsMessages.text + status));
+        logs.shouldHaveSize(amount);
     }
 
     public void openDropdownList(UsersInTable usersInTable) {

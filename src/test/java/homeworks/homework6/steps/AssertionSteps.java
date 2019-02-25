@@ -124,10 +124,10 @@ public class AssertionSteps {
         new UserTablePage().checkUsersTable(usersTable);
     }
 
-    // TODO Why is it hardcoded?
-    @Then("^1 log row has '([^\"]*)''([^\"]*)' text in log section$")
-    public void logRowHasTextInLogSection(String logMessage, String status)  {
-        new UserTablePage().checkLogs(getLogMessage(logMessage), status);
+    // TODO Why is it hardcoded? -- fixed
+    @Then("^(.+) log row has '([^\"]*)''([^\"]*)' text in log section$")
+    public void logRowHasTextInLogSection(int amount, String logMessage, String status)  {
+        new UserTablePage().checkLogs(getLogMessage(logMessage), status, amount);
     }
 
     @Then("^droplist contains values$")
