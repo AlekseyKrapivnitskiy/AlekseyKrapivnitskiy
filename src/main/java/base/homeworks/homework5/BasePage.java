@@ -2,6 +2,7 @@ package base.homeworks.homework5;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import homeworks.homework5.enums.NavigationItems;
 import homeworks.homework5.enums.Service;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +13,9 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.page;
 
 public abstract class BasePage {
+
+    @FindBy(css = ".uui-navigation.nav.navbar-nav.m-l8 > li")
+    private ElementsCollection headerItems;
 
     @FindBy(css = ".dropdown")
     private SelenideElement serviceDropdownInHeader;
@@ -38,6 +42,10 @@ public abstract class BasePage {
     @Step("Click on \"Service\" subcategory in the header and check that drop down contains options")
     public void clickOnServiceDropdownInHeader() {
         serviceDropdownInHeader.click();
+    }
+
+    public void clickOnItemInHeader(NavigationItems navigationItems) {
+        headerItems.get(navigationItems.index).click();
     }
 
     public void checkServiceDropdownListInHeader(List<String> serviceDropdownItems) {

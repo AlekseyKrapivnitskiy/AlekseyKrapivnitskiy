@@ -3,11 +3,13 @@ package homeworks.homework6.steps;
 import cucumber.api.java.en.When;
 import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
+import homeworks.homework5.enums.NavigationItems;
 import homeworks.homework5.enums.UserTablePage;
 import homeworks.homework5.enums.UsersInTable;
 
 import static homeworks.homework5.enums.Checkboxes.getCheckbox;
 import static homeworks.homework5.enums.Colors.getDropdownItem;
+import static homeworks.homework5.enums.NavigationItems.getNavigationItem;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 import static homeworks.homework5.enums.Service.getServiceDropdownItem;
 import static homeworks.homework5.enums.Users.getUser;
@@ -20,10 +22,10 @@ public class ActionSteps {
         new IndexPage().login(getUser(user));
     }
 
-    // TODO Why is it hardcoded?
-    @When("^I click on \"Service\" button in Header$")
-    public void iClickOnSubcategoryInTheHeader() {
-        new IndexPage().clickOnServiceDropdownInHeader();
+    // TODO Why is it hardcoded? -- fixed
+    @When("^I click on ([^\"]*) button in Header$")
+    public void iClickOnSubcategoryInTheHeader(String navigationItem) {
+        new IndexPage().clickOnItemInHeader(getNavigationItem(navigationItem));
     }
 
     // TODO Why is it hardcoded?
