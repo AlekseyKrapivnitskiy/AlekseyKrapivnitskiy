@@ -39,24 +39,24 @@ public class UserTablePage extends BasePage {
         page(this);
     }
 
-    public void checkAmountOfDropdowns() {
-        dropdown.shouldHaveSize(6);
+    public void checkAmountOfDropdowns(int amount) {
+        dropdown.shouldHaveSize(amount);
     }
 
-    public void checkAmountOfUsernames() {
-        usernames.shouldHaveSize(6);
+    public void checkAmountOfUsernames(int amount) {
+        usernames.shouldHaveSize(amount);
     }
 
-    public void checkAmountOfUserImages() {
-        userImages.shouldHaveSize(6);
+    public void checkAmountOfUserImages(int amount) {
+        userImages.shouldHaveSize(amount);
     }
 
-    public void checkAmountOfUserDescriptions() {
-        userDescriptions.shouldHaveSize(6);
+    public void checkAmountOfUserDescriptions(int amount) {
+        userDescriptions.shouldHaveSize(amount);
     }
 
-    public void checkAmountOfCheckboxes() {
-        checkboxes.shouldHaveSize(6);
+    public void checkAmountOfCheckboxes(int amount) {
+        checkboxes.shouldHaveSize(amount);
     }
 
     public void checkUsersTable(DataTable userTable) {

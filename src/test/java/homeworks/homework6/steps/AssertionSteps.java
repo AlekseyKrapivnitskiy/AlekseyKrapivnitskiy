@@ -89,34 +89,34 @@ public class AssertionSteps {
         new IndexPage().checkTitleOfAnyPage(title);
     }
 
-    // TODO Why is it hardcoded?
-    @And("^6 NumberType Dropdowns are displayed on Users Table on User Table Page$")
-    public void numbertypeDropdownsAreDisplayedOnUsersTableOnUserTablePage() {
-        new UserTablePage().checkAmountOfDropdowns();
+    // TODO Why is it hardcoded? -- fixed
+    @And("^(.+) NumberType Dropdowns are displayed on Users Table on User Table Page$")
+    public void numbertypeDropdownsAreDisplayedOnUsersTableOnUserTablePage(int amount) {
+        new UserTablePage().checkAmountOfDropdowns(amount);
     }
 
-    // TODO Why is it hardcoded?
-    @And("^6 User names are displayed on Users Table on User Table Page$")
-    public void userNamesAreDisplayedOnUsersTableOnUserTablePage() {
-        new UserTablePage().checkAmountOfUsernames();
+    // TODO Why is it hardcoded? -- fixed
+    @And("^(.+) User names are displayed on Users Table on User Table Page$")
+    public void userNamesAreDisplayedOnUsersTableOnUserTablePage(int amount) {
+        new UserTablePage().checkAmountOfUsernames(amount);
     }
 
-    // TODO Why is it hardcoded?
-    @And("^6 Description images are displayed on Users Table on User Table Page$")
-    public void descriptionImagesAreDisplayedOnUsersTableOnUserTablePage() {
-        new UserTablePage().checkAmountOfUserImages();
+    // TODO Why is it hardcoded? -- fixed
+    @And("^(.+) Description images are displayed on Users Table on User Table Page$")
+    public void descriptionImagesAreDisplayedOnUsersTableOnUserTablePage(int amount) {
+        new UserTablePage().checkAmountOfUserImages(amount);
     }
 
-    // TODO Why is it hardcoded?
-    @And("^6 Description texts under images are displayed on Users Table on User Table Page$")
-    public void descriptionTextsUnderImagesAreDisplayedOnUsersTableOnUserTablePage() {
-        new UserTablePage().checkAmountOfUserDescriptions();
+    // TODO Why is it hardcoded? -- fixed
+    @And("^(.+) Description texts under images are displayed on Users Table on User Table Page$")
+    public void descriptionTextsUnderImagesAreDisplayedOnUsersTableOnUserTablePage(int amount) {
+        new UserTablePage().checkAmountOfUserDescriptions(amount);
     }
 
-    // TODO Why is it hardcoded?
-    @And("^6 checkboxes are displayed on Users Table on User Table Page$")
-    public void checkboxesAreDisplayedOnUsersTableOnUserTablePage() {
-        new UserTablePage().checkAmountOfCheckboxes();
+    // TODO Why is it hardcoded? -- fixed
+    @And("^(.+) checkboxes are displayed on Users Table on User Table Page$")
+    public void checkboxesAreDisplayedOnUsersTableOnUserTablePage(int amount) {
+        new UserTablePage().checkAmountOfCheckboxes(amount);
     }
 
     @And("^User table contains following values:$")
