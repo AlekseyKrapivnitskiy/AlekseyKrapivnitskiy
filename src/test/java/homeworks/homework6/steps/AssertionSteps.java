@@ -61,25 +61,26 @@ public class AssertionSteps {
         new DifferentElementsPage().checkRightSection();
     }
 
-    /* TODO
+    /* TODO -- fixed
         * Corresponding log appears according to selected checkbox:
         * Corresponding log appears according to selected radiobutton:
         * Corresponding log appears according to selected option in drop-down list:
         * Could be combined into one step
      */
-    @Then("^Corresponding log appears according to selected checkbox: '([^\"]*)''([^\"]*)''([^\"]*)'$")
-    public void correspondingLogAppearsAccordingToSelectedCheckboxes(String checkbox, String logMessage, String status) {
-        new DifferentElementsPage().checkCheckboxesLogs(getCheckbox(checkbox), status, getLogMessage(logMessage));
-    }
+    @Then("^Corresponding log appears according to selected ([^\"]*) - ([^\"]*): condition changed to ([^\"]*)$")
+    public void correspondingLogAppearsAccordingToSelectedRadiobutton(String element, String elementValue, String condition) {
 
-    @Then("^Corresponding log appears according to selected radiobutton: '([^\"]*)''([^\"]*)'$")
-    public void correspondingLogAppearsAccordingToSelectedRadiobutton(String logMessage, String radiobutton) {
-        new DifferentElementsPage().checkRadiosLogs(getRadiobutton(radiobutton), getLogMessage(logMessage));
-    }
+        if (element.equals("checkbox")) {
+            new DifferentElementsPage().checkCheckboxesLogs(getCheckbox(elementValue), condition, CHECKBOX_LOG);
+        }
 
-    @Then("^Corresponding log appears according to selected option in drop-down list: '([^\"]*)''([^\"]*)'$")
-    public void correspondingLogAppearsAccordingToSelectedOptionInDropDownList(String logMessage, String color) {
-        new DifferentElementsPage().checkDropdownLogs(getDropdownItem(color), getLogMessage(logMessage));
+        if (element.equals("radiobutton")) {
+            new DifferentElementsPage().checkRadiosLogs(getRadiobutton(elementValue), RADIOBUTTON_LOG);
+        }
+
+        if (element.equals("option in drop-down list")) {
+            new DifferentElementsPage().checkDropdownLogs(getDropdownItem(elementValue), DROPDOWN_LOG);
+        }
     }
 
     @Then("^([^\"]*) page is opened$")
