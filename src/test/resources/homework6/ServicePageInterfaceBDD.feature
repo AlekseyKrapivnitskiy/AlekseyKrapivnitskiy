@@ -5,7 +5,7 @@ Feature: Service Page Interface BDD
     Then Browser title is 'Home Page'
     When I login as user 'epam' with password '1234'
     Then User name is 'PITER CHAILOVSKII'
-    And Page contains all needed elements
+    And Page contains all needed elements: 4 pictures, 4 texts under them, 2 texts above - headline and description
 
     When I click on "Service" button in Header
     Then Service drop-down list in header contains options:

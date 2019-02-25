@@ -31,9 +31,9 @@ public class AssertionSteps {
         new IndexPage().checkUsernameByName(username);
     }
 
-    // TODO What does 'And' mean?
-    // TODO Which elements needed?
-    @And("^Page contains all needed elements$")
+    // TODO What does 'And' mean? -- fixed
+    // TODO Which elements needed? -- fixed
+    @And("^Page contains all needed elements: 4 pictures, 4 texts under them, 2 texts above - headline and description$")
     public void pageContainsAllNeededElements() {
         new IndexPage().checkBenefitIcons();
         new IndexPage().checkBenefitTexts(getBenefitTextsList());
