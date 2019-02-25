@@ -16,7 +16,7 @@ import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 public class ActionSteps {
 
     // TODO Why did you decide not pass on user as enum?
-    @When("^I login as user '([^\"]*)' with password '([^\"]*)'$")
+    @When("^I login as user ([^\"]*) with password ([^\"]*)$")
     public void iLoginAs(String login, String password) {
         new IndexPage().loginAs(login, password);
     }
@@ -38,33 +38,33 @@ public class ActionSteps {
         new IndexPage().clickOnServiceDropdownInLeftMenu();
     }
 
-    @When("^I open '([^\"]*)' page through \"Service\" drop-down list in header$")
+    @When("^I open ([^\"]*) page through \"Service\" drop-down list in header$")
     public void iOpenPageThroughDropDownListInHeader(String item) {
         new IndexPage().selectPageInServiceDropdown(getServiceDropdownItem(item));
     }
 
-    @When("^I click on checkbox: '([^\"]*)'$")
+    @When("^I click on checkbox: ([^\"]*)$")
     public void iSelectCheckbox(String checkbox) {
         new DifferentElementsPage().clickOnCheckbox(getCheckbox(checkbox));
     }
 
-    @When("^I select '([^\"]*)' radiobutton$")
+    @When("^I select ([^\"]*) radiobutton$")
     public void iSelectRadiobutton(String radiobuttonName) {
         new DifferentElementsPage().clickOnRadioButton(getRadiobutton(radiobuttonName));
     }
 
-    @When("^I select '([^\"]*)' in drop-down list$")
+    @When("^I select ([^\"]*) in drop-down list$")
     public void iSelectInDropDownList(String color) {
         new DifferentElementsPage().selectOptionInDropdown(getDropdownItem(color));
     }
 
     // TODO Why is it hardcoded? -- fixed
-    @When("^I select 'vip' checkbox for '([^\"]*)'$")
+    @When("^I select 'vip' checkbox for ([^\"]*)$")
     public void iSelectVipCheckboxForUser(String user) {
         new UserTablePage().selectCheckbox(UsersInTable.getUserInTable(user));
     }
 
-    @When("^I click on dropdown in column Type for user '([^\"]*)'$")
+    @When("^I click on dropdown in column Type for user ([^\"]*)$")
     public void iClickOnDropdownInColumnTypeForUserRoman(String user) {
         new UserTablePage().openDropdownList(UsersInTable.getUserInTable(user));
     }

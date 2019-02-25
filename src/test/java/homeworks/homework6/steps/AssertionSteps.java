@@ -20,13 +20,13 @@ import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 public class AssertionSteps {
 
     // TODO Why is it hardcoded? -- fixed
-    @Then("^Browser title is '([^\"]*)'")
+    @Then("^Browser title is ([^\"]*)")
     public void browserTitleIs(String title) {
         new IndexPage().checkTitle(getIndexPageDataByTtitle(title));
     }
 
     // TODO Why is it hardcoded? -- fixed
-    @Then("^User name is '([^\"]*)'$")
+    @Then("^User name is ([^\"]*)$")
     public void userNameIsPITERCHAILOVSKII(String username) {
         new IndexPage().checkUsernameByName(username);
     }
@@ -82,7 +82,7 @@ public class AssertionSteps {
         new DifferentElementsPage().checkDropdownLogs(getDropdownItem(color), getLogMessage(logMessage));
     }
 
-    @Then("^'([^\"]*)\' page is opened$")
+    @Then("^([^\"]*) page is opened$")
     public void pageIsOpened(String title) {
         new IndexPage().checkTitleOfAnyPage(title);
     }
