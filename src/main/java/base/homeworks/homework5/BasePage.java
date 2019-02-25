@@ -3,6 +3,7 @@ package base.homeworks.homework5;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import homeworks.homework5.enums.HeaderItems;
+import homeworks.homework5.enums.LeftMenuItems;
 import homeworks.homework5.enums.Service;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
@@ -35,6 +36,9 @@ public abstract class BasePage {
     @FindBy(css = ".right-fix-panel")
     private SelenideElement rightSection;
 
+    @FindBy(css = ".sidebar-menu > li")
+    private ElementsCollection leftMenu;
+
     public BasePage() {
         page(this);
     }
@@ -46,6 +50,10 @@ public abstract class BasePage {
 
     public void clickOnItemInHeader(HeaderItems navigationItems) {
         headerItems.get(navigationItems.index).click();
+    }
+
+    public void clickOnItemInLeftMenu(LeftMenuItems leftMenuItems) {
+        leftMenu.get(leftMenuItems.index).click();
     }
 
     public void checkServiceDropdownListInHeader(List<String> serviceDropdownItems) {

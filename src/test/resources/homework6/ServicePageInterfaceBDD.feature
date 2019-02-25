@@ -18,7 +18,7 @@ Feature: Service Page Interface BDD
       |Different Elements|
       |Performance|
 
-    When I click on "Service" subcategory in the left menu
+    When I click on Service subcategory in the left menu
     Then Service drop-down list in left menu contains options:
       |Support|
       |Dates|
