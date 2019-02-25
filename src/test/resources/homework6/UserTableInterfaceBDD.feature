@@ -2,7 +2,7 @@ Feature: User Table Page Interface BDD
 
   Scenario: User Table Page test
     Given I am on "Home Page"
-    And I login as user "Piter Chailovskii"
+    And I login as user PITER CHAILOVSKII
     When I open User Table page through "Service" drop-down list in header
     Then User Table page is opened
     And 6 NumberType Dropdowns are displayed on Users Table on User Table Page

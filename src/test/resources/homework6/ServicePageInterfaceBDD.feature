@@ -3,7 +3,7 @@ Feature: Service Page Interface BDD
   Scenario: Check Service Page Interface using Cucumber
     Given I am on "Home Page"
     Then Browser title is Home Page
-    When I login as user epam with password 1234
+    When I login as user PITER CHAILOVSKII
     Then User name is PITER CHAILOVSKII
     And Page contains all needed elements: 4 pictures, 4 texts under them, 2 texts above - headline and description
 

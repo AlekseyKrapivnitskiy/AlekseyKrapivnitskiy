@@ -1,6 +1,5 @@
 package homeworks.homework6.steps;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
@@ -11,19 +10,14 @@ import static homeworks.homework5.enums.Checkboxes.getCheckbox;
 import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 import static homeworks.homework5.enums.Service.getServiceDropdownItem;
-import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
+import static homeworks.homework5.enums.Users.getUser;
 
 public class ActionSteps {
 
-    // TODO Why did you decide not pass on user as enum?
-    @When("^I login as user ([^\"]*) with password ([^\"]*)$")
-    public void iLoginAs(String login, String password) {
-        new IndexPage().loginAs(login, password);
-    }
-
-    @And("^I login as user \"Piter Chailovskii\"$")
-    public void iLoginAsPiterChailovskii() {
-        new IndexPage().login(PITER_CHAILOVSKII);
+    // TODO Why did you decide not pass on user as enum? -- fixed
+    @When("^I login as user ([^\"]*)$")
+    public void iLoginAs(String user) {
+        new IndexPage().login(getUser(user));
     }
 
     // TODO Why is it hardcoded?
