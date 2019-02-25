@@ -14,6 +14,9 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class UserTablePage extends BasePage {
 
+    @FindBy(css = "tr > td:nth-child(1)")
+    private ElementsCollection numbers;
+
     @FindBy(css = "select")
     private ElementsCollection dropdown;
 
@@ -66,7 +69,8 @@ public class UserTablePage extends BasePage {
         List<Map<String, String>> table = userTable.asMaps(String.class, String.class);
 
         for (int i = 0; i < table.size(); i++) {
-            // TODO Where is the Number?
+            // TODO Where is the Number? -- fixed
+            numbers.get(i).should(text(table.get(i).get("Number")));
             usernames.get(i).should(text(table.get(i).get("User")));
             userDescriptions.get(i).should(text(table.get(i).get("Description")));
         }
