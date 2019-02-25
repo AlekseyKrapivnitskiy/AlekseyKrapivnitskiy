@@ -3,7 +3,6 @@ package homeworks.homework6.steps;
 import cucumber.api.java.en.When;
 import homeworks.homework5.DifferentElementsPage;
 import homeworks.homework5.IndexPage;
-import homeworks.homework5.enums.LeftMenuItems;
 import homeworks.homework5.enums.UserTablePage;
 import homeworks.homework5.enums.UsersInTable;
 
