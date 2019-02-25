@@ -29,7 +29,7 @@ public class ActionSteps {
         new IndexPage().clickOnItemInHeader(getNavigationItem(navigationItem));
     }
 
-    // TODO Why is it hardcoded?
+    // TODO Why is it hardcoded? -- fixed
     @When("^I click on ([^\"]*) subcategory in the left menu$")
     public void iClickOnSubcategoryInTheLeftMenu(String itemInLeftMenu) {
         new IndexPage().clickOnItemInLeftMenu(getItemInLeftMenu(itemInLeftMenu));
