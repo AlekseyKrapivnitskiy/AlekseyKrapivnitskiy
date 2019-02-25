@@ -13,11 +13,9 @@ import static homeworks.homework3.enums.MainHeader.MAIN_TEXT;
 import static homeworks.homework3.enums.MainHeader.TITLE;
 import static homeworks.homework5.enums.Checkboxes.*;
 import static homeworks.homework5.enums.Colors.getDropdownItem;
-import static homeworks.homework5.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework5.enums.IndexPageData.getIndexPageDataByTtitle;
 import static homeworks.homework5.enums.LogsMessages.*;
 import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
-import static homeworks.homework5.enums.Users.PITER_CHAILOVSKII;
 
 public class AssertionSteps {
 
