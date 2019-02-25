@@ -7,7 +7,7 @@ Feature: Service Page Interface BDD
     Then User name is PITER CHAILOVSKII
     And Page contains all needed elements: 4 pictures, 4 texts under them, 2 texts above - headline and description
 
-    When I click on "Service" button in Header
+    When I click on SERVICE button in Header
     Then Service drop-down list in header contains options:
       |Support|
       |Dates|
