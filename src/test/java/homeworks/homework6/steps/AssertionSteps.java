@@ -19,20 +19,16 @@ import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
 
 public class AssertionSteps {
 
-    // TODO Why is it hardcoded? -- fixed
     @Then("^Browser title is ([^\"]*)")
     public void browserTitleIs(String title) {
         new IndexPage().checkTitle(getIndexPageDataByTtitle(title));
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @Then("^User name is ([^\"]*)$")
     public void userNameIsPITERCHAILOVSKII(String username) {
         new IndexPage().checkUsernameByName(username);
     }
 
-    // TODO What does 'And' mean?
-    // TODO Which elements needed? -- fixed
     @And("^Page contains all needed elements: 4 pictures, 4 texts under them, 2 texts above - headline and description$")
     public void pageContainsAllNeededElements() {
         new IndexPage().checkBenefitIcons();
@@ -47,6 +43,7 @@ public class AssertionSteps {
     }
 
     @Then("^Service drop-down list in left menu contains options:$")
+    // TODO If method get list parameter you could use as input List<String>. Just Recommendation
     public void serviceDropDownListInLeftMenuContainsOptions(DataTable leftMenuItems) {
         new IndexPage().checkServiceDropdownListInLeftMenu(leftMenuItems.asList(String.class));
     }
@@ -61,13 +58,10 @@ public class AssertionSteps {
         new DifferentElementsPage().checkRightSection();
     }
 
-    /* TODO -- fixed
-        * Corresponding log appears according to selected checkbox:
-        * Corresponding log appears according to selected radiobutton:
-        * Corresponding log appears according to selected option in drop-down list:
-        * Could be combined into one step
-     */
     @Then("^Corresponding log appears according to selected ([^\"]*) - ([^\"]*): condition changed to ([^\"]*)$")
+    // TODO This step could by simplified. From previous step you know which element was clicked.
+    // TODO So in this case you could write your step more easily
+    // TODO "Last log record has text '<full string of log text which should appear>'"
     public void correspondingLogAppearsAccordingToSelectedRadiobutton(String element, String elementValue, String condition) {
 
         if (element.equals("checkbox")) {
@@ -88,31 +82,26 @@ public class AssertionSteps {
         new IndexPage().checkTitleOfAnyPage(title);
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @And("^(.+) NumberType Dropdowns are displayed on Users Table on User Table Page$")
     public void numbertypeDropdownsAreDisplayedOnUsersTableOnUserTablePage(int amount) {
         new UserTablePage().checkAmountOfDropdowns(amount);
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @And("^(.+) User names are displayed on Users Table on User Table Page$")
     public void userNamesAreDisplayedOnUsersTableOnUserTablePage(int amount) {
         new UserTablePage().checkAmountOfUsernames(amount);
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @And("^(.+) Description images are displayed on Users Table on User Table Page$")
     public void descriptionImagesAreDisplayedOnUsersTableOnUserTablePage(int amount) {
         new UserTablePage().checkAmountOfUserImages(amount);
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @And("^(.+) Description texts under images are displayed on Users Table on User Table Page$")
     public void descriptionTextsUnderImagesAreDisplayedOnUsersTableOnUserTablePage(int amount) {
         new UserTablePage().checkAmountOfUserDescriptions(amount);
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @And("^(.+) checkboxes are displayed on Users Table on User Table Page$")
     public void checkboxesAreDisplayedOnUsersTableOnUserTablePage(int amount) {
         new UserTablePage().checkAmountOfCheckboxes(amount);
@@ -123,7 +112,6 @@ public class AssertionSteps {
         new UserTablePage().checkUsersTable(usersTable);
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @Then("^(.+) log row has '([^\"]*)''([^\"]*)' text in log section$")
     public void logRowHasTextInLogSection(int amount, String logMessage, String status)  {
         new UserTablePage().checkLogs(getLogMessage(logMessage), status, amount);

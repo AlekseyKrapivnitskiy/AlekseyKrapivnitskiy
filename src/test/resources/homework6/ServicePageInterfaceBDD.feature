@@ -8,6 +8,7 @@ Feature: Service Page Interface BDD
     And Page contains all needed elements: 4 pictures, 4 texts under them, 2 texts above - headline and description
 
     When I click on SERVICE button in Header
+    # TODO You could use next style: |Support|Dates|Complex Table|. It just recommendation
     Then Service drop-down list in header contains options:
       |Support|
       |Dates|

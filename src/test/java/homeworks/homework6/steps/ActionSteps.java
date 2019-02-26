@@ -16,19 +16,16 @@ import static homeworks.homework5.enums.Users.getUser;
 
 public class ActionSteps {
 
-    // TODO Why did you decide not pass on user as enum? -- fixed
     @When("^I login as user ([^\"]*)$")
     public void iLoginAs(String user) {
         new IndexPage().login(getUser(user));
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @When("^I click on ([^\"]*) button in Header$")
     public void iClickOnSubcategoryInTheHeader(String navigationItem) {
         new IndexPage().clickOnItemInHeader(getNavigationItem(navigationItem));
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @When("^I click on ([^\"]*) subcategory in the left menu$")
     public void iClickOnSubcategoryInTheLeftMenu(String itemInLeftMenu) {
         new IndexPage().clickOnItemInLeftMenu(getItemInLeftMenu(itemInLeftMenu));
@@ -54,7 +51,6 @@ public class ActionSteps {
         new DifferentElementsPage().selectOptionInDropdown(getDropdownItem(color));
     }
 
-    // TODO Why is it hardcoded? -- fixed
     @When("^I select 'vip' checkbox for ([^\"]*)$")
     public void iSelectVipCheckboxForUser(String user) {
         new UserTablePage().selectCheckbox(UsersInTable.getUserInTable(user));
