@@ -3,7 +3,7 @@ package homeworks.homework7.site;
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 import homeworks.homework7.site.pages.HomePage;
-import homeworks.homework7.site.pages.MetalsAndColosPage;
+import homeworks.homework7.site.pages.MetalsAndColorsPage;
 
 @JSite("https://epam.github.io/JDI/")
 public class JDISite {
@@ -12,5 +12,5 @@ public class JDISite {
     public static HomePage homePage;
 
     @Url("metals-colors.html")
-    public static MetalsAndColosPage metalsAndColosPage;
+    public static MetalsAndColorsPage metalsAndColosPage;
 }
