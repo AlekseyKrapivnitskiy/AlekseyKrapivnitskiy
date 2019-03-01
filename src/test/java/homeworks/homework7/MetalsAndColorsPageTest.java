@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
-import static homeworks.homework7.enums.Users.PITER_CHAILOVSKII;
+import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
 import static homeworks.homework7.site.JDISite.homePage;
 import static homeworks.homework7.site.pages.HomePage.login;
 
@@ -26,6 +26,8 @@ public class MetalsAndColorsPageTest {
     @Test
     public void metalsAndColorsPageTest() {
         homePage.open();
+        homePage.checkOpened();
         login(PITER_CHAILOVSKII);
+        homePage.checkUsername(PITER_CHAILOVSKII);
     }
 }
