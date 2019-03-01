@@ -4,14 +4,17 @@ import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.common.Icon;
 import homeworks.homework7.entities.User;
+import homeworks.homework7.enums.HeaderItems;
 import homeworks.homework7.site.forms.LoginForm;
+import homeworks.homework7.site.sections.HeaderMenu;
 import org.openqa.selenium.support.FindBy;
 
 import static org.testng.Assert.assertEquals;
 
 public class HomePage extends WebPage {
 
-    LoginForm loginForm;
+    private LoginForm loginForm;
+    HeaderMenu headerMenu;
 
     @FindBy(css = "#user-icon")
     private Icon userIcon;
@@ -26,5 +29,9 @@ public class HomePage extends WebPage {
 
     public void checkUsername(User user) {
         assertEquals(usernameLabel.getText(), user.getUsername());
+    }
+
+    public void clickOnItemInHeader(HeaderItems headerItems) {
+        headerMenu.headerMenu.select(headerItems.label);
     }
 }

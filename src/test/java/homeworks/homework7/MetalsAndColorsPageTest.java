@@ -1,6 +1,7 @@
 package homeworks.homework7;
 
 import homeworks.homework7.site.JDISite;
+import homeworks.homework7.site.sections.HeaderMenu;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -8,6 +9,8 @@ import org.testng.annotations.Test;
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
+import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
+import static homeworks.homework7.enums.HeaderItems.getHeaderItem;
 
 public class MetalsAndColorsPageTest extends JDISite{
 
@@ -29,7 +32,9 @@ public class MetalsAndColorsPageTest extends JDISite{
         homePage.login(PITER_CHAILOVSKII);
         homePage.checkUsername(PITER_CHAILOVSKII);
 
-        //2.Open Metals & Colors page by Header menu
+        //2.Open Metals & Colors page by HeaderMenu menu
+        homePage.clickOnItemInHeader(METALS_AND_COLORS);
+        metalsAndColosPage.checkOpened();
 
         //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
         // Vegetables: Cucumber,Tomato
