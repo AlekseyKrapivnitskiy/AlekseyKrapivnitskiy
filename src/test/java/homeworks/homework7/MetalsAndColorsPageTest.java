@@ -1,5 +1,6 @@
 package homeworks.homework7;
 
+import homeworks.homework7.enums.SummaryRadiobuttons;
 import homeworks.homework7.site.JDISite;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -9,6 +10,8 @@ import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
+import static homeworks.homework7.enums.SummaryRadiobuttons.EIGHT;
+import static homeworks.homework7.enums.SummaryRadiobuttons.THREE;
 
 public class MetalsAndColorsPageTest extends JDISite{
 
@@ -36,8 +39,8 @@ public class MetalsAndColorsPageTest extends JDISite{
 
         //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
         // Vegetables: Cucumber,Tomato
-        metalsAndColosPage.selectSummary(3);
-        metalsAndColosPage.selectSummary(8);
+        metalsAndColosPage.selectSummary(THREE);
+        metalsAndColosPage.selectSummary(EIGHT);
 
         //4.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
         // Vegetables: Cucumber, Tomato
