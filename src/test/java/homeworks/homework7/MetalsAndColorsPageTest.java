@@ -36,6 +36,8 @@ public class MetalsAndColorsPageTest extends JDISite{
 
         //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
         // Vegetables: Cucumber,Tomato
+        metalsAndColosPage.selectSummary(3);
+        metalsAndColosPage.selectSummary(8);
 
         //4.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
         // Vegetables: Cucumber, Tomato
