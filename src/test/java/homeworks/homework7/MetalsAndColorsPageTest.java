@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
+import static homeworks.homework7.enums.ElementsList.FIRE;
+import static homeworks.homework7.enums.ElementsList.WATER;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
 import static homeworks.homework7.enums.SummaryRadiobuttons.EIGHT;
 import static homeworks.homework7.enums.SummaryRadiobuttons.THREE;
@@ -40,6 +42,8 @@ public class MetalsAndColorsPageTest extends JDISite{
         // Vegetables: Cucumber,Tomato
         metalsAndColosPage.selectSummary(THREE);
         metalsAndColosPage.selectSummary(EIGHT);
+        metalsAndColosPage.selectElement(WATER);
+        metalsAndColosPage.selectElement(FIRE);
 
         //4.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
         // Vegetables: Cucumber, Tomato
