@@ -15,7 +15,7 @@ import static homeworks.homework5.enums.Checkboxes.*;
 import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.IndexPageData.getIndexPageDataByTtitle;
 import static homeworks.homework5.enums.LogsMessages.*;
-import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
+import static homeworks.homework5.enums.Radiobuttons.getRadiobutton;
 
 public class AssertionSteps {
 

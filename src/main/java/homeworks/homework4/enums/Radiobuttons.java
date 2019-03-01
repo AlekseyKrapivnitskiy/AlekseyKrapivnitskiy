@@ -1,6 +1,6 @@
 package homeworks.homework4.enums;
 
-public enum  RadioButtons {
+public enum Radiobuttons {
 
     GOLD(0, "Gold"),
     SILVER(1, "Silver"),
@@ -10,7 +10,7 @@ public enum  RadioButtons {
     public int index;
     public String label;
 
-    RadioButtons(int index, String label) {
+    Radiobuttons(int index, String label) {
         this.index = index;
         this.label = label;
     }

@@ -6,7 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import homeworks.homework5.enums.Checkboxes;
 import homeworks.homework5.enums.Colors;
 import homeworks.homework5.enums.LogsMessages;
-import homeworks.homework5.enums.RadioButtons;
+import homeworks.homework5.enums.Radiobuttons;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
@@ -54,7 +54,7 @@ public class DifferentElementsPage extends BasePage {
     }
 
     @Step("Select radio: {radioButtons}")
-    public void clickOnRadioButton(RadioButtons radioButtons) {
+    public void clickOnRadioButton(Radiobuttons radioButtons) {
         radioButtonsList.get(radioButtons.index).click();
     }
 
@@ -70,7 +70,7 @@ public class DifferentElementsPage extends BasePage {
     }
 
     @Step("Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton")
-    public void checkRadiosLogs(RadioButtons radioButton, LogsMessages logsMessages) {
+    public void checkRadiosLogs(Radiobuttons radioButton, LogsMessages logsMessages) {
         logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }
 

@@ -10,7 +10,7 @@ import static homeworks.homework4.enums.Checkboxes.*;
 import static homeworks.homework4.enums.Colors.YELLOW;
 import static homeworks.homework4.enums.IndexPageData.INDEX_PAGE_DATA;
 import static homeworks.homework4.enums.LogsMessages.*;
-import static homeworks.homework4.enums.RadioButtons.SELEN;
+import static homeworks.homework4.enums.Radiobuttons.SELEN;
 import static homeworks.homework4.enums.Service.DIFFERENT_ELEMENTS;
 import static homeworks.homework4.enums.Service.getServiceDropdownList;
 import static homeworks.homework4.enums.Users.PITER_CHAILOVSKII;

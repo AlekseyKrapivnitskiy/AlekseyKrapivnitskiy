@@ -6,7 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import homeworks.homework4.enums.Checkboxes;
 import homeworks.homework4.enums.Colors;
 import homeworks.homework4.enums.LogsMessages;
-import homeworks.homework4.enums.RadioButtons;
+import homeworks.homework4.enums.Radiobuttons;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
@@ -43,7 +43,7 @@ public class DifferentElementsPage extends BasePage {
         checkboxesList.get(checkboxes.index).click();
     }
 
-    public void clickOnRadioButton(RadioButtons radioButtons) {
+    public void clickOnRadioButton(Radiobuttons radioButtons) {
         radioButtonsList.get(radioButtons.index).click();
     }
 
@@ -57,7 +57,7 @@ public class DifferentElementsPage extends BasePage {
         logsPanel.shouldHave(text(checkbox.label + logsMessages.text + status));
     }
 
-    public void checkRadiosLogs(RadioButtons radioButton, LogsMessages logsMessages) {
+    public void checkRadiosLogs(Radiobuttons radioButton, LogsMessages logsMessages) {
         // TODO Hardcoded values -- fixed
         logsPanel.shouldHave(text(logsMessages.text + radioButton));
     }

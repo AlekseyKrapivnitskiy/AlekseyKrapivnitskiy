@@ -10,7 +10,7 @@ import static homeworks.homework5.enums.Checkboxes.getCheckbox;
 import static homeworks.homework5.enums.Colors.getDropdownItem;
 import static homeworks.homework5.enums.HeaderItems.getNavigationItem;
 import static homeworks.homework5.enums.LeftMenuItems.getItemInLeftMenu;
-import static homeworks.homework5.enums.RadioButtons.getRadiobutton;
+import static homeworks.homework5.enums.Radiobuttons.getRadiobutton;
 import static homeworks.homework5.enums.Service.getServiceDropdownItem;
 import static homeworks.homework5.enums.Users.getUser;
 
