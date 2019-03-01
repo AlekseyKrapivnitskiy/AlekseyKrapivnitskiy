@@ -1,6 +1,5 @@
 package homeworks.homework7;
 
-import homeworks.homework7.enums.SummaryRadiobuttons;
 import homeworks.homework7.site.JDISite;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
