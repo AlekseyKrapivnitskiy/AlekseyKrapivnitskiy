@@ -1,4 +1,4 @@
-package homeworks.homework7.site.sections;
+package homeworks.homework7.site.forms;
 
 import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.ui.html.common.Button;
@@ -9,11 +9,11 @@ import org.openqa.selenium.support.FindBy;
 public class LoginForm extends Form<User> {
 
     @FindBy(css = "#name")
-    public TextField userField;
+    private TextField login;
 
     @FindBy(css = "#password")
-    public TextField passwordField;
+    private TextField password;
 
     @FindBy(css = "#login-button")
-    private Button submitButton;
+    private Button submit;
 }

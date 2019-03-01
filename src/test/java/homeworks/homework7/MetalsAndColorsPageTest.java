@@ -8,10 +8,8 @@ import org.testng.annotations.Test;
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
-import static homeworks.homework7.site.JDISite.homePage;
-import static homeworks.homework7.site.pages.HomePage.login;
 
-public class MetalsAndColorsPageTest {
+public class MetalsAndColorsPageTest extends JDISite{
 
     @BeforeSuite
     public void beforeSuite() {
@@ -25,9 +23,18 @@ public class MetalsAndColorsPageTest {
 
     @Test
     public void metalsAndColorsPageTest() {
+        //1.Login on JDI site as User
         homePage.open();
         homePage.checkOpened();
-        login(PITER_CHAILOVSKII);
+        homePage.login(PITER_CHAILOVSKII);
         homePage.checkUsername(PITER_CHAILOVSKII);
+
+        //2.Open Metals & Colors page by Header menu
+
+        //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
+        // Vegetables: Cucumber,Tomato
+
+        //4.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
+        // Vegetables: Cucumber, Tomato
     }
 }
