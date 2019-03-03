@@ -6,6 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class Result extends Section {
 
-    @FindBy(css = "panel-body-list.results > li")
-    public WebList result;
+    @FindBy(css = ".panel-body-list.results")
+    public WebList resultSection;
 }

@@ -1,6 +1,5 @@
 package homeworks.homework7;
 
-import homeworks.homework7.enums.ColorsList;
 import homeworks.homework7.site.JDISite;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -10,10 +9,10 @@ import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
 import static homeworks.homework7.enums.ColorsList.RED;
-import static homeworks.homework7.enums.ElementsList.FIRE;
-import static homeworks.homework7.enums.ElementsList.WATER;
+import static homeworks.homework7.enums.ElementsList.*;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
 import static homeworks.homework7.enums.MetalsList.SELEN;
+import static homeworks.homework7.enums.ResultsList.*;
 import static homeworks.homework7.enums.SummaryRadiobuttons.EIGHT;
 import static homeworks.homework7.enums.SummaryRadiobuttons.THREE;
 import static homeworks.homework7.enums.VegetablesList.*;
@@ -40,27 +39,33 @@ public class MetalsAndColorsPageTest extends JDISite{
 
         //2.Open Metals & Colors page by HeaderMenu menu
         homePage.clickOnItemInHeader(METALS_AND_COLORS);
-        metalsAndColosPage.checkOpened();
+        metalsAndColorsPage.checkOpened();
 
         //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
         // VegetablesList: Cucumber,Tomato
-        metalsAndColosPage.selectSummary(THREE);
-        metalsAndColosPage.selectSummary(EIGHT);
-        metalsAndColosPage.selectElement(WATER);
-        metalsAndColosPage.selectElement(FIRE);
+        metalsAndColorsPage.selectSummary(THREE);
+        metalsAndColorsPage.selectSummary(EIGHT);
 
-        metalsAndColosPage.selectColor(RED);
+        metalsAndColorsPage.selectElement(WATER);
+        metalsAndColorsPage.selectElement(FIRE);
 
-        metalsAndColosPage.selectMetal(SELEN);
+        metalsAndColorsPage.selectColor(RED);
 
-        metalsAndColosPage.selectVegetable(VEGETABLES);
-        metalsAndColosPage.selectVegetable(CUCUMBER);
-        metalsAndColosPage.selectVegetable(TOMATO);
+        metalsAndColorsPage.selectMetal(SELEN);
+
+        metalsAndColorsPage.selectVegetable(VEGETABLE);
+        metalsAndColorsPage.selectVegetable(CUCUMBER);
+        metalsAndColorsPage.selectVegetable(TOMATO);
 
         //4.Submit form Metals & Colors
-        metalsAndColosPage.submitMetalsAndColorsForm();
+        metalsAndColorsPage.submitMetalsAndColorsForm();
 
         //5.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
         // VegetablesList: Cucumber, Tomato
+        metalsAndColorsPage.checkResults(SUMMARY, "11");
+        metalsAndColorsPage.checkResults(ELEMENTS, WATER.label + ", " + FIRE.label);
+        metalsAndColorsPage.checkResults(COLOR, RED.label);
+        metalsAndColorsPage.checkResults(METAL, SELEN.label);
+        metalsAndColorsPage.checkResults(VEGETABLES, CUCUMBER.label + ", " + TOMATO.label);
     }
 }

@@ -4,6 +4,10 @@ import com.epam.jdi.light.elements.composite.WebPage;
 import homeworks.homework7.enums.*;
 import homeworks.homework7.site.forms.MetalsAndColorsForm;
 import homeworks.homework7.site.sections.*;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.testng.Assert.assertTrue;
 
@@ -18,7 +22,7 @@ public class MetalsAndColorsPage extends WebPage {
     private Result result;
 
     public void selectSummary(SummaryRadiobuttons summaryRadiobuttons) {
-        if(summaryRadiobuttons.index % 2 == 0) {
+        if(summaryRadiobuttons.value % 2 == 0) {
             summary.odd.select(summaryRadiobuttons.label);
         }
         else {
@@ -47,6 +51,11 @@ public class MetalsAndColorsPage extends WebPage {
     }
 
     public void checkResults(ResultsList resultsList, String resultValue) {
-        assertTrue(result.result.contains(resultsList + resultValue));
+
+        List<String> resultContent = new ArrayList<>();
+        for (WebElement element : result.resultSection) {
+            resultContent.add(element.getText());
+        }
+        assertTrue(resultContent.contains(resultsList.label + resultValue));
     }
 }

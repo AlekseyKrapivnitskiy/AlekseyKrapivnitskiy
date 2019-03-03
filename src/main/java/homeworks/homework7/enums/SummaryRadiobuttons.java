@@ -11,11 +11,11 @@ public enum  SummaryRadiobuttons {
     SEVEN(7, "7"),
     EIGHT(8, "8");
 
-    public int index;
+    public int value;
     public String label;
 
-    SummaryRadiobuttons(int index, String label) {
-        this.index = index;
+    SummaryRadiobuttons(int value, String label) {
+        this.value = value;
         this.label = label;
     }
 }
