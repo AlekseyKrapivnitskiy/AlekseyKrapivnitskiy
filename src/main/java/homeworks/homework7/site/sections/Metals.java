@@ -10,5 +10,5 @@ public class Metals extends Section {
             value = "input",
             list = "li",
             expand = ".caret")
-    public static Droplist metal;
+    public Droplist metalDropdown;
 }

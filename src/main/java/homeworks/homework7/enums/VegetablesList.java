@@ -4,7 +4,7 @@ public enum VegetablesList {
 
     CUCUMBER(0, "Cucumber"),
     TOMATO(1, "Tomato"),
-    VEGETABLES(2, "VegetablesList"),
+    VEGETABLES(2, "Vegetables"),
     ONION(3, "Onion");
 
     public int index;

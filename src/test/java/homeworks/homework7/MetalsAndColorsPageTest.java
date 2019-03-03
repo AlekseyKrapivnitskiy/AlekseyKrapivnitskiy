@@ -11,6 +11,7 @@ import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
 import static homeworks.homework7.enums.ElementsList.FIRE;
 import static homeworks.homework7.enums.ElementsList.WATER;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
+import static homeworks.homework7.enums.MetalsList.SELEN;
 import static homeworks.homework7.enums.SummaryRadiobuttons.EIGHT;
 import static homeworks.homework7.enums.SummaryRadiobuttons.THREE;
 import static homeworks.homework7.enums.VegetablesList.*;
@@ -45,6 +46,8 @@ public class MetalsAndColorsPageTest extends JDISite{
         metalsAndColosPage.selectSummary(EIGHT);
         metalsAndColosPage.selectElement(WATER);
         metalsAndColosPage.selectElement(FIRE);
+
+        metalsAndColosPage.selectMetal(SELEN);
 
         metalsAndColosPage.selectVegetable(VEGETABLES);
         metalsAndColosPage.selectVegetable(CUCUMBER);
