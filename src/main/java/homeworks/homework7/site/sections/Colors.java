@@ -10,5 +10,5 @@ public class Colors extends Section {
             value = ".filter-option",
             list = "li",
             expand = ".caret")
-    public static Droplist colors;
+    public Droplist colorsDropdown;
 }

@@ -1,5 +1,6 @@
 package homeworks.homework7;
 
+import homeworks.homework7.enums.ColorsList;
 import homeworks.homework7.site.JDISite;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -8,6 +9,7 @@ import org.testng.annotations.Test;
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
+import static homeworks.homework7.enums.ColorsList.RED;
 import static homeworks.homework7.enums.ElementsList.FIRE;
 import static homeworks.homework7.enums.ElementsList.WATER;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
@@ -46,6 +48,8 @@ public class MetalsAndColorsPageTest extends JDISite{
         metalsAndColosPage.selectSummary(EIGHT);
         metalsAndColosPage.selectElement(WATER);
         metalsAndColosPage.selectElement(FIRE);
+
+        metalsAndColosPage.selectColor(RED);
 
         metalsAndColosPage.selectMetal(SELEN);
 
