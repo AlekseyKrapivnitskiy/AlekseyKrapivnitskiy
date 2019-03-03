@@ -13,6 +13,7 @@ import static homeworks.homework7.enums.ElementsList.WATER;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
 import static homeworks.homework7.enums.SummaryRadiobuttons.EIGHT;
 import static homeworks.homework7.enums.SummaryRadiobuttons.THREE;
+import static homeworks.homework7.enums.VegetablesList.*;
 
 public class MetalsAndColorsPageTest extends JDISite{
 
@@ -39,15 +40,19 @@ public class MetalsAndColorsPageTest extends JDISite{
         metalsAndColosPage.checkOpened();
 
         //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
-        // Vegetables: Cucumber,Tomato
+        // VegetablesList: Cucumber,Tomato
         metalsAndColosPage.selectSummary(THREE);
         metalsAndColosPage.selectSummary(EIGHT);
         metalsAndColosPage.selectElement(WATER);
         metalsAndColosPage.selectElement(FIRE);
 
+        metalsAndColosPage.selectVegetable(VEGETABLES);
+        metalsAndColosPage.selectVegetable(CUCUMBER);
+        metalsAndColosPage.selectVegetable(TOMATO);
+
         //4.Submit form Metals & Colors
 
         //5.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
-        // Vegetables: Cucumber, Tomato
+        // VegetablesList: Cucumber, Tomato
     }
 }

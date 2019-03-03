@@ -10,5 +10,5 @@ public class Vegetables extends Section {
             value = ".dropdown-toggle",
             list = "li",
             expand = ".caret")
-    public static Droplist vegetables;
+    public Droplist vegetablesDropdown;
 }
