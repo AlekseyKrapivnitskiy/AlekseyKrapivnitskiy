@@ -5,6 +5,7 @@ import homeworks.homework7.enums.ElementsList;
 import homeworks.homework7.enums.MetalsList;
 import homeworks.homework7.enums.SummaryRadiobuttons;
 import homeworks.homework7.enums.VegetablesList;
+import homeworks.homework7.site.forms.MetalsAndColorsForm;
 import homeworks.homework7.site.sections.Elements;
 import homeworks.homework7.site.sections.Metals;
 import homeworks.homework7.site.sections.Summary;
@@ -16,6 +17,7 @@ public class MetalsAndColorsPage extends WebPage {
     private Elements element;
     private Metals metals;
     private Vegetables vegetables;
+    private MetalsAndColorsForm metalsAndColorsForm;
 
     public void selectSummary(SummaryRadiobuttons summaryRadiobuttons) {
         if(summaryRadiobuttons.index % 2 == 0) {
@@ -36,5 +38,9 @@ public class MetalsAndColorsPage extends WebPage {
 
     public void selectVegetable(VegetablesList vegetable) {
         vegetables.vegetablesDropdown.select(vegetable.label);
+    }
+
+    public void submitMetalsAndColorsForm() {
+        metalsAndColorsForm.submit.click();
     }
 }

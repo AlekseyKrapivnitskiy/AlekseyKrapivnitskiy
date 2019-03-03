@@ -54,6 +54,7 @@ public class MetalsAndColorsPageTest extends JDISite{
         metalsAndColosPage.selectVegetable(TOMATO);
 
         //4.Submit form Metals & Colors
+        metalsAndColosPage.submitMetalsAndColorsForm();
 
         //5.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
         // VegetablesList: Cucumber, Tomato
