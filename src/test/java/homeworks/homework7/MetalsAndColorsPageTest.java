@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
-import static homeworks.homework7.entities.User.PITER_CHAILOVSKII;
+import static homeworks.homework7.entities.User.piterChailovskii;
 import static homeworks.homework7.enums.ColorsList.RED;
 import static homeworks.homework7.enums.ElementsList.*;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
@@ -34,8 +34,8 @@ public class MetalsAndColorsPageTest extends JDISite{
         //1.Login on JDI site as User
         homePage.open();
         homePage.checkOpened();
-        homePage.login(PITER_CHAILOVSKII);
-        homePage.checkUsername(PITER_CHAILOVSKII);
+        homePage.login(piterChailovskii);
+        homePage.checkUsername(piterChailovskii);
 
         //2.Open Metals & Colors page by HeaderMenu menu
         homePage.clickOnItemInHeader(METALS_AND_COLORS);

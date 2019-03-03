@@ -1,8 +1,11 @@
 package homeworks.homework7.entities;
 
+import static homeworks.homework7.enums.Users.PITER_CHAILOVSKII;
+
 public class User {
 
-    public static User PITER_CHAILOVSKII = new User("epam", "1234", "PITER CHAILOVSKII");
+    public static User piterChailovskii = new User(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password,
+            PITER_CHAILOVSKII.username);
 
     public String login;
     public String password;
