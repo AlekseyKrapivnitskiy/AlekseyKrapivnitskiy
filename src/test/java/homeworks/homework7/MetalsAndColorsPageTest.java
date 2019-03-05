@@ -17,7 +17,7 @@ import static homeworks.homework7.enums.SummaryRadiobuttons.EIGHT;
 import static homeworks.homework7.enums.SummaryRadiobuttons.THREE;
 import static homeworks.homework7.enums.VegetablesList.*;
 
-public class MetalsAndColorsPageTest extends JDISite{
+public class MetalsAndColorsPageTest extends JDISite {
 
     @BeforeSuite
     public void beforeSuite() {
