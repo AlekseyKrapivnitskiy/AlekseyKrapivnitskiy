@@ -1,3 +1,4 @@
-/TODO missing target and .iml file -- fixed, all .iml files are contained in .idea folder
+# TODO missing target and .iml file -- fixed, all .iml files are contained in .idea folder
+# TODO This file can be improved, idea project file. ^^
 .idea/
 target

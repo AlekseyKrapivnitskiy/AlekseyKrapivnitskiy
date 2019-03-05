@@ -13,13 +13,19 @@ import static org.testng.Assert.assertTrue;
 
 public class MetalsAndColorsPage extends WebPage {
 
+    /*
+    TODO All of this elements should be inside of the form,
+         in the other words, form should consist of this elements.
+    TODO This is not make sense to create a section with one particular element...
+     */
     private Summary summary;
     private Elements element;
     private Colors colors;
     private Metals metals;
     private Vegetables vegetables;
-    private MetalsAndColorsForm metalsAndColorsForm;
     private Result result;
+
+    private MetalsAndColorsForm metalsAndColorsForm;
 
     public void selectSummary(SummaryRadiobuttons summaryRadiobuttons) {
         if(summaryRadiobuttons.value % 2 == 0) {
@@ -51,7 +57,7 @@ public class MetalsAndColorsPage extends WebPage {
     }
 
     public void checkResults(ResultsList resultsList, String resultValue) {
-
+        // TODO Take a look on stream::map method
         List<String> resultContent = new ArrayList<>();
         for (WebElement element : result.resultSection) {
             resultContent.add(element.getText());
