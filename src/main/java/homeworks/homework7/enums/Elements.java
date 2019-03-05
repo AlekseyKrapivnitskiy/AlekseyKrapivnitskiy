@@ -1,6 +1,6 @@
 package homeworks.homework7.enums;
 
-public enum ElementsList {
+public enum Elements {
 
     WATER(0, "Water"),
     EARTH(1, "Earth"),
@@ -10,7 +10,7 @@ public enum ElementsList {
     public int index;
     public String label;
 
-    ElementsList(int index, String label) {
+    Elements(int index, String label) {
         this.index = index;
         this.label = label;
     }

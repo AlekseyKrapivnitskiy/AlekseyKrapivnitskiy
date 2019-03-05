@@ -8,13 +8,13 @@ import org.testng.annotations.Test;
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static homeworks.homework7.entities.User.piterChailovskii;
-import static homeworks.homework7.enums.ColorsList.RED;
-import static homeworks.homework7.enums.ElementsList.*;
+import static homeworks.homework7.enums.Colors.RED;
+import static homeworks.homework7.enums.Elements.*;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
-import static homeworks.homework7.enums.MetalsList.SELEN;
-import static homeworks.homework7.enums.ResultsList.*;
-import static homeworks.homework7.enums.SummaryRadiobuttons.EIGHT;
-import static homeworks.homework7.enums.SummaryRadiobuttons.THREE;
+import static homeworks.homework7.enums.Metals.SELEN;
+import static homeworks.homework7.enums.Results.*;
+import static homeworks.homework7.enums.Summary.EIGHT;
+import static homeworks.homework7.enums.Summary.THREE;
 import static homeworks.homework7.enums.VegetablesList.*;
 
 public class MetalsAndColorsPageTest extends JDISite {
@@ -44,19 +44,7 @@ public class MetalsAndColorsPageTest extends JDISite {
 
         //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
         // VegetablesList: Cucumber,Tomato
-        metalsAndColorsPage.selectSummary(THREE);
-        metalsAndColorsPage.selectSummary(EIGHT);
 
-        metalsAndColorsPage.selectElement(WATER);
-        metalsAndColorsPage.selectElement(FIRE);
-
-        metalsAndColorsPage.selectColor(RED);
-
-        metalsAndColorsPage.selectMetal(SELEN);
-
-        metalsAndColorsPage.selectVegetable(VEGETABLE);
-        metalsAndColorsPage.selectVegetable(CUCUMBER);
-        metalsAndColorsPage.selectVegetable(TOMATO);
 
         //4.Submit form Metals & Colors
         metalsAndColorsPage.submitMetalsAndColorsForm();

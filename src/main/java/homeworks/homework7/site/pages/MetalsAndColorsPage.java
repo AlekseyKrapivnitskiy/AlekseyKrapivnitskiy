@@ -19,7 +19,7 @@ public class MetalsAndColorsPage extends WebPage {
      */
     private MetalsAndColorsForm metalsAndColorsForm;
 
-    public void selectSummary(SummaryRadiobuttons summaryRadiobuttons) {
+    public void selectSummary(Summary summaryRadiobuttons) {
         if(summaryRadiobuttons.value % 2 == 0) {
             metalsAndColorsForm.odd.select(summaryRadiobuttons.label);
         }
@@ -28,15 +28,15 @@ public class MetalsAndColorsPage extends WebPage {
         }
     }
 
-    public void selectElement(ElementsList elementsList) {
+    public void selectElement(Elements elementsList) {
         metalsAndColorsForm.elements.select(elementsList.label);
     }
 
-    public void selectColor(ColorsList color) {
+    public void selectColor(Colors color) {
         metalsAndColorsForm.colorsDropdown.select(color.label);
     }
 
-    public void selectMetal(MetalsList metal) {
+    public void selectMetal(Metals metal) {
         metalsAndColorsForm.metalsDropdown.select(metal.label);
     }
 
@@ -48,7 +48,7 @@ public class MetalsAndColorsPage extends WebPage {
         metalsAndColorsForm.submit.click();
     }
 
-    public void checkResults(ResultsList resultsList, String resultValue) {
+    public void checkResults(Results resultsList, String resultValue) {
         // TODO Take a look on stream::map method
         List<String> resultContent = new ArrayList<>();
         for (WebElement element : metalsAndColorsForm.resultSection) {

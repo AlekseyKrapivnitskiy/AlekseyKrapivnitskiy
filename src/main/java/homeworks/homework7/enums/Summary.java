@@ -1,6 +1,6 @@
 package homeworks.homework7.enums;
 
-public enum  SummaryRadiobuttons {
+public enum Summary {
 
     ONE(1, "1"),
     TWO(2, "2"),
@@ -14,7 +14,7 @@ public enum  SummaryRadiobuttons {
     public int value;
     public String label;
 
-    SummaryRadiobuttons(int value, String label) {
+    Summary(int value, String label) {
         this.value = value;
         this.label = label;
     }

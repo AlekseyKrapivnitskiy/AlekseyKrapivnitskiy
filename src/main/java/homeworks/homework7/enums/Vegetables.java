@@ -1,6 +1,6 @@
 package homeworks.homework7.enums;
 
-public enum VegetablesList {
+public enum Vegetables {
 
     CUCUMBER(0, "Cucumber"),
     TOMATO(1, "Tomato"),
@@ -10,7 +10,7 @@ public enum VegetablesList {
     public int index;
     public String label;
 
-    VegetablesList(int index, String label) {
+    Vegetables(int index, String label) {
         this.index = index;
         this.label = label;
     }

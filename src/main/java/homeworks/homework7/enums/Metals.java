@@ -1,6 +1,6 @@
 package homeworks.homework7.enums;
 
-public enum MetalsList {
+public enum Metals {
 
     METALS(0, "Metals"),
     GOLD(1, "Gold"),
@@ -11,7 +11,7 @@ public enum MetalsList {
     public int index;
     public String label;
 
-    MetalsList(int index, String label) {
+    Metals(int index, String label) {
         this.index = index;
         this.label = label;
     }

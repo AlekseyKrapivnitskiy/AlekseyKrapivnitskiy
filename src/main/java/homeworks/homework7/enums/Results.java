@@ -1,6 +1,6 @@
 package homeworks.homework7.enums;
 
-public enum ResultsList {
+public enum Results {
 
     SUMMARY("Summary: "),
     ELEMENTS("Elements: "),
@@ -10,7 +10,7 @@ public enum ResultsList {
 
     public String label;
 
-    ResultsList(String label) {
+    Results(String label) {
         this.label = label;
     }
 }

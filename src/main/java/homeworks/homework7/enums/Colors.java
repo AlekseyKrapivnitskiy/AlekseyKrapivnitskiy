@@ -1,6 +1,6 @@
 package homeworks.homework7.enums;
 
-public enum ColorsList {
+public enum Colors {
 
     COLORS(0, "Colors"),
     RED(1, "Red"),
@@ -11,7 +11,7 @@ public enum ColorsList {
     public int index;
     public String label;
 
-    ColorsList(int index, String label) {
+    Colors(int index, String label) {
         this.index = index;
         this.label = label;
     }
