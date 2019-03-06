@@ -23,7 +23,7 @@ public class MetalsAndColorsPageTest extends JDISite {
         close();
     }
 
-    // TODO This test should be written in according to entity driving testing.
+    // TODO This test should be written in according to entity driving testing. -- fixed
     @Test
     public void metalsAndColorsPageTest() {
         //1.Login on JDI site as User
