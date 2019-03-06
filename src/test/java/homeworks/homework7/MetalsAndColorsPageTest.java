@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
+import static homeworks.homework7.entities.MetalsAndColors.homeworkSeven;
 import static homeworks.homework7.entities.User.piterChailovskii;
 import static homeworks.homework7.enums.Colors.RED;
 import static homeworks.homework7.enums.Elements.*;
@@ -42,7 +43,7 @@ public class MetalsAndColorsPageTest extends JDISite {
 
         //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
         // VegetablesList: Cucumber,Tomato
-
+        metalsAndColorsPage.fillMetalsAndColorsForm(homeworkSeven);
 
         //4.Submit form Metals & Colors
         metalsAndColorsPage.submitMetalsAndColorsForm();

@@ -18,16 +18,16 @@ import static java.util.Arrays.asList;
 
 public class MetalsAndColors {
 
-    public MetalsAndColors homeworkSeven = new MetalsAndColors(asList(THREE.label, EIGHT.label),
+    public static MetalsAndColors homeworkSeven = new MetalsAndColors(asList(THREE.value, EIGHT.value),
             asList(WATER.label, FIRE.label), RED.label, SELEN.label, asList(CUCUMBER.label, TOMATO.label));
 
-    private List<String> summary;
-    private List<String> elements;
-    private String color;
-    private String metal;
-    private List<String> vegetables;
+    public List<Integer> summary;
+    public List<String> elements;
+    public String color;
+    public String metal;
+    public List<String> vegetables;
 
-    public MetalsAndColors(List<String> summary, List<String> elements, String color, String metal, List<String> vegetables) {
+    public MetalsAndColors(List<Integer> summary, List<String> elements, String color, String metal, List<String> vegetables) {
         this.summary = summary;
         this.elements = elements;
         this.color = color;

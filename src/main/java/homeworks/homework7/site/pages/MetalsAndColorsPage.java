@@ -1,13 +1,16 @@
 package homeworks.homework7.site.pages;
 
 import com.epam.jdi.light.elements.composite.WebPage;
+import homeworks.homework7.entities.MetalsAndColors;
 import homeworks.homework7.enums.*;
 import homeworks.homework7.site.forms.MetalsAndColorsForm;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static homeworks.homework7.enums.Summary.getSummary;
 import static org.testng.Assert.assertTrue;
 
 public class MetalsAndColorsPage extends WebPage {
@@ -19,12 +22,14 @@ public class MetalsAndColorsPage extends WebPage {
      */
     private MetalsAndColorsForm metalsAndColorsForm;
 
-    public void selectSummary(Summary summaryRadiobuttons) {
-        if(summaryRadiobuttons.value % 2 == 0) {
-            metalsAndColorsForm.odd.select(summaryRadiobuttons.label);
-        }
-        else {
-            metalsAndColorsForm.even.select(summaryRadiobuttons.label);
+    public void fillMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
+
+        for(int i = 0; i < metalsAndColors.summary.size(); i++) {
+            if (metalsAndColors.summary.get(i) % 2 == 0) {
+                metalsAndColorsForm.odd.select(getSummary(i));
+            } else {
+                metalsAndColorsForm.even.select(getSummary(i));
+            }
         }
     }
 
@@ -40,7 +45,7 @@ public class MetalsAndColorsPage extends WebPage {
         metalsAndColorsForm.metalsDropdown.select(metal.label);
     }
 
-    public void selectVegetable(VegetablesList vegetable) {
+    public void selectVegetable(Vegetables vegetable) {
         metalsAndColorsForm.vegetablesDropdown.select(vegetable.label);
     }
 

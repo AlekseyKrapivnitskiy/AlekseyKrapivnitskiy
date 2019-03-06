@@ -18,4 +18,13 @@ public enum Summary {
         this.value = value;
         this.label = label;
     }
+
+    public static Summary getSummary(int summary) {
+        for (Summary summaryValue : Summary.values()) {
+            if (summaryValue.value == summary) {
+                return summaryValue;
+            }
+        }
+        return null;
+    }
 }
