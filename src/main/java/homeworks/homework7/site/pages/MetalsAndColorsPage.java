@@ -7,10 +7,12 @@ import homeworks.homework7.site.forms.MetalsAndColorsForm;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static homeworks.homework7.enums.Summary.getSummary;
+import static homeworks.homework7.enums.Elements.getElementLabel;
+import static homeworks.homework7.enums.Summary.getSummaryLabel;
+import static homeworks.homework7.enums.Vegetables.VEGETABLE;
+import static homeworks.homework7.enums.Vegetables.getVegetableLabel;
 import static org.testng.Assert.assertTrue;
 
 public class MetalsAndColorsPage extends WebPage {
@@ -23,30 +25,33 @@ public class MetalsAndColorsPage extends WebPage {
     private MetalsAndColorsForm metalsAndColorsForm;
 
     public void fillMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
-
+        //select summary
         for(int i = 0; i < metalsAndColors.summary.size(); i++) {
             if (metalsAndColors.summary.get(i) % 2 == 0) {
-                metalsAndColorsForm.odd.select(getSummary(i));
+                metalsAndColorsForm.odd.select(getSummaryLabel(metalsAndColors.summary.get(i)));
             } else {
-                metalsAndColorsForm.even.select(getSummary(i));
+                metalsAndColorsForm.even.select(getSummaryLabel(metalsAndColors.summary.get(i)));
             }
         }
-    }
 
-    public void selectElement(Elements elementsList) {
-        metalsAndColorsForm.elements.select(elementsList.label);
-    }
+        //select elements
+        for(int i = 0; i < metalsAndColors.elements.size(); i++) {
+            metalsAndColorsForm.elements.select(getElementLabel(metalsAndColors.elements.get(i)));
+        }
 
-    public void selectColor(Colors color) {
-        metalsAndColorsForm.colorsDropdown.select(color.label);
-    }
+        //select color
+        metalsAndColorsForm.colorsDropdown.select(metalsAndColors.color);
 
-    public void selectMetal(Metals metal) {
-        metalsAndColorsForm.metalsDropdown.select(metal.label);
-    }
+        //select metal
+        metalsAndColorsForm.metalsDropdown.select(metalsAndColors.metal);
 
-    public void selectVegetable(Vegetables vegetable) {
-        metalsAndColorsForm.vegetablesDropdown.select(vegetable.label);
+        //unselect 'Vegetables'
+        metalsAndColorsForm.vegetablesDropdown.select(VEGETABLE.label);
+
+        //select vegetables
+        for(int i = 0; i < metalsAndColors.vegetables.size(); i++) {
+            metalsAndColorsForm.vegetablesDropdown.select(getVegetableLabel(metalsAndColors.vegetables.get(i)));
+        }
     }
 
     public void submitMetalsAndColorsForm() {

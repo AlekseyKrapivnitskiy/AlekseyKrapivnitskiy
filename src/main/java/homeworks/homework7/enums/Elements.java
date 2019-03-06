@@ -14,4 +14,13 @@ public enum Elements {
         this.index = index;
         this.label = label;
     }
+
+    public static String getElementLabel(String element) {
+        for (Elements elementName : Elements.values()) {
+            if (elementName.label.equals(element)) {
+                return elementName.label;
+            }
+        }
+        return null;
+    }
 }

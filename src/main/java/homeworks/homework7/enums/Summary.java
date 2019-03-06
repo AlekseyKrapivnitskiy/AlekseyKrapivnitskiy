@@ -19,10 +19,10 @@ public enum Summary {
         this.label = label;
     }
 
-    public static Summary getSummary(int summary) {
+    public static String getSummaryLabel(int summary) {
         for (Summary summaryValue : Summary.values()) {
             if (summaryValue.value == summary) {
-                return summaryValue;
+                return summaryValue.label;
             }
         }
         return null;

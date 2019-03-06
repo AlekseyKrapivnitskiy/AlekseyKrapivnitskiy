@@ -14,4 +14,13 @@ public enum Vegetables {
         this.index = index;
         this.label = label;
     }
+
+    public static String getVegetableLabel(String vegetable) {
+        for (Vegetables vegetableName : Vegetables.values()) {
+            if (vegetableName.label.equals(vegetable)) {
+                return vegetableName.label;
+            }
+        }
+        return null;
+    }
 }
