@@ -9,12 +9,7 @@ import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static homeworks.homework7.entities.MetalsAndColors.homeworkSeven;
 import static homeworks.homework7.entities.User.piterChailovskii;
-import static homeworks.homework7.enums.Colors.RED;
-import static homeworks.homework7.enums.Elements.*;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
-import static homeworks.homework7.enums.Metals.SELEN;
-import static homeworks.homework7.enums.Results.*;
-import static homeworks.homework7.enums.Vegetables.*;
 
 public class MetalsAndColorsPageTest extends JDISite {
 
