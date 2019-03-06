@@ -13,9 +13,7 @@ import static homeworks.homework7.enums.Elements.*;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;
 import static homeworks.homework7.enums.Metals.SELEN;
 import static homeworks.homework7.enums.Results.*;
-import static homeworks.homework7.enums.Summary.EIGHT;
-import static homeworks.homework7.enums.Summary.THREE;
-import static homeworks.homework7.enums.VegetablesList.*;
+import static homeworks.homework7.enums.Vegetables.*;
 
 public class MetalsAndColorsPageTest extends JDISite {
 
