@@ -23,7 +23,7 @@ public class MetalsAndColors {
     public String metal;
     public List<String> vegetables;
 
-    public MetalsAndColors(List<Integer> summary, List<String> elements, String color, String metal, List<String> vegetables) {
+    private MetalsAndColors(List<Integer> summary, List<String> elements, String color, String metal, List<String> vegetables) {
         this.summary = summary;
         this.elements = elements;
         this.color = color;
