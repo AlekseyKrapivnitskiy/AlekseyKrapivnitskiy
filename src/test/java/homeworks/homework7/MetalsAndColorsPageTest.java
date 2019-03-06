@@ -50,10 +50,6 @@ public class MetalsAndColorsPageTest extends JDISite {
 
         //5.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
         // VegetablesList: Cucumber, Tomato
-        metalsAndColorsPage.checkResults(SUMMARY, "11");
-        metalsAndColorsPage.checkResults(ELEMENTS, WATER.label + ", " + FIRE.label);
-        metalsAndColorsPage.checkResults(COLOR, RED.label);
-        metalsAndColorsPage.checkResults(METAL, SELEN.label);
-        metalsAndColorsPage.checkResults(VEGETABLES, CUCUMBER.label + ", " + TOMATO.label);
+        metalsAndColorsPage.checkResults(homeworkSeven);
     }
 }
