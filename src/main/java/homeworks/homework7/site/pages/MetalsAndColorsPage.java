@@ -5,8 +5,8 @@ import homeworks.homework7.entities.MetalsAndColors;
 import homeworks.homework7.site.forms.MetalsAndColorsForm;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static homeworks.homework7.enums.Elements.*;
 import static homeworks.homework7.enums.Results.*;
@@ -59,11 +59,8 @@ public class MetalsAndColorsPage extends WebPage {
     }
 
     public void checkResults(MetalsAndColors metalsAndColors) {
-        // TODO Take a look on stream::map method
-        List<String> resultContent = new ArrayList<>();
-        for (WebElement element : metalsAndColorsForm.resultSection) {
-            resultContent.add(element.getText());
-        }
+        // TODO Take a look on stream::map method -- fixed
+        List<String> resultContent = metalsAndColorsForm.resultSection.stream().map(WebElement::getText).collect(Collectors.toList());
 
         //assert summary result
         int summaryResult = 0;
