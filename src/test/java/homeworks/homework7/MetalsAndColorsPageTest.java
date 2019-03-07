@@ -30,7 +30,6 @@ public class MetalsAndColorsPageTest extends JDISite {
         homePage.open();
         homePage.checkOpened();
         homePage.login(piterChailovskii);
-        homePage.checkUsername(piterChailovskii);
 
         //2.Open Metals & Colors page by HeaderMenu menu
         homePage.clickOnItemInHeader(METALS_AND_COLORS);
