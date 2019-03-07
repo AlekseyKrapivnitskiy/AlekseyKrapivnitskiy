@@ -14,7 +14,7 @@ import static org.testng.Assert.assertEquals;
 public class HomePage extends WebPage {
 
     private LoginForm loginForm;
-    HeaderMenu headerMenu;
+    private HeaderMenu headerMenu;
 
     @FindBy(css = "#user-icon")
     private Icon userIcon;
@@ -25,6 +25,7 @@ public class HomePage extends WebPage {
     public void login(User user) {
         userIcon.click();
         loginForm.login(user);
+        checkUsername(user);
     }
 
     public void checkUsername(User user) {
