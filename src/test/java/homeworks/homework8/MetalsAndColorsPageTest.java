@@ -2,6 +2,7 @@ package homeworks.homework8;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import homeworks.homework8.data.TestData;
@@ -14,6 +15,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
+import java.util.Map;
 
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
@@ -34,14 +36,17 @@ public class MetalsAndColorsPageTest extends JDISite {
 
     @DataProvider
     public Object[][] getData() throws FileNotFoundException {
-        JsonElement jsonData = new JsonParser().parse(new FileReader("src/test/resources/homework8/JDI_ex8_metalsColorsDataSet.json"));
-        List<TestData> testData = new Gson().fromJson(jsonData, new TypeToken<List<TestData>>() {}.getType());
-        Object[][] returnValue = new Object[testData.size()][1];
+        JsonObject jsonObject = new JsonParser().parse(new FileReader("src/test/resources/homework8/" +
+                "JDI_ex8_metalsColorsDataSet.json")).getAsJsonObject();
+
+        Map<String, TestData> testData = new Gson().fromJson(jsonObject, new TypeToken<Map<String, TestData>>() {}.getType());
+
+        Object[][] data = new Object[testData.size()][1];
         int index = 0;
-        for (Object[] each : returnValue) {
+        for (Object[] each : data) {
             each[0] = testData.get(index++);
         }
-        return returnValue;
+        return data;
     }
 
     @Test(dataProvider = "getData")
