@@ -1,13 +1,22 @@
 package homeworks.homework8;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import homeworks.homework8.data.TestData;
 import homeworks.homework8.site.JDISite;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.List;
 
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
-import static homeworks.homework8.entities.MetalsAndColors.homeworkSeven;
 import static homeworks.homework8.entities.User.piterChailovskii;
 import static homeworks.homework8.enums.HeaderItems.METALS_AND_COLORS;
 
@@ -23,9 +32,20 @@ public class MetalsAndColorsPageTest extends JDISite {
         close();
     }
 
-    // TODO This test should be written in according to entity driving testing. -- fixed
-    @Test
-    public void metalsAndColorsPageTest() {
+    @DataProvider
+    public Object[][] getData() throws FileNotFoundException {
+        JsonElement jsonData = new JsonParser().parse(new FileReader("src/test/resources/homework8/JDI_ex8_metalsColorsDataSet.json"));
+        List<TestData> testData = new Gson().fromJson(jsonData, new TypeToken<List<TestData>>() {}.getType());
+        Object[][] returnValue = new Object[testData.size()][1];
+        int index = 0;
+        for (Object[] each : returnValue) {
+            each[0] = testData.get(index++);
+        }
+        return returnValue;
+    }
+
+    @Test(dataProvider = "getData")
+    public void metalsAndColorsPageTest(TestData metalsAndColors) {
         //1.Login on JDI site as User
         homePage.open();
         homePage.checkOpened();
@@ -37,13 +57,13 @@ public class MetalsAndColorsPageTest extends JDISite {
 
         //3.Fill form Metals & Colors by data below:  Summary: 3, 8, Elements: Water, Fire, Colors: Red, Metals: Selen,
         // VegetablesList: Cucumber,Tomato
-        metalsAndColorsPage.fillMetalsAndColorsForm(homeworkSeven);
+        metalsAndColorsPage.fillMetalsAndColorsForm(metalsAndColors);
 
         //4.Submit form Metals & Colors
         metalsAndColorsPage.submitMetalsAndColorsForm();
 
         //5.Result sections should contains data  below:  Summary: 11, Elements: Water, Fire, Color: Red, Metal: Selen,
         // VegetablesList: Cucumber, Tomato
-        metalsAndColorsPage.checkResults(homeworkSeven);
+        metalsAndColorsPage.checkResults(metalsAndColors);
     }
 }
