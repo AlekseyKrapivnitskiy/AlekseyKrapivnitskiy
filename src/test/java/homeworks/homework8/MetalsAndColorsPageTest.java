@@ -6,10 +6,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import homeworks.homework8.data.TestData;
 import homeworks.homework8.site.JDISite;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,13 +19,13 @@ import static homeworks.homework8.enums.HeaderItems.METALS_AND_COLORS;
 
 public class MetalsAndColorsPageTest extends JDISite {
 
-    @BeforeSuite
-    public void beforeSuite() {
+    @BeforeTest
+    public void beforeTest() {
         initElements(JDISite.class);
     }
 
-    @AfterSuite
-    public void afterSuite() {
+    @AfterTest
+    public void afterTest() {
         close();
     }
 
@@ -39,12 +36,12 @@ public class MetalsAndColorsPageTest extends JDISite {
 
         Map<String, TestData> testData = new Gson().fromJson(jsonObject, new TypeToken<Map<String, TestData>>() {}.getType());
 
-        Object[][] data = new Object[testData.size()][1];
+        Object[][] dataObjects = new Object[testData.size()][1];
         int index = 0;
-        for (Object[] each : data) {
-            each[0] = testData.get(index++);
+        for (String key : testData.keySet()) {
+            dataObjects[index++][0] = testData.get(key);
         }
-        return data;
+        return dataObjects;
     }
 
     @Test(dataProvider = "getData")
