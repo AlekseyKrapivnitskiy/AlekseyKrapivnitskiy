@@ -14,6 +14,7 @@ public class CucumberTestRunner extends AbstractTestNGCucumberTests {
     @BeforeMethod
     public void beforeMethod() {
         Configuration.startMaximized = true;
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
     }
 
     @AfterMethod

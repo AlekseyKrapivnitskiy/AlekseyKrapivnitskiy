@@ -9,5 +9,6 @@ public abstract class SelenideBase {
     public void beforeSuite() {
         // TODO Why you set this property??? -- fixed
         Configuration.startMaximized = true;
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
     }
 }
