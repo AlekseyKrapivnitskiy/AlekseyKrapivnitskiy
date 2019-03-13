@@ -9,8 +9,6 @@ import java.util.List;
 
 import static homeworks.homework7.enums.Elements.*;
 import static homeworks.homework7.enums.Results.*;
-import static homeworks.homework7.enums.Summary.getSummaryLabel;
-import static homeworks.homework7.enums.Vegetables.VEGETABLE;
 import static homeworks.homework7.enums.Vegetables.getVegetableLabel;
 import static java.util.stream.Collectors.*;
 import static org.testng.Assert.assertTrue;
@@ -20,42 +18,29 @@ public class MetalsAndColorsPage extends WebPage {
 
     private MetalsAndColorsForm metalsAndColorsForm;
 
-    // TODO
+    // TODO -- fixed
     // This method works with the elements from another class.
     // What is the reason of your decision to put it here ?
     public void fillMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
         //select summary
-        for(int i = 0; i < metalsAndColors.summary.size(); i++) {
-            if (metalsAndColors.summary.get(i) % 2 == 0) {
-                metalsAndColorsForm.odd.select(getSummaryLabel(metalsAndColors.summary.get(i)));
-            } else {
-                metalsAndColorsForm.even.select(getSummaryLabel(metalsAndColors.summary.get(i)));
-            }
-        }
+        metalsAndColorsForm.selectSummary(metalsAndColors.summary);
 
         //select elements
-        for(int i = 0; i < metalsAndColors.elements.size(); i++) {
-            metalsAndColorsForm.elements.select(getElementLabel(metalsAndColors.elements.get(i)));
-        }
+        metalsAndColorsForm.selectElements(metalsAndColors.elements);
 
         //select color
-        metalsAndColorsForm.colorsDropdown.select(metalsAndColors.color);
+        metalsAndColorsForm.selectColor(metalsAndColors.color);
 
         //select metal
-        metalsAndColorsForm.metalsDropdown.select(metalsAndColors.metal);
-
-        //unselect 'Vegetables'
-        metalsAndColorsForm.vegetablesDropdown.select(VEGETABLE.label);
+        metalsAndColorsForm.selectMetal(metalsAndColors.metal);
 
         //select vegetables
-        for(int i = 0; i < metalsAndColors.vegetables.size(); i++) {
-            metalsAndColorsForm.vegetablesDropdown.select(getVegetableLabel(metalsAndColors.vegetables.get(i)));
-        }
+        metalsAndColorsForm.selectVegetables(metalsAndColors.vegetables);
     }
 
-    // TODO Same story
+    // TODO Same story -- fixed
     public void submitMetalsAndColorsForm() {
-        metalsAndColorsForm.submit.click();
+        metalsAndColorsForm.submitMetlsAndColorsForm();
     }
 
     /* TODO Oh my...
