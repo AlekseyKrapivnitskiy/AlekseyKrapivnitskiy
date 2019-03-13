@@ -6,10 +6,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import homeworks.homework8.data.TestData;
 import homeworks.homework8.site.JDISite;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,8 +24,8 @@ public class MetalsAndColorsPageTest extends JDISite {
         initElements(JDISite.class);
     }
 
-    @AfterSuite
-    public void afterSuite() {
+    @AfterMethod
+    public void afterMethod() {
         close();
     }
 
