@@ -13,17 +13,17 @@ import static homeworks.homework7.enums.Results.*;
 import static homeworks.homework7.enums.Summary.getSummaryLabel;
 import static homeworks.homework7.enums.Vegetables.VEGETABLE;
 import static homeworks.homework7.enums.Vegetables.getVegetableLabel;
+import static java.util.stream.Collectors.*;
 import static org.testng.Assert.assertTrue;
 
+// TODO Code convention !
 public class MetalsAndColorsPage extends WebPage {
 
-    /*
-    TODO All of this elements should be inside of the form,
-         in the other words, form should consist of this elements.
-    TODO This is not make sense to create a section with one particular element... -- fixed
-     */
     private MetalsAndColorsForm metalsAndColorsForm;
 
+    // TODO
+    // This method works with the elements from another class.
+    // What is the reason of your decision to put it here ?
     public void fillMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
         //select summary
         for(int i = 0; i < metalsAndColors.summary.size(); i++) {
@@ -54,13 +54,22 @@ public class MetalsAndColorsPage extends WebPage {
         }
     }
 
+    // TODO Same story
     public void submitMetalsAndColorsForm() {
         metalsAndColorsForm.submit.click();
     }
 
+    /* TODO Oh my...
+    It is completely prohibited to wright algorithm like this.
+    It is quite difficult to realise what's going on here, especially because of 'switch' structures...
+    I told you that it will be better to compare two lists of strings -
+        1. List that based on MetalsAndColors instance
+        1. List that based on log rows
+    */
     public void checkResults(MetalsAndColors metalsAndColors) {
-        // TODO Take a look on stream::map method -- fixed
-        List<String> resultContent = metalsAndColorsForm.resultSection.stream().map(WebElement::getText).collect(Collectors.toList());
+        List<String> resultContent = metalsAndColorsForm.resultSection.stream()
+                .map(WebElement::getText)
+                .collect(toList());
 
         //assert summary result
         int summaryResult = 0;
