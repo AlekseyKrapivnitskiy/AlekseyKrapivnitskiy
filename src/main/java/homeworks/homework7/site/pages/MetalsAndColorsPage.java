@@ -6,7 +6,6 @@ import homeworks.homework7.site.forms.MetalsAndColorsForm;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static homeworks.homework7.enums.Elements.*;
 import static homeworks.homework7.enums.Results.*;
