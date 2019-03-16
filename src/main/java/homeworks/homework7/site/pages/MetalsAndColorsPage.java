@@ -22,16 +22,12 @@ public class MetalsAndColorsPage extends WebPage {
     // This method works with the elements from another class.
     // What is the reason of your decision to put it here ?
     public void fillMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
-        metalsAndColorsForm.selectSummary(metalsAndColors.summary);
-        metalsAndColorsForm.selectElements(metalsAndColors.elements);
-        metalsAndColorsForm.selectColor(metalsAndColors.color);
-        metalsAndColorsForm.selectMetal(metalsAndColors.metal);
-        metalsAndColorsForm.selectVegetables(metalsAndColors.vegetables);
+        metalsAndColorsForm.fillForm(metalsAndColors);
     }
 
     // TODO Same story -- fixed
     public void submitMetalsAndColorsForm() {
-        metalsAndColorsForm.submitMetlsAndColorsForm();
+        metalsAndColorsForm.submitMetalsAndColorsForm();
     }
 
     /* TODO Oh my...

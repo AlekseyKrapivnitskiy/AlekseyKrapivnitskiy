@@ -6,9 +6,8 @@ import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
+import homeworks.homework7.entities.MetalsAndColors;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 import static homeworks.homework7.enums.Elements.getElementLabel;
 import static homeworks.homework7.enums.Summary.getSummaryLabel;
@@ -24,55 +23,48 @@ public class MetalsAndColorsForm extends Form {
     private RadioButtons even;
 
     @FindBy(css = "#elements-checklist > p")
-    public WebList elements;
+    private WebList elements;
 
     @JDropdown(root = "div[ui=dropdown]", value = ".filter-option", list = "li", expand = ".caret")
-    public Droplist colorsDropdown;
+    private Droplist colorsDropdown;
 
     @JDropdown(root = "div[ui=combobox]", value = "input", list = "li", expand = ".caret")
-    public Droplist metalsDropdown;
+    private Droplist metalsDropdown;
 
     @JDropdown(root = "#salad-dropdown", value = ".dropdown-toggle", list = "li", expand = ".caret")
-    public Droplist vegetablesDropdown;
+    private Droplist vegetablesDropdown;
 
     @FindBy(css = "#submit-button")
-    public Button submit;
+    private Button submit;
 
     @FindBy(css = ".panel-body-list.results")
     public WebList resultSection;
 
-    public void selectSummary(List<Integer> summary) {
-        for (Integer integer : summary) {
+    public void fillForm(MetalsAndColors metalsAndColors) {
+        //select summary
+        for (Integer integer : metalsAndColors.summary) {
             if (integer % 2 == 0) {
                 odd.select(getSummaryLabel(integer));
             } else {
                 even.select(getSummaryLabel(integer));
             }
         }
-    }
-
-    public void selectElements(List<String> elementsList) {
-        for (String s : elementsList) {
+        //select elements
+        for (String s : metalsAndColors.elements) {
             elements.select(getElementLabel(s));
         }
-    }
-
-    public void selectColor(String color) {
-        colorsDropdown.select(color);
-    }
-
-    public void selectMetal(String metal) {
-        metalsDropdown.select(metal);
-    }
-
-    public void selectVegetables(List<String> vegetablesList) {
+        //select color
+        colorsDropdown.select(metalsAndColors.color);
+        //select metal
+        metalsDropdown.select(metalsAndColors.metal);
+        //select vegetables
         vegetablesDropdown.select(VEGETABLE.label);
-        for (String s : vegetablesList) {
+        for (String s : metalsAndColors.vegetables) {
             vegetablesDropdown.select(getVegetableLabel(s));
         }
     }
 
-    public void submitMetlsAndColorsForm() {
+    public void submitMetalsAndColorsForm() {
         submit.click();
     }
 }
