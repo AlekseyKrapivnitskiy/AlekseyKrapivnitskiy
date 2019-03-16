@@ -62,8 +62,9 @@ public class MetalsAndColorsForm extends Form {
         colorsDropdown.select(metalsAndColors.color);
         //select metal
         metalsDropdown.select(metalsAndColors.metal);
-        //select vegetables
+        //unselect 'Vegetables'
         vegetablesDropdown.select(VEGETABLE.label);
+        //select vegetables
         for (String s : metalsAndColors.vegetables) {
             vegetablesDropdown.select(getVegetableLabel(s));
         }
