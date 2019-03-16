@@ -10,8 +10,8 @@ import homeworks.homework7.entities.MetalsAndColors;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static homeworks.homework7.enums.Elements.getElementLabel;
 import static homeworks.homework7.enums.Summary.getSummaryLabel;
@@ -75,10 +75,7 @@ public class MetalsAndColorsForm extends Form {
     }
 
     public void checkResultPanel(MetalsAndColors metalsAndColors) {
-        List<String> results = new ArrayList<>();
-        for (WebElement element : resultSection) {
-            results.add(element.getText());
-        }
+        List<String> results = resultSection.stream().map(WebElement::getText).collect(Collectors.toList());
 
         assertTrue(results.contains("Summary: " + (metalsAndColors.summary.get(0) + metalsAndColors.summary.get(1))));
         assertTrue(results.contains("Elements: " + String.join(", ", metalsAndColors.elements)));
