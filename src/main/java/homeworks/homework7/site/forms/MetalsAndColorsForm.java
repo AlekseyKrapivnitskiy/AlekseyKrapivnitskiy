@@ -70,11 +70,11 @@ public class MetalsAndColorsForm extends Form {
         }
     }
 
-    public void submitMetalsAndColorsForm() {
+    public void submitForm() {
         submit.click();
     }
 
-    public void checkResult(MetalsAndColors metalsAndColors) {
+    public void checkResultPanel(MetalsAndColors metalsAndColors) {
         List<String> results = new ArrayList<>();
         for (WebElement element : resultSection) {
             results.add(element.getText());

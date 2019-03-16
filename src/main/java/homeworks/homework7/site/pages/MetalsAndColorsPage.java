@@ -4,7 +4,7 @@ import com.epam.jdi.light.elements.composite.WebPage;
 import homeworks.homework7.entities.MetalsAndColors;
 import homeworks.homework7.site.forms.MetalsAndColorsForm;
 
-// TODO Code convention !
+// TODO Code convention ! -- fixed
 public class MetalsAndColorsPage extends WebPage {
 
     private MetalsAndColorsForm metalsAndColorsForm;
@@ -18,7 +18,7 @@ public class MetalsAndColorsPage extends WebPage {
 
     // TODO Same story -- fixed
     public void submitMetalsAndColorsForm() {
-        metalsAndColorsForm.submitMetalsAndColorsForm();
+        metalsAndColorsForm.submitForm();
     }
 
     /* TODO Oh my... -- fixed
@@ -29,6 +29,6 @@ public class MetalsAndColorsPage extends WebPage {
         1. List that based on log rows
     */
     public void checkResults(MetalsAndColors metalsAndColors) {
-        metalsAndColorsForm.checkResult(metalsAndColors);
+        metalsAndColorsForm.checkResultPanel(metalsAndColors);
     }
 }
