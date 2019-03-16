@@ -7,12 +7,17 @@ import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
 import homeworks.homework7.entities.MetalsAndColors;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static homeworks.homework7.enums.Elements.getElementLabel;
 import static homeworks.homework7.enums.Summary.getSummaryLabel;
 import static homeworks.homework7.enums.Vegetables.VEGETABLE;
 import static homeworks.homework7.enums.Vegetables.getVegetableLabel;
+import static org.testng.Assert.assertTrue;
 
 public class MetalsAndColorsForm extends Form {
 
@@ -38,7 +43,7 @@ public class MetalsAndColorsForm extends Form {
     private Button submit;
 
     @FindBy(css = ".panel-body-list.results")
-    public WebList resultSection;
+    private WebList resultSection;
 
     public void fillForm(MetalsAndColors metalsAndColors) {
         //select summary
@@ -66,5 +71,18 @@ public class MetalsAndColorsForm extends Form {
 
     public void submitMetalsAndColorsForm() {
         submit.click();
+    }
+
+    public void checkResult(MetalsAndColors metalsAndColors) {
+        List<String> results = new ArrayList<>();
+        for (WebElement element : resultSection) {
+            results.add(element.getText());
+        }
+
+        assertTrue(results.contains("Summary: " + (metalsAndColors.summary.get(0) + metalsAndColors.summary.get(1))));
+        assertTrue(results.contains("Elements: " + String.join(", ", metalsAndColors.elements)));
+        assertTrue(results.contains("Color: " + metalsAndColors.color));
+        assertTrue(results.contains("Metal: " + metalsAndColors.metal));
+        assertTrue(results.contains("Vegetables: " + String.join(", ", metalsAndColors.vegetables)));
     }
 }
