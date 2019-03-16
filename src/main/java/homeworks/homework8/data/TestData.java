@@ -22,7 +22,7 @@ public class TestData {
         return color;
     }
 
-    public String getMetals() {
+    public String getMetal() {
         return metals;
     }
 
