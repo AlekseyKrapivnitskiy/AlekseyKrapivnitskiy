@@ -7,7 +7,7 @@
   <con:entry key="Save After" value="false"/>
   <con:entry key="Add Settings" value="false"/>
   <con:entry key="WSS Password Type" value=""/>
-  <con:entry key="TestSuite" value="TestSuiteForOptionsTests"/>
+  <con:entry key="TestSuite" value="OptionsTests"/>
   <con:entry key="Endpoint" value=""/>
   <con:entry key="Select Report Type" value=""/>
   <con:entry key="System Properties" value=""/>
@@ -389,4 +389,20 @@ wordsWithWrongCapitalization.add("КаРандАШ");
 for (int i = 0 ; i  &lt; wordsWithWrongCapitalization.size; i++) {
         	testRunner.testCase.getTestStepByName("TestProperties").setPropertyValue("textWithWrongCapitalization", wordsWithWrongCapitalization.getAt(i));
         	testRunner.runTestStepByName("CheckIgnoreCapitlizationOption");
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="45e2bad7-5528-4d24-bc32-394e0f1cc2d2" name="ErrorsTests"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6f9f66e6-25f3-4e85-8d77-41320574dc9a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UnknownWordTest" searchProperties="true"><con:settings/><con:testStep type="request" name="CheckUnknownWordError" id="96ea20e0-c51c-4eda-93c4-27f91f267b5a"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpellServiceSoap</con:interface><con:operation>checkText</con:operation><con:request name="CheckUnknownWordError" id="527b5b0d-d26f-4d91-b558-062d7517df86"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <spel:CheckTextRequest>\r
+         <spel:text>${TestProperties#unknownWord}</spel:text>\r
+      </spel:CheckTextRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6ce99ef7-e8cd-47a3-8eec-ac49c366c1c8"/><con:assertion type="XPath Match" id="82cb2d12-fa36-426e-b481-650f16b8c28f" name="XPath Match"><con:configuration/></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="properties" name="TestProperties" id="989a0308-7e66-41bc-a5af-7e7646929d91"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>unknownWord</con:name><con:value>23523552</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="GetTestData" id="47838867-a685-44ad-8ee2-27b2440eb3b3"><con:settings/><con:config><script>List&lt;String> unknownWords = new ArrayList&lt;>();
+
+unknownWords.add("dfgdfg");
+unknownWords.add("варпварвар");
+unknownWords.add("23523552");
+
+for (int i = 0 ; i  &lt; unknownWords.size; i++) {
+        	testRunner.testCase.getTestStepByName("TestProperties").setPropertyValue("unknownWord", unknownWords.getAt(i));
+        	testRunner.runTestStepByName("CheckUnknownWordError");
 }</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
