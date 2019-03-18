@@ -10,6 +10,7 @@ import homeworks.homework8.data.TestData;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +18,7 @@ import static homeworks.homework8.enums.Elements.getElementLabel;
 import static homeworks.homework8.enums.Summary.getSummaryLabel;
 import static homeworks.homework8.enums.Vegetables.VEGETABLE;
 import static homeworks.homework8.enums.Vegetables.getVegetableLabel;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
 
 public class MetalsAndColorsForm extends Form {
 
@@ -75,12 +76,15 @@ public class MetalsAndColorsForm extends Form {
     }
 
     public void checkResultPanel(TestData metalsAndColors) {
-        List<String> results = resultSection.stream().map(WebElement::getText).collect(Collectors.toList());
+        List<String> resultsFromSection = resultSection.stream().map(WebElement::getText).collect(Collectors.toList());
 
-        assertTrue(results.contains("Summary: " + (metalsAndColors.summary.get(0) + metalsAndColors.summary.get(1))));
-        assertTrue(results.contains("Elements: " + String.join(", ", metalsAndColors.elements)));
-        assertTrue(results.contains("Color: " + metalsAndColors.getColor()));
-        assertTrue(results.contains("Metal: " + metalsAndColors.getMetal()));
-        assertTrue(results.contains("Vegetables: " + String.join(", ", metalsAndColors.vegetables)));
+        List<String> metalsAndColorsResults = new ArrayList<>();
+        metalsAndColorsResults.add("Summary: " + (metalsAndColors.summary.get(0) + metalsAndColors.summary.get(1)));
+        metalsAndColorsResults.add("Elements: " + String.join(", ", metalsAndColors.elements));
+        metalsAndColorsResults.add("Color: " + metalsAndColors.getColor());
+        metalsAndColorsResults.add("Metal: " + metalsAndColors.getMetal());
+        metalsAndColorsResults.add("Vegetables: " + String.join(", ", metalsAndColors.vegetables));
+
+        assertEquals(metalsAndColorsResults, resultsFromSection);
     }
 }
