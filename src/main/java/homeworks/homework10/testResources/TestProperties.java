@@ -9,7 +9,7 @@ public class TestProperties {
     private static FileInputStream testPropertiesFile;
     private static Properties testProperties;
 
-    TestProperties() {
+    static {
         try {
             testPropertiesFile = new FileInputStream("test.properties");
             testProperties = new Properties();
