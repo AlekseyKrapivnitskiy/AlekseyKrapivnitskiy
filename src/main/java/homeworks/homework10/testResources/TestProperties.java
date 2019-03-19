@@ -11,7 +11,7 @@ public class TestProperties {
 
     static {
         try {
-            testPropertiesFile = new FileInputStream("test.properties");
+            testPropertiesFile = new FileInputStream("src/test/resources/test.properties");
             testProperties = new Properties();
             testProperties.load(testPropertiesFile);
         } catch (IOException e) {
