@@ -8,7 +8,7 @@ import static homeworks.homework10.testResources.TestProperties.getTestProperty;
 
 public class RequestSpec {
 
-    public static RequestSpecification baseRequestConfiguration(){
+    public static RequestSpecification requestSpec(){
         return new RequestSpecBuilder()
                 .setAccept(ContentType.XML)
                 .setBaseUri(getTestProperty("baseUrl"))
