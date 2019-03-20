@@ -1,4 +1,4 @@
-package homeworks.homework10.apiBuilder;
+package homeworks.homework10.paramsBuilder;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
