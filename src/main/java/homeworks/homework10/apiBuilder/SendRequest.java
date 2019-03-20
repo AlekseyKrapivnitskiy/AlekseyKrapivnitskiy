@@ -1,4 +1,4 @@
-package homeworks.homework10.testResources;
+package homeworks.homework10.apiBuilder;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
