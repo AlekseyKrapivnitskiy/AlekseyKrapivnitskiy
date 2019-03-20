@@ -8,8 +8,8 @@ public class RequestBuilder {
 
     public HashMap<String, String> params = new HashMap<>();
 
-    public RequestBuilder setParam(QueryParams param, String text) {
-        params.put(param.queryParam, text);
+    public RequestBuilder setParam(QueryParams queryParam, String value) {
+        params.put(queryParam.value, value);
         return this;
     }
 }

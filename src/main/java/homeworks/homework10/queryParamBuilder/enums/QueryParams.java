@@ -6,9 +6,9 @@ public enum QueryParams {
     LANG("lang"),
     OPTIONS("options");
 
-    public String queryParam;
+    public String value;
 
-    QueryParams(String queryParam) {
-        this.queryParam = queryParam;
+    QueryParams(String value) {
+        this.value = value;
     }
 }
