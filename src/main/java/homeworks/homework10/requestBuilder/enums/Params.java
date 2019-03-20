@@ -1,6 +1,6 @@
 package homeworks.homework10.requestBuilder.enums;
 
-public enum  Params {
+public enum Params {
 
     TEXT("text"),
     LANG("lang"),
