@@ -11,7 +11,6 @@ public class CheckTextRequest {
     public static Response sendGetRequest(RequestBuilder requestBuilder) {
         return RestAssured.with()
                 .queryParams(requestBuilder.params)
-                .log().all()
-                .get(getTestProperty("baseUrl")).prettyPeek();
+                .get(getTestProperty("baseUrl"));
     }
 }
