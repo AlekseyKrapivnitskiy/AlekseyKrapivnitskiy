@@ -1,4 +1,4 @@
-package homeworks.homework10.paramsBuilder.enums;
+package homeworks.homework10.requestBuilder.enums;
 
 public enum  Params {
 
