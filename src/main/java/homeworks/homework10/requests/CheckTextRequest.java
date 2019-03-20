@@ -8,9 +8,10 @@ import static homeworks.homework10.testResources.TestProperties.getTestProperty;
 
 public class CheckTextRequest {
 
-    public static Response sendGetRequest(RequestBuilder requestBuilder) {
+    public static Response checkText(RequestBuilder requestBuilder) {
         return RestAssured.with()
                 .queryParams(requestBuilder.params)
-                .get(getTestProperty("baseUrl"));
+                .log().all()
+                .get(getTestProperty("baseUrl")).prettyPeek();
     }
 }
