@@ -5,6 +5,8 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 import static homeworks.homework10.queryParamBuilder.enums.QueryParams.TEXT;
 import static homeworks.homework10.requests.CheckTextRequest.checkText;
 
@@ -16,8 +18,8 @@ public class UnknownWordTest {
 
         Response response = checkText(requestBuilder.setParam(TEXT, "марковь"));
 
-        System.out.println(response.getBody().jsonPath().getList("[1]"));
+        List<List> code = response.getBody().jsonPath().getList("code");
 
-        Assert.assertEquals(response.getBody().jsonPath().getInt(".code"), 1);
+        Assert.assertEquals(code.get(0).get(0), 1);
     }
 }
