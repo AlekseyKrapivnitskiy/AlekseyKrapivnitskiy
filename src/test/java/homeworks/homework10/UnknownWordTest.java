@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static homeworks.homework10.queryParamBuilder.enums.QueryParams.TEXT;
+import static homeworks.homework10.queryParamBuilder.enums.QueryParams.*;
 import static homeworks.homework10.requests.CheckTextRequest.checkText;
 
 public class UnknownWordTest {
@@ -16,7 +16,8 @@ public class UnknownWordTest {
     public void unknownWordTest() {
         RequestBuilder requestBuilder = new RequestBuilder();
 
-        Response response = checkText(requestBuilder.setParam(TEXT, "марковь"));
+        Response response = checkText(requestBuilder.setParam(TEXT, "марковь, вадарасла, москва").setParam(OPTIONS, "2")
+                );
 
         List<List> code = response.getBody().jsonPath().getList("code");
 
