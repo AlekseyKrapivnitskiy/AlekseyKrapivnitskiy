@@ -1,5 +1,6 @@
-package homeworks.homework10;
+package homeworks.homework10.errorsTests;
 
+import homeworks.homework10.QueryParamBuilder;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
