@@ -13,7 +13,7 @@ public class SendRequest {
 
     RequestAndResponseSpec requestAndResponseSpec;
 
-    public SendRequest(RequestAndResponseSpec gcApi) {
+    SendRequest(RequestAndResponseSpec gcApi) {
         requestAndResponseSpec = gcApi;
     }
 
