@@ -1,6 +1,6 @@
 package homeworks.homework10;
 
-import homeworks.homework10.queryParamBuilder.RequestBuilder;
+import homeworks.homework10.queryParamBuilder.SendRequest;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,7 +14,7 @@ public class UnknownWordTest {
 
     @Test
     public void unknownWordTest() {
-        RequestBuilder requestBuilder = new RequestBuilder();
+        SendRequest requestBuilder = new SendRequest();
 
         Response response = checkText(requestBuilder.setParam(TEXT, "марковь, вадарасла, москва").setParam(OPTIONS, "2")
                 );
