@@ -1,4 +1,4 @@
-package homeworks.homework10.errorsTests;
+package homeworks.homework10;
 
 import homeworks.homework10.queryParamBuilder.QueryParamBuilder;
 import io.restassured.response.Response;
