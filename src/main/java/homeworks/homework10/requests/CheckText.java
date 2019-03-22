@@ -14,13 +14,13 @@ public class CheckText {
     public static Response checkText(QueryParamBuilder queryParamBuilder) {
         return RestAssured
                 .given()
-                .queryParams(queryParamBuilder.params)
-                .spec(requestSpec())
+                        .queryParams(queryParamBuilder.params)
+                        .spec(requestSpec())
                 .when()
-                .get(getTestProperty("baseUrl") + CHECK_TEXT.endpoint).prettyPeek()
+                        .get(getTestProperty("baseUrl") + CHECK_TEXT.endpoint).prettyPeek()
                 .then()
-                .spec(successResponseSpec())
-                .extract()
-                .response();
+                        .spec(successResponseSpec())
+                        .extract()
+                        .response();
     }
 }
