@@ -1,25 +1,26 @@
 package homeworks.homework10;
 
+import homeworks.homework10.enums.Language;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static homeworks.homework10.enums.QueryParams.*;
-import static homeworks.homework10.requests.CheckTextRequest.checkText;
+import static homeworks.homework10.requests.CheckTexts.checkTexts;
+
 
 public class UnknownWordTest {
 
     @Test
     public void unknownWordTest() {
-        SendRequest requestBuilder = new SendRequest();
 
-        Response response = checkText(requestBuilder.setParam(TEXT, "марковь, вадарасла, москва").setParam(OPTIONS, "2")
-                );
+        QueryParamBuilder queryParams = new QueryParamBuilder();
 
-        List<List> code = response.getBody().jsonPath().getList("code");
+        Response response = checkTexts(queryParams.language(Language.EN));
 
-        Assert.assertEquals(code.get(0).get(0), 1);
+       /* List<List> code = response.getBody().jsonPath().getList("code");
+
+        Assert.assertEquals(code.get(0).get(0), 1);*/
     }
 }
