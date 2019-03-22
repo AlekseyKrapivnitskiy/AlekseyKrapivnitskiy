@@ -1,4 +1,4 @@
-package homeworks.homework10.queryParamBuilder.enums;
+package homeworks.homework10.enums;
 
 public enum Language {
 

@@ -1,6 +1,5 @@
-package homeworks.homework10.specifications;
+package homeworks.homework10;
 
-import homeworks.homework10.queryParamBuilder.SendRequest;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -10,7 +9,7 @@ import org.apache.http.HttpStatus;
 
 import java.util.HashMap;
 
-import static homeworks.homework10.testResources.TestProperties.getTestProperty;
+import static homeworks.homework10.TestProperties.getTestProperty;
 
 public class RequestAndResponseSpec {
 

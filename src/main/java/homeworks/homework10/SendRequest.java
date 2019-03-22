@@ -1,14 +1,13 @@
-package homeworks.homework10.queryParamBuilder;
+package homeworks.homework10;
 
-import homeworks.homework10.queryParamBuilder.enums.Language;
-import homeworks.homework10.specifications.RequestAndResponseSpec;
+import homeworks.homework10.enums.Language;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 import java.util.stream.IntStream;
 
-import static homeworks.homework10.queryParamBuilder.enums.QueryParams.*;
-import static homeworks.homework10.testResources.TestProperties.getTestProperty;
+import static homeworks.homework10.enums.QueryParams.*;
+import static homeworks.homework10.TestProperties.getTestProperty;
 
 public class SendRequest {
 

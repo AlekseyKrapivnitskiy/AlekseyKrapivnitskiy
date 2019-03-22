@@ -1,13 +1,12 @@
 package homeworks.homework10;
 
-import homeworks.homework10.queryParamBuilder.SendRequest;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static homeworks.homework10.queryParamBuilder.enums.QueryParams.*;
+import static homeworks.homework10.enums.QueryParams.*;
 import static homeworks.homework10.requests.CheckTextRequest.checkText;
 
 public class UnknownWordTest {
