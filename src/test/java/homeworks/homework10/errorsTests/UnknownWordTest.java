@@ -9,6 +9,7 @@ import java.util.List;
 import static homeworks.homework10.enums.Errors.ERROR_UNKNOWN_WORD;
 import static homeworks.homework10.enums.Language.*;
 import static homeworks.homework10.requests.CheckTexts.checkTexts;
+import static homeworks.homework10.testResources.TestData.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -19,8 +20,7 @@ public class UnknownWordTest {
     public void unknownWordRuTest() {
         //make query params
         QueryParamBuilder queryParams = new QueryParamBuilder();
-        String wordInRequest = "марковь";
-        queryParams.language(RU).texts(wordInRequest);
+        queryParams.language(RU).texts(UNKNOWN_WORD_TEST_RU.word);
 
         //send request
         Response response = checkTexts(queryParams);
@@ -31,15 +31,14 @@ public class UnknownWordTest {
 
         //assertions
         assertThat(code.get(0).get(0), equalTo(ERROR_UNKNOWN_WORD.code));
-        assertThat(word.get(0).get(0), equalTo(wordInRequest));
+        assertThat(word.get(0).get(0), equalTo(UNKNOWN_WORD_TEST_RU.word));
     }
 
     @Test
     public void unknownWordEnTest() {
         //make query params
         QueryParamBuilder queryParams = new QueryParamBuilder();
-        String wordInRequest = "tamoto";
-        queryParams.language(EN).texts(wordInRequest);
+        queryParams.language(EN).texts(UNKNOWN_WORD_TEST_EN.word);
 
         //send request
         Response response = checkTexts(queryParams);
@@ -50,15 +49,14 @@ public class UnknownWordTest {
 
         //assertions
         assertThat(code.get(0).get(0), equalTo(ERROR_UNKNOWN_WORD.code));
-        assertThat(word.get(0).get(0), equalTo(wordInRequest));
+        assertThat(word.get(0).get(0), equalTo(UNKNOWN_WORD_TEST_EN.word));
     }
 
     @Test
     public void unknownWordUkTest() {
         //make query params
         QueryParamBuilder queryParams = new QueryParamBuilder();
-        String wordInRequest = "превіт";
-        queryParams.language(UK).texts(wordInRequest);
+        queryParams.language(UK).texts(UNKNOWN_WORD_TEST_UK.word);
 
         //send request
         Response response = checkTexts(queryParams);
@@ -69,6 +67,6 @@ public class UnknownWordTest {
 
         //assertions
         assertThat(code.get(0).get(0), equalTo(ERROR_UNKNOWN_WORD.code));
-        assertThat(word.get(0).get(0), equalTo(wordInRequest));
+        assertThat(word.get(0).get(0), equalTo(UNKNOWN_WORD_TEST_UK.word));
     }
 }
