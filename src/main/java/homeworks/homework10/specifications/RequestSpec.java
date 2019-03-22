@@ -5,7 +5,7 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
-import static homeworks.homework10.TestProperties.getTestProperty;
+import static homeworks.homework10.testResources.TestProperties.getTestProperty;
 
 public class RequestSpec {
 

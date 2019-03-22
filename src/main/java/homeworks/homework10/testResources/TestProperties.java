@@ -1,4 +1,4 @@
-package homeworks.homework10;
+package homeworks.homework10.testResources;
 
 import java.io.FileInputStream;
 import java.io.IOException;

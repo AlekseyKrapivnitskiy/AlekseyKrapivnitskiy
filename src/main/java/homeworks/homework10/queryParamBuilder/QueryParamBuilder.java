@@ -1,9 +1,8 @@
-package homeworks.homework10;
+package homeworks.homework10.queryParamBuilder;
 
 import homeworks.homework10.enums.Language;
 
 import java.util.HashMap;
-import java.util.stream.IntStream;
 
 import static homeworks.homework10.enums.QueryParams.*;
 
@@ -16,8 +15,8 @@ public class QueryParamBuilder {
         return this;
     }
 
-    public QueryParamBuilder options(int... options) {
-        params.put(OPTIONS.value, Integer.toString(IntStream.of(options).sum()));
+    public QueryParamBuilder options(int option) {
+        params.put(OPTIONS.value, option);
         return this;
     }
 
