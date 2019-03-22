@@ -13,8 +13,8 @@ public class SendRequest {
 
     RequestAndResponseSpec requestAndResponseSpec;
 
-    SendRequest(RequestAndResponseSpec gcApi) {
-        requestAndResponseSpec = gcApi;
+    SendRequest(RequestAndResponseSpec spec) {
+        requestAndResponseSpec = spec;
     }
 
     public SendRequest texts(String text) {
