@@ -17,7 +17,7 @@ public class CheckTextTest {
     public void checkTextTest() {
         //make query params
         QueryParamBuilder queryParams = new QueryParamBuilder();
-        queryParams.language(EN).texts(CHECK_TEST_RU_WRONG_WORD.word);
+        queryParams.language(EN).texts(CHECK_TEXT_TEST_RU_WRONG_WORD.word);
 
         //send request
         SpellerResponse[] spellerResponse = checkText(queryParams).body().as(SpellerResponse[].class);
@@ -27,7 +27,7 @@ public class CheckTextTest {
         assertThat(spellerResponse[0].getPos(), equalTo(0));
         assertThat(spellerResponse[0].getRow(), equalTo(0));
         assertThat(spellerResponse[0].getCol(), equalTo(0));
-        assertThat(spellerResponse[0].getWord(), equalTo(CHECK_TEST_RU_WRONG_WORD.word));
-        assertThat(spellerResponse[0].getS().get(0), equalTo(CHECK_TEST_RU_CORRECT_WORD.word));
+        assertThat(spellerResponse[0].getWord(), equalTo(CHECK_TEXT_TEST_RU_WRONG_WORD.word));
+        assertThat(spellerResponse[0].getS().get(0), equalTo(CHECK_TEXT_TEST_RU_CORRECT_WORD.word));
     }
 }
