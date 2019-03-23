@@ -27,15 +27,15 @@ public class CapitalizationTest {
         queryParams.language(RU).texts(CAPITALIZATION_TEST_RU.word);
 
         //send request
-        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
+        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(response[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
-        assertThat(response[0][0].getPos(), equalTo(0));
-        assertThat(response[0][0].getRow(), equalTo(0));
-        assertThat(response[0][0].getCol(), equalTo(0));
-        assertThat(response[0][0].getLen(), equalTo(CAPITALIZATION_TEST_RU.word.length()));
-        assertThat(response[0][0].getWord(), equalTo(CAPITALIZATION_TEST_RU.word));
+        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
+        assertThat(spellerResponse[0][0].getPos(), equalTo(0));
+        assertThat(spellerResponse[0][0].getRow(), equalTo(0));
+        assertThat(spellerResponse[0][0].getCol(), equalTo(0));
+        assertThat(spellerResponse[0][0].getLen(), equalTo(CAPITALIZATION_TEST_RU.word.length()));
+        assertThat(spellerResponse[0][0].getWord(), equalTo(CAPITALIZATION_TEST_RU.word));
     }
 
     @Test
@@ -45,15 +45,15 @@ public class CapitalizationTest {
         queryParams.language(EN).texts(CAPITALIZATION_TEST_EN.word);
 
         //send request
-        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
+        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(response[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
-        assertThat(response[0][0].getPos(), equalTo(0));
-        assertThat(response[0][0].getRow(), equalTo(0));
-        assertThat(response[0][0].getCol(), equalTo(0));
-        assertThat(response[0][0].getLen(), equalTo(CAPITALIZATION_TEST_EN.word.length()));
-        assertThat(response[0][0].getWord(), equalTo(CAPITALIZATION_TEST_EN.word));
+        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
+        assertThat(spellerResponse[0][0].getPos(), equalTo(0));
+        assertThat(spellerResponse[0][0].getRow(), equalTo(0));
+        assertThat(spellerResponse[0][0].getCol(), equalTo(0));
+        assertThat(spellerResponse[0][0].getLen(), equalTo(CAPITALIZATION_TEST_EN.word.length()));
+        assertThat(spellerResponse[0][0].getWord(), equalTo(CAPITALIZATION_TEST_EN.word));
     }
 
     @Test
@@ -63,14 +63,14 @@ public class CapitalizationTest {
         queryParams.language(UK).texts(CAPITALIZATION_TEST_UK.word);
 
         //send request
-        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
+        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(response[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
-        assertThat(response[0][0].getPos(), equalTo(0));
-        assertThat(response[0][0].getRow(), equalTo(0));
-        assertThat(response[0][0].getCol(), equalTo(0));
-        assertThat(response[0][0].getLen(), equalTo(CAPITALIZATION_TEST_UK.word.length()));
-        assertThat(response[0][0].getWord(), equalTo(CAPITALIZATION_TEST_UK.word));
+        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
+        assertThat(spellerResponse[0][0].getPos(), equalTo(0));
+        assertThat(spellerResponse[0][0].getRow(), equalTo(0));
+        assertThat(spellerResponse[0][0].getCol(), equalTo(0));
+        assertThat(spellerResponse[0][0].getLen(), equalTo(CAPITALIZATION_TEST_UK.word.length()));
+        assertThat(spellerResponse[0][0].getWord(), equalTo(CAPITALIZATION_TEST_UK.word));
     }
 }

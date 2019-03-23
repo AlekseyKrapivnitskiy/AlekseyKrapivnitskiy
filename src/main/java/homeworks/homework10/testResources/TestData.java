@@ -12,7 +12,10 @@ public enum TestData {
 
     CAPITALIZATION_TEST_RU("санкт-петербург"),
     CAPITALIZATION_TEST_EN("saint petersburg"),
-    CAPITALIZATION_TEST_UK("санкт-петербург");
+    CAPITALIZATION_TEST_UK("санкт-петербург"),
+
+    CHECK_TEST_RU_WRONG_WORD("памидор"),
+    CHECK_TEST_RU_CORRECT_WORD("помидор");
 
     public String word;
 
