@@ -29,15 +29,11 @@ public class CapitalizationTest {
         queryParams.language(RU).texts(CAPITALIZATION_TEST_RU.word);
 
         //send request
-        Response response = checkTexts(queryParams);
-
-        //get data from response
-        List<List> code = response.getBody().jsonPath().getList("code");
-        List<List> word = response.getBody().jsonPath().getList("word");
+     //   ListOfSpellerResponseCheckTexts[] response = checkTexts(queryParams).body().as(ListOfSpellerResponseCheckTexts[].class);
 
         //assertions
-        assertThat(code.get(0).get(0), equalTo(ERROR_CAPITALIZATION.code));
-        assertThat(word.get(0).get(0), equalTo(CAPITALIZATION_TEST_RU.word));
+      //  assertThat(response[0].getSpellerResponseCheckTexts()[0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
+       // assertThat(word.get(0).get(0), equalTo(CAPITALIZATION_TEST_RU.word));*
     }
 
     @Test
