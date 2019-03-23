@@ -11,7 +11,6 @@ import static homeworks.homework10.testResources.TestData.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-
 public class UnknownWordTest {
 
     @Test

@@ -1,10 +1,8 @@
 package homeworks.homework10;
 
+import homeworks.homework10.bodies.SpellerResponse;
 import homeworks.homework10.queryParamBuilder.QueryParamBuilder;
-import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 import static homeworks.homework10.enums.Errors.ERROR_UNKNOWN_WORD;
 import static homeworks.homework10.enums.Language.*;
@@ -22,13 +20,10 @@ public class RepeatWordTest {
         queryParams.language(RU).options(8).texts(REPEAT_WORD_TEST_RU.word);
 
         //send request
-        Response response = checkTexts(queryParams);
-
-        //get data from response
-        List<List> code = response.getBody().jsonPath().getList("code");
+        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(code.get(0).get(0), equalTo(ERROR_UNKNOWN_WORD.code));
+        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
     }
 
     @Test
@@ -38,13 +33,10 @@ public class RepeatWordTest {
         queryParams.language(EN).options(8).texts(REPEAT_WORD_TEST_EN.word);
 
         //send request
-        Response response = checkTexts(queryParams);
-
-        //get data from response
-        List<List> code = response.getBody().jsonPath().getList("code");
+        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(code.get(0).get(0), equalTo(ERROR_UNKNOWN_WORD.code));
+        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
     }
 
     @Test
@@ -54,12 +46,9 @@ public class RepeatWordTest {
         queryParams.language(UK).options(8).texts(REPEAT_WORD_TEST_UK.word);
 
         //send request
-        Response response = checkTexts(queryParams);
-
-        //get data from response
-        List<List> code = response.getBody().jsonPath().getList("code");
+        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(code.get(0).get(0), equalTo(ERROR_UNKNOWN_WORD.code));
+        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
     }
 }

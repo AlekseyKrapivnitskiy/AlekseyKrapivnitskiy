@@ -16,8 +16,9 @@ import homeworks.homework10.queryParamBuilder.QueryParamBuilder;
 import org.testng.annotations.Test;
 
 //todo все хорошо за исключением главного - нет pojo класса
-// 1. добавить pojo класс
+// 1. добавить pojo класс -- поправил
 //2. построить часть проверок на сравнении дессериализованного объекта из ответа сервиса и expected сущности, заданной в тесте
+//-- поправил
 public class CapitalizationTest {
 
     @Test
