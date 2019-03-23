@@ -11,11 +11,9 @@ import static homeworks.homework10.testResources.TestData.CAPITALIZATION_TEST_UK
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
+import homeworks.homework10.bodies.SpellerResponse;
 import homeworks.homework10.queryParamBuilder.QueryParamBuilder;
-import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 //todo все хорошо за исключением главного - нет pojo класса
 // 1. добавить pojo класс
@@ -29,11 +27,15 @@ public class CapitalizationTest {
         queryParams.language(RU).texts(CAPITALIZATION_TEST_RU.word);
 
         //send request
-     //   ListOfSpellerResponseCheckTexts[] response = checkTexts(queryParams).body().as(ListOfSpellerResponseCheckTexts[].class);
+        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-      //  assertThat(response[0].getSpellerResponseCheckTexts()[0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
-       // assertThat(word.get(0).get(0), equalTo(CAPITALIZATION_TEST_RU.word));*
+        assertThat(response[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
+        assertThat(response[0][0].getPos(), equalTo(0));
+        assertThat(response[0][0].getRow(), equalTo(0));
+        assertThat(response[0][0].getCol(), equalTo(0));
+        assertThat(response[0][0].getLen(), equalTo(CAPITALIZATION_TEST_RU.word.length()));
+        assertThat(response[0][0].getWord(), equalTo(CAPITALIZATION_TEST_RU.word));
     }
 
     @Test
@@ -43,15 +45,15 @@ public class CapitalizationTest {
         queryParams.language(EN).texts(CAPITALIZATION_TEST_EN.word);
 
         //send request
-        Response response = checkTexts(queryParams);
-
-        //get data from response
-        List<List> code = response.getBody().jsonPath().getList("code");
-        List<List> word = response.getBody().jsonPath().getList("word");
+        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(code.get(0).get(0), equalTo(ERROR_CAPITALIZATION.code));
-        assertThat(word.get(0).get(0), equalTo(CAPITALIZATION_TEST_EN.word));
+        assertThat(response[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
+        assertThat(response[0][0].getPos(), equalTo(0));
+        assertThat(response[0][0].getRow(), equalTo(0));
+        assertThat(response[0][0].getCol(), equalTo(0));
+        assertThat(response[0][0].getLen(), equalTo(CAPITALIZATION_TEST_EN.word.length()));
+        assertThat(response[0][0].getWord(), equalTo(CAPITALIZATION_TEST_EN.word));
     }
 
     @Test
@@ -61,14 +63,14 @@ public class CapitalizationTest {
         queryParams.language(UK).texts(CAPITALIZATION_TEST_UK.word);
 
         //send request
-        Response response = checkTexts(queryParams);
-
-        //get data from response
-        List<List> code = response.getBody().jsonPath().getList("code");
-        List<List> word = response.getBody().jsonPath().getList("word");
+        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(code.get(0).get(0), equalTo(ERROR_CAPITALIZATION.code));
-        assertThat(word.get(0).get(0), equalTo(CAPITALIZATION_TEST_UK.word));
+        assertThat(response[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
+        assertThat(response[0][0].getPos(), equalTo(0));
+        assertThat(response[0][0].getRow(), equalTo(0));
+        assertThat(response[0][0].getCol(), equalTo(0));
+        assertThat(response[0][0].getLen(), equalTo(CAPITALIZATION_TEST_UK.word.length()));
+        assertThat(response[0][0].getWord(), equalTo(CAPITALIZATION_TEST_UK.word));
     }
 }
