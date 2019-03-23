@@ -2,10 +2,7 @@ package homeworks.homework10;
 
 import homeworks.homework10.bodies.SpellerResponse;
 import homeworks.homework10.queryParamBuilder.QueryParamBuilder;
-import io.restassured.response.Response;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 import static homeworks.homework10.enums.Errors.ERROR_UNKNOWN_WORD;
 import static homeworks.homework10.enums.Language.*;
@@ -28,7 +25,7 @@ public class UnknownWordTest {
 
         //assertions
         assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
-     //   assertThat(word.get(0).get(0), equalTo(UNKNOWN_WORD_TEST_RU.word));
+        assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_RU.word));
     }
 
     @Test
@@ -38,15 +35,11 @@ public class UnknownWordTest {
         queryParams.language(EN).texts(UNKNOWN_WORD_TEST_EN.word);
 
         //send request
-        Response response = checkTexts(queryParams);
-
-        //get data from response
-        List<List> code = response.getBody().jsonPath().getList("code");
-        List<List> word = response.getBody().jsonPath().getList("word");
+        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(code.get(0).get(0), equalTo(ERROR_UNKNOWN_WORD.code));
-        assertThat(word.get(0).get(0), equalTo(UNKNOWN_WORD_TEST_EN.word));
+        assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
+        assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_EN.word));
     }
 
     @Test
@@ -56,14 +49,10 @@ public class UnknownWordTest {
         queryParams.language(UK).texts(UNKNOWN_WORD_TEST_UK.word);
 
         //send request
-        Response response = checkTexts(queryParams);
-
-        //get data from response
-        List<List> code = response.getBody().jsonPath().getList("code");
-        List<List> word = response.getBody().jsonPath().getList("word");
+        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
-        assertThat(code.get(0).get(0), equalTo(ERROR_UNKNOWN_WORD.code));
-        assertThat(word.get(0).get(0), equalTo(UNKNOWN_WORD_TEST_UK.word));
+        assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
+        assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_UK.word));
     }
 }
