@@ -1,18 +1,25 @@
 package homeworks.homework10;
 
+import static homeworks.homework10.enums.Errors.ERROR_CAPITALIZATION;
+import static homeworks.homework10.enums.Language.EN;
+import static homeworks.homework10.enums.Language.RU;
+import static homeworks.homework10.enums.Language.UK;
+import static homeworks.homework10.requests.CheckTexts.checkTexts;
+import static homeworks.homework10.testResources.TestData.CAPITALIZATION_TEST_EN;
+import static homeworks.homework10.testResources.TestData.CAPITALIZATION_TEST_RU;
+import static homeworks.homework10.testResources.TestData.CAPITALIZATION_TEST_UK;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+
 import homeworks.homework10.queryParamBuilder.QueryParamBuilder;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static homeworks.homework10.enums.Errors.ERROR_CAPITALIZATION;
-import static homeworks.homework10.enums.Language.*;
-import static homeworks.homework10.requests.CheckTexts.checkTexts;
-import static homeworks.homework10.testResources.TestData.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-
+//todo все хорошо за исключением главного - нет pojo класса
+// 1. добавить pojo класс
+//2. построить часть проверок на сравнении дессериализованного объекта из ответа сервиса и expected сущности, заданной в тесте
 public class CapitalizationTest {
 
     @Test
