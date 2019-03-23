@@ -25,6 +25,10 @@ public class UnknownWordTest {
 
         //assertions
         assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
+        assertThat(response[0][0].getPos(), equalTo(0));
+        assertThat(response[0][0].getRow(), equalTo(0));
+        assertThat(response[0][0].getCol(), equalTo(0));
+        assertThat(response[0][0].getLen(), equalTo(UNKNOWN_WORD_TEST_RU.word.length()));
         assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_RU.word));
     }
 
@@ -39,6 +43,10 @@ public class UnknownWordTest {
 
         //assertions
         assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
+        assertThat(response[0][0].getPos(), equalTo(0));
+        assertThat(response[0][0].getRow(), equalTo(0));
+        assertThat(response[0][0].getCol(), equalTo(0));
+        assertThat(response[0][0].getLen(), equalTo(UNKNOWN_WORD_TEST_EN.word.length()));
         assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_EN.word));
     }
 
@@ -53,6 +61,10 @@ public class UnknownWordTest {
 
         //assertions
         assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
+        assertThat(response[0][0].getPos(), equalTo(0));
+        assertThat(response[0][0].getRow(), equalTo(0));
+        assertThat(response[0][0].getCol(), equalTo(0));
+        assertThat(response[0][0].getLen(), equalTo(UNKNOWN_WORD_TEST_UK.word.length()));
         assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_UK.word));
     }
 }
