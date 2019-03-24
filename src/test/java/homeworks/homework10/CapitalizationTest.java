@@ -49,6 +49,9 @@ public class CapitalizationTest {
         SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
 
         //assertions
+        //todo очень много однотипный проверок. приведи все к одной проверки 
+        //assertThat(spellerReponse[0][0], equalTo(expectedSpellerResonse)), где expectedSpellerResonse инициализируй предварительно
+        //ну или свой асершен, например, assertSpellerResponce(checkTexts(queryParams).body(), expectedSpellerResonse) (ну как вариант)
         assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_CAPITALIZATION.code));
         assertThat(spellerResponse[0][0].getPos(), equalTo(0));
         assertThat(spellerResponse[0][0].getRow(), equalTo(0));
