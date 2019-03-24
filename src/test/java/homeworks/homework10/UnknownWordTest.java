@@ -4,12 +4,12 @@ import homeworks.homework10.bodies.SpellerResponse;
 import homeworks.homework10.queryParamBuilder.QueryParamBuilder;
 import org.testng.annotations.Test;
 
+import static homeworks.homework10.assertions.AssertSpellerResponse.assertSpellerResponse;
+import static homeworks.homework10.testResources.ExpectedSpellerResponse.setExpectedSpellerResponse;
 import static homeworks.homework10.enums.Errors.ERROR_UNKNOWN_WORD;
 import static homeworks.homework10.enums.Language.*;
 import static homeworks.homework10.requests.CheckTexts.checkTexts;
 import static homeworks.homework10.testResources.TestData.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 public class UnknownWordTest {
 
@@ -19,16 +19,9 @@ public class UnknownWordTest {
         QueryParamBuilder queryParams = new QueryParamBuilder();
         queryParams.language(RU).texts(UNKNOWN_WORD_TEST_RU.word);
 
-        //send request
-        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
-
-        //assertions
-        assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
-        assertThat(response[0][0].getPos(), equalTo(0));
-        assertThat(response[0][0].getRow(), equalTo(0));
-        assertThat(response[0][0].getCol(), equalTo(0));
-        assertThat(response[0][0].getLen(), equalTo(UNKNOWN_WORD_TEST_RU.word.length()));
-        assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_RU.word));
+        //send request and assert response
+        assertSpellerResponse(checkTexts(queryParams).body().as(SpellerResponse[][].class),
+                setExpectedSpellerResponse(ERROR_UNKNOWN_WORD.code, UNKNOWN_WORD_TEST_RU.word));
     }
 
     @Test
@@ -37,16 +30,9 @@ public class UnknownWordTest {
         QueryParamBuilder queryParams = new QueryParamBuilder();
         queryParams.language(EN).texts(UNKNOWN_WORD_TEST_EN.word);
 
-        //send request
-        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
-
-        //assertions
-        assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
-        assertThat(response[0][0].getPos(), equalTo(0));
-        assertThat(response[0][0].getRow(), equalTo(0));
-        assertThat(response[0][0].getCol(), equalTo(0));
-        assertThat(response[0][0].getLen(), equalTo(UNKNOWN_WORD_TEST_EN.word.length()));
-        assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_EN.word));
+        //send request and assert response
+        assertSpellerResponse(checkTexts(queryParams).body().as(SpellerResponse[][].class),
+                setExpectedSpellerResponse(ERROR_UNKNOWN_WORD.code, UNKNOWN_WORD_TEST_EN.word));
     }
 
     @Test
@@ -55,15 +41,8 @@ public class UnknownWordTest {
         QueryParamBuilder queryParams = new QueryParamBuilder();
         queryParams.language(UK).texts(UNKNOWN_WORD_TEST_UK.word);
 
-        //send request
-        SpellerResponse[][] response = checkTexts(queryParams).body().as(SpellerResponse[][].class);
-
-        //assertions
-        assertThat(response[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
-        assertThat(response[0][0].getPos(), equalTo(0));
-        assertThat(response[0][0].getRow(), equalTo(0));
-        assertThat(response[0][0].getCol(), equalTo(0));
-        assertThat(response[0][0].getLen(), equalTo(UNKNOWN_WORD_TEST_UK.word.length()));
-        assertThat(response[0][0].getWord(), equalTo(UNKNOWN_WORD_TEST_UK.word));
+        //send request and assert response
+        assertSpellerResponse(checkTexts(queryParams).body().as(SpellerResponse[][].class),
+                setExpectedSpellerResponse(ERROR_UNKNOWN_WORD.code, UNKNOWN_WORD_TEST_UK.word));
     }
 }

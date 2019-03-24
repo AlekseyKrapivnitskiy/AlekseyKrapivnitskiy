@@ -4,12 +4,12 @@ import homeworks.homework10.bodies.SpellerResponse;
 import homeworks.homework10.queryParamBuilder.QueryParamBuilder;
 import org.testng.annotations.Test;
 
+import static homeworks.homework10.assertions.AssertSpellerResponse.assertSpellerResponse;
+import static homeworks.homework10.testResources.ExpectedSpellerResponse.setExpectedSpellerResponse;
 import static homeworks.homework10.enums.Errors.ERROR_UNKNOWN_WORD;
 import static homeworks.homework10.enums.Language.*;
 import static homeworks.homework10.requests.CheckTexts.checkTexts;
 import static homeworks.homework10.testResources.TestData.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 public class RepeatWordTest {
 
@@ -17,38 +17,32 @@ public class RepeatWordTest {
     public void repeatWordRuTest() {
         //make query params
         QueryParamBuilder queryParams = new QueryParamBuilder();
-        queryParams.language(RU).options(8).texts(REPEAT_WORD_TEST_RU.word);
+        queryParams.language(RU).options(8).texts(PHRASE_WITH_REPEAT_WORD_TEST_RU.word);
 
-        //send request
-        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
-
-        //assertions
-        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
+        //send request and assert response
+        assertSpellerResponse(checkTexts(queryParams).body().as(SpellerResponse[][].class),
+                setExpectedSpellerResponse(ERROR_UNKNOWN_WORD.code, REPEAT_WORD_TEST_RU.word));
     }
 
     @Test
     public void repeatWordEnTest() {
         //make query params
         QueryParamBuilder queryParams = new QueryParamBuilder();
-        queryParams.language(EN).options(8).texts(REPEAT_WORD_TEST_EN.word);
+        queryParams.language(EN).options(8).texts(PHRASE_WITH_REPEAT_WORD_TEST_EN.word);
 
-        //send request
-        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
-
-        //assertions
-        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
+        //send request and assert response
+        assertSpellerResponse(checkTexts(queryParams).body().as(SpellerResponse[][].class),
+                setExpectedSpellerResponse(ERROR_UNKNOWN_WORD.code, REPEAT_WORD_TEST_EN.word));
     }
 
     @Test
     public void repeatWordUkTest() {
         //make query params
         QueryParamBuilder queryParams = new QueryParamBuilder();
-        queryParams.language(UK).options(8).texts(REPEAT_WORD_TEST_UK.word);
+        queryParams.language(UK).options(8).texts(PHRASE_WITH_REPEAT_WORD_TEST_UK.word);
 
-        //send request
-        SpellerResponse[][] spellerResponse = checkTexts(queryParams).body().as(SpellerResponse[][].class);
-
-        //assertions
-        assertThat(spellerResponse[0][0].getCode(), equalTo(ERROR_UNKNOWN_WORD.code));
+        //send request and assert response
+        assertSpellerResponse(checkTexts(queryParams).body().as(SpellerResponse[][].class),
+                setExpectedSpellerResponse(ERROR_UNKNOWN_WORD.code, REPEAT_WORD_TEST_UK.word));
     }
 }
