@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import static com.epam.jdi.light.driver.WebDriverFactory.close;
-import static com.epam.jdi.light.ui.html.PageFactory.initElements;
+import static com.epam.jdi.light.elements.init.PageFactory.initElements;
 import static homeworks.homework7.entities.MetalsAndColors.homeworkSeven;
 import static homeworks.homework7.entities.User.piterChailovskii;
 import static homeworks.homework7.enums.HeaderItems.METALS_AND_COLORS;

@@ -1,8 +1,8 @@
 package homeworks.homework8.site.forms;
 
 import com.epam.jdi.light.elements.composite.Form;
-import com.epam.jdi.light.ui.html.common.Button;
-import com.epam.jdi.light.ui.html.common.TextField;
+import com.epam.jdi.light.ui.html.elements.common.Button;
+import com.epam.jdi.light.ui.html.elements.common.TextField;
 import homeworks.homework8.entities.User;
 import org.openqa.selenium.support.FindBy;
 

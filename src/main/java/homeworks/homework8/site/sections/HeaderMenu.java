@@ -1,7 +1,7 @@
 package homeworks.homework8.site.sections;
 
+import com.epam.jdi.light.elements.complex.Menu;
 import com.epam.jdi.light.elements.composite.Section;
-import com.epam.jdi.light.ui.html.complex.Menu;
 import org.openqa.selenium.support.FindBy;
 
 public class HeaderMenu extends Section {

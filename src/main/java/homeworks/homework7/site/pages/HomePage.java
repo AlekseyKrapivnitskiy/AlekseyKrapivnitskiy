@@ -1,8 +1,8 @@
 package homeworks.homework7.site.pages;
 
 import com.epam.jdi.light.elements.composite.WebPage;
-import com.epam.jdi.light.ui.html.common.Button;
-import com.epam.jdi.light.ui.html.common.Icon;
+import com.epam.jdi.light.ui.html.elements.common.Button;
+import com.epam.jdi.light.ui.html.elements.common.Icon;
 import homeworks.homework7.entities.User;
 import homeworks.homework7.enums.HeaderItems;
 import homeworks.homework7.site.forms.LoginForm;

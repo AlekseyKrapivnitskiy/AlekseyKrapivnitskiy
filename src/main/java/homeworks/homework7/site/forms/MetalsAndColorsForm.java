@@ -1,11 +1,11 @@
 package homeworks.homework7.site.forms;
 
-import com.epam.jdi.light.elements.complex.Droplist;
 import com.epam.jdi.light.elements.complex.WebList;
+import com.epam.jdi.light.elements.complex.dropdown.Dropdown;
 import com.epam.jdi.light.elements.composite.Form;
-import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
-import com.epam.jdi.light.ui.html.common.Button;
-import com.epam.jdi.light.ui.html.complex.RadioButtons;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.JDropdown;
+import com.epam.jdi.light.ui.html.elements.common.Button;
+import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
 import homeworks.homework7.entities.MetalsAndColors;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +19,6 @@ import static homeworks.homework7.enums.Summary.getSummaryLabel;
 import static homeworks.homework7.enums.Vegetables.VEGETABLE;
 import static homeworks.homework7.enums.Vegetables.getVegetableLabel;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class MetalsAndColorsForm extends Form {
 
@@ -33,13 +32,13 @@ public class MetalsAndColorsForm extends Form {
     private WebList elements;
 
     @JDropdown(root = "div[ui=dropdown]", value = ".filter-option", list = "li", expand = ".caret")
-    private Droplist colorsDropdown;
+    private Dropdown colorsDropdown;
 
     @JDropdown(root = "div[ui=combobox]", value = "input", list = "li", expand = ".caret")
-    private Droplist metalsDropdown;
+    private Dropdown metalsDropdown;
 
     @JDropdown(root = "#salad-dropdown", value = ".dropdown-toggle", list = "li", expand = ".caret")
-    private Droplist vegetablesDropdown;
+    private Dropdown vegetablesDropdown;
 
     @FindBy(css = "#submit-button")
     private Button submit;
